@@ -1,0 +1,65 @@
+@import url(/home/styles/color-palette.css);
+
+.botoes-area {
+    height: 130px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid var(--linhas);
+}
+
+.btn-saibamais {
+    height: 42px;
+    width: 96px;
+    background-color: var(--bg-main);
+    position: absolute;
+    top: -7px;
+    left: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid var(--linhas);
+    box-shadow: 4px 4px 8px -2px;
+}
+
+.txt-saiba-mais {
+    width: 74px;
+    text-align: center;
+    color: var(--txt-botao);
+    font: var(--rubik);
+    font-size: 15px;
+    line-height: 13px;
+}
+
+.btn-comprar {
+    height: 81px;
+    width: 164px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid var(--linhas);
+    color: var(--txt-botao);
+    z-index: 1;
+    background-color: var(--bg-main);
+    box-shadow: 5px 4px 5px black;
+}
+
+.txt-comprar {
+    text-align: center;
+    font: var(--rubik);
+    font-size: 22px;
+    line-height: 20px;
+}
+
+.btn-saibamais:hover {
+    box-shadow: 0 0 6px 2px var(--luz-saiba);
+}
+
+.btn-comprar:hover {
+    box-shadow: 0 0 6px 4px var(--txt-horario);
+}

@@ -1,0 +1,103 @@
+@import url(./color-palette.css);
+
+.barra-esq {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: var(--bg-main);
+    z-index: 0;
+}
+
+.sessao-dias {
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.barra-dias-bg {
+    background-color: var(--bg-dark);
+    width: 108px;
+    height: 100%;
+    position: absolute;
+    left: 36px;
+    margin: auto;
+    z-index: -1;
+}
+
+.dias-barra {
+    height: 369px;
+    width: 167px;
+    border-right: 2px solid var(--linhas);
+    z-index: 1;
+}
+
+.titulo-dias {
+    height: 32px;
+    width: 167px;
+    border-right: 2px solid var(--linhas);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 19px;
+}
+
+.txt-titulo-dias {
+    font: var(--rubik-one);
+    color: var(--txt-dias-title);
+    z-index: 1;
+}
+
+.dia-box {
+    height: 90px;
+    width: 100%;
+}
+
+.dia-box-bg {
+    height: 100%;
+    margin: 0px 36px;
+    width: 108px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dia-box-bg:hover {
+    background-color: rgb(255 240 240 / 12%);
+}
+
+.db-atv {
+    border-bottom: 2px solid var(--linhas);
+}
+
+.txt-dia {
+    font: var(--rubik-light);
+    font-size: 37px;
+    margin-bottom: -6px;
+    color: var(--txt-dia-inact);
+    z-index: 1;
+}
+
+.txt-mes {
+    font: var(--rubik-one);
+    color: var(--txt-mes-inact);
+    z-index: 1;
+    font-size: 10px;
+}
+
+.td-atv {
+    font: var(--rubik-light);
+    font-size: 60px;
+    color: white;
+    margin-bottom: -10px;
+    z-index: 1;
+}
+
+.tm-atv {
+    font: var(--rubik-one);
+    color: white;
+    z-index: 1;
+    font-size: 14px;
+}
