@@ -1,0 +1,38 @@
+@import url(/home/styles/color-palette.css);
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(242, 233, 217, 1) 0%, rgba(213, 218, 227, 1) 78%, rgba(175, 185, 203, 1) 91%, rgba(132, 148, 179, 1) 100%);
+    height: 140px;
+    font-size: 33px;
+}
+
+#contexto {
+    display: flex;
+    background-color: white;
+    height: 80px;
+    padding: 35px;
+    border-bottom: 1px solid #e1e1e1;
+    justify-content: space-between;
+}
+
+#em-cartaz {
+    font-family: var(--inder);
+    color: white;
+    font-size: 198px;
+    margin-top: -9px;
+}
+
+#data {
+    font-family: var(--inder);
+    color: white;
+    font-size: 23px;
+}
+
+#programacao {
+    font: var(--rubik-one);
+    font-size: 40px;
+    color: lightgrey;
+}
