@@ -189,13 +189,12 @@
 }
 
 .filme-atores {
-    background-color: aqua;
     border-radius: 50%;
     height: 77px;
     width: 77px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.atores-img {}
 
 .trailer-btn:hover {
     cursor: pointer;
