@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&family=IM+Fell+Double+Pica+SC&family=Inconsolata:wght@900&family=Inder&family=Inter:wght@300;700&family=Rubik:wght@300;400;900&family=Inder&display=swap');
+
+:root {
+    --bg-main: #1b1b1b;
+    --bg-dark: #000;
+    --bg-botao: #202020;
+    --bg-horas: #030303;
+    --bg-lingua: #070707;
+
+    --txt-botao: #fff;
+    --txt-main: #fff;
+    --txt-second: rgb(204, 204, 204);
+    --txt-horario: #007BD3;
+    --txt-dub: #BDDA0D;
+    --txt-leg: #A74600;
+    --txt-dias-title: #9A9A9A;
+    --txt-dia-inact: #707070;
+    --txt-mes-inact: #595959;
+
+    --linhas: #2c2c2c;
+
+    --luz-saiba: #fdd47e;
+
+    --double-pica: 'IM Fell Double Pica SC', serif;
+    --dw-pica: 'IM Fell DW Pica', serif;
+    --inconsolata-f: 'Inconsolata', monospace;
+    --inter-light: 300 15px 'Inter', sans-serif;
+    --inter-bold: 700 15px 'Inter', sans-serif;
+    --rubik-one: 900 16px 'Rubik', sans-serif;
+    --rubik: 400 15px 'Rubik';
+    --rubik-light: 300 15px 'Rubik';
+    --inder: 'Inder', sans-serif;
+}

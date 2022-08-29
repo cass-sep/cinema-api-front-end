@@ -4,9 +4,7 @@ const sala = document.querySelector(".poltronas")
 let ocupadas = [1,3,12, 37]
 let capacidadeSala = 50
 
-const deletarUm = (numPolt) => {
-    bilhetes = bilhetes.filter(bilhete => bilhete.poltrona != numPolt)
-}
+
 
 const poltronaDisponivel = numPolt => {
     let poltrona = document.createElement("div")

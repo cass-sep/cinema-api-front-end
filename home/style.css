@@ -1,5 +1,28 @@
-*{
+@import url("/home/styles/dias-secao.css");
+@import url("/home/styles/botoes-secao.css");
+@import url("/home/styles/filme-secao.css");
+@import url("/home/styles/horarios-secao.css");
+@import url("/home/styles/banner-secao.css");
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.cursor {
+    cursor: default;
+}
+
+main {
+    padding: 0 25px 0 25px;
+    background-color: #c4c4c4;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    padding: 38px 30px 0 30px;
+    background-color: white;
+    gap: 85px;
 }

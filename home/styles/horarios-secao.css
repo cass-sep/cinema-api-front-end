@@ -1,0 +1,101 @@
+@import url(./color-palette.css);
+
+.sessao-horarios {
+    background-color: var(--bg-main);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    border-right: 2px solid var(--linhas);
+}
+
+.horarios-area {
+    width: 100%;
+    border-top: 2px solid var(--linhas);
+    display: flex;
+    justify-content: start;
+    overflow-x: hidden;
+}
+
+.salas-box {
+    height: 73px;
+    border-right: 2px solid var(--linhas);
+    z-index: 1;
+}
+
+.prim-sb {
+    width: 7%;
+}
+
+.sala-titulo {
+    height: 20px;
+    width: 100%;
+    margin-top: 2px;
+    display: flex;
+}
+
+.sala-nome {
+    color: var(--txt-main);
+    margin-left: 10px;
+    font: var(--rubik-one);
+}
+
+.sala-horas {
+    height: 31px;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sala-lingua {
+    height: 18px;
+    width: 63px;
+    background-color: var(--bg-lingua);
+    margin: 0 0 0 10px;
+    text-align: center;
+    border-radius: 12px;
+    font-family: var(--inder);
+    font-size: 13px;
+}
+
+.leg {
+    color: var(--txt-leg);
+}
+
+.dub {
+    color: var(--txt-dub);
+}
+
+.sala-tipo {
+    margin-left: -1px;
+    margin-top: -5px;
+    width: 40px;
+    height: 20px;
+}
+
+.hora {
+    width: 86px;
+    height: 100%;
+    text-align: center;
+    padding-top: 6px;
+    color: var(--txt-horario);
+    font-family: var(--inconsolata-f);
+}
+
+.hora:hover {
+    background-color: var(--txt-horario);
+    color: white;
+    text-shadow: 0px 0px 5px white;
+    box-shadow: 0 0 9px var(--txt-horario);
+}
+
+.horas-bg {
+    height: 31px;
+    width: 968px;
+    background-color: var(--bg-dark);
+    position: absolute;
+    top: 38px;
+    z-index: 0;
+}

@@ -1,0 +1,7 @@
+export function filmesArea() {
+    var innerData = "<div class=*filme-bg*></div><div class=*filme-main-info*> <div class=*filme-titulos*> <div class=*filme-estudio*>WARNER BROS. PICTURES</div> <div class=*filme-nome*>DUNA</div> </div> <div class=*filme-poster*></div> </div> <div class=*filme-extra-info*> <div class=*filme-descricao*> <div class=*filme-diretor*> <div class=*diretor-intro*>direção de</div> <div class=*diretor-nome*>DENIS VILLENEUVE</div> </div> <div class=*filme-sinopse*> <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque deleniti tenetur ipsam, consequatur impedit, iusto in quis eligendi dolorem iste libero. Atque optio ut quae, rem adipisci aspernatur voluptatum qui. </p> </div> </div> <div class=*filme-trailer-box*> <div class=*trailer-btn*> <img class=*trailer-icon* src=*/assets/icone-trailer.svg* alt=**><h3 class=*trailer-txt*>trailer</h3> </div> </div> <div class=*filme-bottom*> <div class=*filme-dados*> <h3 class=*filme-genero* *>Ficção Científica</h3> <h3 class=*filme-duracao* *>125 min</h3> <h3 class=*filme-pais* *>Estados Unidos</h3> </div> <div class=*filme-atores-box*> <div class=*filme-atores*></div> <div class=*filme-atores*></div> <div class=*filme-atores*></div> <div class=*filme-atores*></div> </div> </div> </div>"
+    var aspas = '"';
+    var array = innerData.split("*");
+    innerData = array.join(aspas);
+    return innerData;
+}
