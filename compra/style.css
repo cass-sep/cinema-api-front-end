@@ -1,0 +1,204 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+
+}
+.sala, .material-symbols-outlined{
+    user-select: none;
+}
+html, body{
+    width:100%;
+    height: 100%;
+}
+main{
+   display: flex;
+   height:calc(100% - 70px);   
+   padding-top: 80px; 
+}
+nav{
+    background-color: #222;
+    width:100%;
+    height:80px;
+    position: fixed;
+    top:0;
+}
+
+.menu_lateral{
+    width:300px;
+    height: calc(100% - 0px);
+    background-color: #f1f1f1;
+    /* background-color:#ab3536; */
+    
+    display: flex;
+    flex-direction: column;
+}
+.box-bilhetes{
+    width:100%;
+    height:100%;
+    overflow: auto;
+    padding:10px;
+    
+}
+.menu_lateral .img_poster{
+    width:130px;
+    height: auto;
+}
+.menu_lateral .title{
+    font-weight: bold;
+}
+.menu_lateral .img_poster img{
+    width:100%;
+    height: 200px; 
+}
+.menu_lateral .top{
+    display: flex;
+    padding:10px;
+}
+.menu_lateral .top ul{
+    list-style: none;
+    width:150px;
+    /* background-color: aquamarine; */
+}
+.menu_lateral .top ul li{
+    padding:5px;
+    display: flex;
+    align-items: center;
+}
+.menu_lateral .top ul li span.material-symbols-outlined{
+    font-size:22px;
+    margin-right:5px;
+}
+.menu_lateral .top ul li.tipo span{
+   background-color: #222;
+   padding:3px;
+   color:#fff;
+   border-radius:3px;
+}
+
+
+
+
+.menu_lateral .bilhete{
+    background-color: #e1e1e1;
+    margin-top:10px;
+}
+.menu_lateral .bilhete .deletar{
+    background:red;
+    cursor: pointer;
+    text-align: right;
+    padding:10px;
+}
+
+.bilhete .meia, .bilhete .poltrona, .bilhete .total_bilhete{
+    /* background-color: green; */
+    padding:10px;
+}
+
+
+
+
+.footer-total{
+    background-color: #f6f0f0;
+    height:70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom:0;
+}
+.footer-total .total-bilhetes{
+
+    width:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:40px;
+    font-weight: bold;
+}
+.footer-total input{
+    background:green;
+    margin:10px;
+    border:none;
+    outline:none;
+    padding:10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    color:#fff;
+}
+
+
+
+.box-sala{
+    width: calc(100% - 300px);
+    
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.sala{
+    /* outline:1px solid black; */
+   
+    
+  
+  
+    
+    height:auto;
+    
+   
+}
+
+.sala .poltronas{
+    display: flex;
+    flex-wrap: wrap;
+ 
+    width:355px;
+    min-width:355px;
+  
+    flex-direction: row;
+    gap:5px;
+}
+.sala .tela{
+    background-color: #000;
+    padding:3px;
+    width: 60%;
+    margin:0 20% 30px 20%;
+    text-align: center;
+    color:#fff;
+    text-transform: uppercase;
+}
+.sala .poltrona{
+    background-color:#00b400;
+    width:40px;
+    height:40px;
+    border-radius:100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    cursor:pointer;
+}
+/* .sala .poltrona:hover{
+    background-color:rgb(125, 220, 125);
+}
+.sala .poltrona.ocupada:hover{
+    background-color: rgb(248, 126, 126);
+} */
+.sala .poltrona.ocupada{
+    background-color: red;
+    border:2px solid red;
+    cursor:not-allowed;
+}
+.sala .poltrona.selecionada{
+    background-color: rgb(248, 233, 115);
+    border:2px solid rgb(149, 149, 8);
+}
+
+
+
+
+
+

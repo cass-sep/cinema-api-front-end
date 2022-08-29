@@ -7,17 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/home/style.css">
     <title>Document</title>
-
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Serif:opsz,wght@8..144,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <base href="">
+
+    <nav></nav>
+
+    <main>
+
+        <div class="menu_lateral">
+            <div class="top">
+                <div class="img_poster">
+                    <img src="duna.webp" />
+                </div>
+                <ul>
+                    <li class="title">Duna</li>
+                    <li><span class="material-symbols-outlined">Date_Range</span> 20/08/2022</li>
+                    <li><span class="material-symbols-outlined">live_tv</span> Sala: 06</li>
+                    <li><span class="material-symbols-outlined">query_builder</span> 16:00</li>
+                    <li><span class="material-symbols-outlined">attach_money</span> R$ 20,00</li>
+                    <li class="tipo"><span>3D</span></li>
+                </ul>
+            </div>
+
+            <div class="box-bilhetes">
+
+            </div>
+
+            
+        </div>
+
+        <div class="box-sala">
+            <div class="sala">
+                <div class="tela">Tela</div>
+                <div class="poltronas">
+                    <div class="poltrona">5</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <div class="footer-total">
+        <div class="total-bilhetes"></div>
+        <input type="submit" value="pagamento">
+    </div>
+
+</body>
+
 </html>
+
+<template id="bilhete-template">
+    <div class="bilhete">
+        <div class="deletar">X</div>
+        <div class="poltrona">Poltrona: <span>9</span></div>
+        <div class="meia">Meia: <input type="checkbox" /></div>
+        <div class="total_bilhete">Total: <span></span></div>
+    </div>
+</template>
