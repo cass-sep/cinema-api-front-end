@@ -1,13 +1,14 @@
 const templateBilhete = document.querySelector("#bilhete-template");
+import { preencherDados } from "./script.js"
 
-let bilhetes = []
+export let bilhetes = []
 
-class Bilhete {
+export class Bilhete {
 
-    constructor(bilheteObj, precoSessao) {
+    constructor(bilheteObj) {
         this.bilheteObj = bilheteObj
-        this.precoSessao = precoSessao
-        this.cloneBilhete = templateBilhete.cloneNode(true).content
+        this.precoSessao = bilheteObj.preco
+        this.cloneBilhete = templateBilhete.content.cloneNode(true).children[0]
         this.bilhetePreco = this.cloneBilhete.querySelector(".total_bilhete span")
         this.btnDeletar = this.cloneBilhete.querySelector(".deletar")
         this.bilhetePoltrona = this.cloneBilhete.querySelector(".poltrona span")
@@ -45,18 +46,26 @@ class Bilhete {
                 this.atualizarTotal()
             })
 
-            this.btnDeletar.addEventListener("click", event => {
-                bilhetes = bilhetes.filter(bilhete => bilhete != this.bilheteObj)
-                console.log(this)
-                this.remove()
-            })
+        this.btnDeletar.addEventListener("click", event => {
+            // if(!confirm("Remoter Bilhete da Poltrona "+this.bilheteObj.poltrona)) return false
+           this.deletarItem(this.bilheteObj)
+        })
+
         document.querySelector(".box-bilhetes").appendChild(this.cloneBilhete)
 
-        
+        this.atualizarTotal()
+    }
+
+    deletarItem = obj => {
+        console.log(bilhetes)
+        bilhetes = bilhetes.filter(bilhete => bilhete != obj)
+        this.cloneBilhete.remove()
+        document.querySelector(`.poltrona[data-id='${obj.poltrona}']`).classList.remove("selecionada")
         this.atualizarTotal()
     }
 
     atualizarTotal = () => {
+        console.log("Bilhetes:")
         console.log(bilhetes)
         let divTotal = document.querySelector(".total-bilhetes")
         let total = bilhetes.reduce((accum, curr) => accum + curr.preco, 0)
@@ -65,8 +74,29 @@ class Bilhete {
 
 }
 
+
+const limparBilhetes = () => {
+    document.querySelector(".box-bilhetes").innerHTML = ""
+    bilhetes = []
+}
+
 const monetarioBr = num => {
     return num.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
 }
 
-export { Bilhete }
+
+document.querySelector("input[type='submit']").addEventListener("click", event => {
+    
+    bilhetes.forEach(bilhete => {
+        axios.post('http://localhost:8080/bilhetes', bilhete)
+            .then(response => {
+                limparBilhetes()
+                preencherDados()
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    })
+
+
+})

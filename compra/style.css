@@ -3,7 +3,9 @@
     margin:0px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-
+}
+:root{
+    --color-primary: #00b400;
 }
 .sala, .material-symbols-outlined{
     user-select: none;
@@ -83,12 +85,18 @@ nav{
 .menu_lateral .bilhete{
     background-color: #e1e1e1;
     margin-top:10px;
+    position: relative;
 }
 .menu_lateral .bilhete .deletar{
-    background:red;
     cursor: pointer;
     text-align: right;
-    padding:10px;
+    padding:5px;
+    position: absolute;
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:red;
 }
 
 .bilhete .meia, .bilhete .poltrona, .bilhete .total_bilhete{
@@ -119,7 +127,7 @@ nav{
     font-weight: bold;
 }
 .footer-total input{
-    background:green;
+    background:var(--color-primary);
     margin:10px;
     border:none;
     outline:none;
@@ -172,7 +180,7 @@ nav{
     text-transform: uppercase;
 }
 .sala .poltrona{
-    background-color:#00b400;
+    background-color:#dcf4dc;
     width:40px;
     height:40px;
     border-radius:100%;
@@ -193,10 +201,10 @@ nav{
     cursor:not-allowed;
 }
 .sala .poltrona.selecionada{
-    background-color: rgb(248, 233, 115);
-    border:2px solid rgb(149, 149, 8);
+    background-color: var(--color-primary);
+    color:#fff;
+    
 }
-
 
 
 

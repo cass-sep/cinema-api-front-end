@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/home/style.css">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="module"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Serif:opsz,wght@8..144,700&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -27,11 +27,14 @@
                 </div>
                 <ul>
                     <li class="title">Duna</li>
-                    <li><span class="material-symbols-outlined">Date_Range</span> 20/08/2022</li>
-                    <li><span class="material-symbols-outlined">live_tv</span> Sala: 06</li>
-                    <li><span class="material-symbols-outlined">query_builder</span> 16:00</li>
-                    <li><span class="material-symbols-outlined">attach_money</span> R$ 20,00</li>
-                    <li class="tipo"><span>3D</span></li>
+                    <li><span class="material-symbols-outlined">Date_Range</span><span class="date"></span>
+                    </li>
+                    <li><span class="material-symbols-outlined">live_tv</span> Sala: <span class="nomeSala"></span></li>
+                    <li><span class="material-symbols-outlined">query_builder</span> <span class="sessaoHorario"></span>
+                    </li>
+                    <li><span class="material-symbols-outlined">attach_money</span> <span class="sessaoPreco"></span>
+                    </li>
+                    <li class="tipo"><span></span></li>
                 </ul>
             </div>
 
@@ -39,15 +42,13 @@
 
             </div>
 
-            
+
         </div>
 
         <div class="box-sala">
             <div class="sala">
                 <div class="tela">Tela</div>
-                <div class="poltronas">
-                    <div class="poltrona">5</div>
-                </div>
+                <div class="poltronas"></div>
             </div>
         </div>
 
@@ -65,7 +66,7 @@
 
 <template id="bilhete-template">
     <div class="bilhete">
-        <div class="deletar">X</div>
+        <div class="deletar"><span class="material-symbols-outlined">delete</span> </div>
         <div class="poltrona">Poltrona: <span>9</span></div>
         <div class="meia">Meia: <input type="checkbox" /></div>
         <div class="total_bilhete">Total: <span></span></div>
