@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 970px 179px;
     grid-template-rows: 446px;
+    box-shadow: 0px 5px 8px 2px;
 }
 
 .filme-bg {
@@ -77,6 +78,7 @@
     padding: 36px 16px 23px;
     justify-content: space-between;
     z-index: 1;
+    position: relative;
 }
 
 .filme-descricao {
@@ -144,19 +146,38 @@
     color: var(--txt-second);
 }
 
+.btn-filme-info {
+    height: 30px;
+    width: 30px;
+    background: gray;
+    position: absolute;
+}
+
+#btn-fi-p {
+    top: 236px;
+    right: 21px;
+}
+
+#btn-fi-a {
+    top: 236px;
+    left: 13px;
+}
+
+
 .filme-bottom {
-    height: 102px;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .filme-dados {
-    height: 100%;
-    width: 186px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     color: var(--txt-second);
+    align-items: flex-end;
 }
 
 .filme-genero {
@@ -182,8 +203,7 @@
     width: 454px;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 0 7px;
     gap: 17px;
 }
@@ -198,4 +218,12 @@
 
 .trailer-btn:hover {
     cursor: pointer;
+}
+
+.cast-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }

@@ -52,7 +52,9 @@
 .dia-box {
     height: 90px;
     width: 100%;
+    position: relative;
 }
+
 
 .dia-box-bg {
     height: 100%;
@@ -70,6 +72,17 @@
 
 .db-atv {
     border-bottom: 2px solid var(--linhas);
+}
+
+.txt-dia-semana {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: absolute;
+    color: #363636;
+    top: 20px;
+    right: 0px;
+    font: var(--rubik-one);
+    font-size: 12px;
 }
 
 .txt-dia {

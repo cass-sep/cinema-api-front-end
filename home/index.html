@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="components/homeController.js"></script>
+    <script type="module" src="/components/homeController.js"></script>
+    <script src="/home/script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Programação</title>
 </head>
 <style>
 
@@ -16,66 +17,87 @@
 <body>
 
     <div id="banner">
-        <h1 id="em-cartaz">EM CARTAZ</h1>
-        <h1 id="data">AGOSTO/2022</h1>
+        <h1 id="em-cartaz" class="cursor">EM CARTAZ</h1>
+        <h1 id="data" class="cursor">AGOSTO/2022</h1>
     </div>
 
     <main>
         <header id="contexto">
-            <h1 id="programacao">PROGRAMAÇÃO DIÁRIA</h1>
+            <h1 id="programacao" class="cursor">PROGRAMAÇÃO DIÁRIA</h1>
         </header>
         <div class="content-box">
         </div>
     </main>
 
+
+
+
+
     <template id="sessao-window">
-        <div class="filme-box">
+        <div class="filme-box" id>
             <div class="filme-info">
                 <div class="filme-bg">
                 </div>
                 <div class="filme-main-info">
                     <div class="filme-titulos">
-                        <div class="filme-estudio cursor">WARNER BROS. PICTURES</div>
-                        <div class="filme-nome cursor">DUNA</div>
+                        <div class="filme-estudio cursor">
+                            <!-- WARNER BROS. PICTURES -->
+                        </div>
+                        <div class="filme-nome cursor">
+                            <!-- DUNA -->
+                            <!--  -->
+                        </div>
                     </div>
                     <img class="filme-poster" src="/assets/duna.jpg" alt="">
                 </div>
                 <div class="filme-extra-info">
-                    <div class="filme-descricao">
-                        <div class="filme-diretor">
-                            <div class="diretor-intro cursor">direção de</div>
-                            <div class="diretor-nome cursor">DENIS VILLENEUVE</div>
+                    <button class="btn-filme-info" id="btn-fi-a" onclick="voltarInfo(this)"></button>
+                    <button class="btn-filme-info" id="btn-fi-p" onclick="avancarInfo(this)"></button>
+                    <div class="filme-info-page1 page page-ativo" data-page="1">
+                        <div class="filme-descricao">
+                            <div class="filme-sinopse">
+                                <p class="txt-sinopse cursor"> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    Cumque
+                                    deleniti tenetur
+                                    ipsam, consequatur
+                                    impedit, iusto in quis eligendi dolorem iste libero. Atque optio ut quae, rem
+                                    adipisci aspernatur
+                                    voluptatum qui. </p>
+                            </div>
                         </div>
-                        <div class="filme-sinopse">
-                            <p class="cursor"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
-                                deleniti tenetur
-                                ipsam, consequatur
-                                impedit, iusto in quis eligendi dolorem iste libero. Atque optio ut quae, rem
-                                adipisci aspernatur
-                                voluptatum qui. </p>
+                        <div class="filme-trailer-box">
+                            <div class="trailer-btn">
+                                <img class="trailer-icon" src="/assets/icone-trailer.svg" alt="">
+                                <h3 class="trailer-txt">trailer</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="filme-trailer-box">
-                        <div class="trailer-btn">
-                            <img class="trailer-icon" src="/assets/icone-trailer.svg" alt="">
-                            <h3 class="trailer-txt">trailer</h3>
-                        </div>
-                    </div>
-                    <div class="filme-bottom">
                         <div class="filme-dados">
-                            <h3 class="filme-genero cursor" style=" font-size: 16px; ">ficção científica</h3>
-                            <h3 class="filme-duracao cursor" style=" font-size: 31px; ">125 min</h3>
-                            <h3 class="filme-pais cursor" style=" font-size: 16px; ">Estados Unidos</h3>
+                            <h3 class="filme-genero cursor" style=" font-size: 16px; ">
+                            </h3>
+                            <h3 class="filme-duracao cursor" style=" font-size: 31px; ">
+                            </h3>
+                            <h3 class="filme-pais cursor" style=" font-size: 16px; ">
+                            </h3>
                         </div>
-                        <div class="filme-atores-box">
-                            <div class="filme-atores" style="background: url('/assets/timothee chalamet.jpg');background-repeat: no-repeat;
-    background-size: cover;"></div>
-                            <div class="filme-atores" style="background: url('/assets/zendaya.jpg');background-repeat: no-repeat;
-    background-size: cover;background-position-x: -29px;"></div>
-                            <div class="filme-atores" style="background: url('/assets/oscar-isaac.jpg');background-repeat: no-repeat;
-    background-size: cover;background-position-x: -25px;"></div>
-                            <div class="filme-atores" style="background: url('/assets/josh brolin.jpg');background-repeat: no-repeat;
-    background-size: cover;background-position-x: -10px;"></div>
+                    </div>
+                    <div class="filme-info-page2 page" data-page="2">
+                        <div class="cast-info">
+                            <div class="filme-diretor">
+                                <div class="diretor-intro cursor">direção de</div>
+                                <div class="diretor-nome cursor">DENIS VILLENEUVE</div>
+                            </div>
+                            <div class="filme-bottom">
+                                <div class="filme-atores-box">
+                                    <div class="filme-atores" style="background: url('/assets/timothee chalamet.jpg');background-repeat: no-repeat;
+                                                    background-size: cover;"></div>
+                                    <div class="filme-atores" style="background: url('/assets/zendaya.jpg');background-repeat: no-repeat;
+                                                    background-size: cover;background-position-x: -29px;"></div>
+                                    <div class="filme-atores" style="background: url('/assets/oscar-isaac.jpg');background-repeat: no-repeat;
+                                                    background-size: cover;background-position-x: -25px;"></div>
+                                    <div class="filme-atores" style="background: url('/assets/josh brolin.jpg');background-repeat: no-repeat;
+                                                    background-size: cover;background-position-x: -10px;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,85 +109,69 @@
                         <h3= class="txt-titulo-dias cursor">DIAS</h3=>
                     </div>
                     <div class="dias-barra">
-                        <div class="dia-box">
-                            <div class="dia-box-bg">
-                                <p class="txt-dia cursor">26</p>
-                                <p class="txt-mes cursor">AGOSTO</p>
-                            </div>
-                        </div>
-                        <div class="dia-box db-atv">
-                            <div class="dia-box-bg">
-                                <p class="td-atv cursor">27</p>
-                                <p class="tm-atv cursor">AGOSTO</p>
-                            </div>
-                        </div>
-                        <div class="dia-box">
-                            <div class="dia-box-bg">
-                                <p class="txt-dia cursor">28</p>
-                                <p class="txt-mes cursor">AGOSTO</p>
-                            </div>
-                        </div>
-                        <div class="dia-box">
-                            <div class="dia-box-bg">
-                                <p class="txt-dia cursor">29</p>
-                                <p class="txt-mes cursor">AGOSTO</p>
-                            </div>
-                        </div>
+                        <!-- INSERIR SECAO DE DIAS AQUI!!!-->
                     </div>
                 </div>
                 <div class="botoes-area">
                     <div class="btn-saibamais">
                         <p class="txt-saiba-mais cursor">SAIBA MAIS</p>
                     </div>
-                    <div class="btn-comprar">
+                    <button class="btn-comprar" onclick="comprarPage(this)" data-filmeid="">
                         <p class="txt-comprar cursor">COMPRAR INGRESSO</p>
-                    </div>
+                    </button>
                 </div>
             </div>
             <div class="sessao-horarios">
                 <div class="horarios-area">
+                    <button class="btn-mais-horarios" id="btn-mh-a" onclick="voltarHorarios(this)"></button>
+                    <button class="btn-mais-horarios" id="btn-mh-p" onclick="avancarHorarios(this)"></button>
                     <div class="horas-bg"></div>
                     <div class="salas-box prim-sb"></div>
-                    <div class="salas-box">
-                        <div class="sala-titulo">
-                            <div class="sala-nome cursor">SALA 1</div>
-                            <div class="sala-lingua leg cursor">LEG</div>
-                        </div>
-                        <div class="sala-horas">
-                            <div class="hora cursor">16:00</div>
-                            <div class="hora cursor">18:00</div>
-                            <div class="hora cursor">20:00</div>
-                        </div>
-                    </div>
-                    <div class="salas-box">
-                        <div class="sala-titulo">
-                            <div class="sala-nome cursor">SALA 3</div>
-                            <div class="sala-lingua dub cursor">DUB</div>
-                            <img class="sala-tipo" src="/assets/3D.png" alt="">
-                        </div>
-                        <div class="sala-horas">
-                            <div class="hora cursor">16:00</div>
-                            <div class="hora cursor">18:00</div>
-                            <div class="hora cursor">20:00</div>
-                        </div>
-                    </div>
-                    <div class="salas-box">
-                        <div class="sala-titulo">
-                            <div class="sala-nome cursor">SALA 6</div>
-                            <div class="sala-lingua dub cursor">DUB</div>
-                        </div>
-                        <div class="sala-horas">
-                            <div class="hora cursor">16:00</div>
-                            <div class="hora cursor">18:00</div>
-                            <div class="hora cursor">20:00</div>
-                        </div>
-                    </div>
+
+                    <!-- INSERIR AS SALAS AQUI!!!! -->
+
                 </div>
             </div>
         </div>
+
+
     </template>
+    <template id="temp-dia-box">
+        <div class="dia-box" data-dia="">
+            <h4 class="txt-dia-semana cursor">QUARTA</h4>
+            <div class="dia-box-bg">
+                <p class="txt-dia cursor">26</p>
+                <p class="txt-mes cursor">AGOSTO</p>
+            </div>
+        </div>
+    </template>
+
+
+
+    <div class="horarios-area">
+        <button class="btn-mais-horarios" id="btn-mh-a"></button>
+        <button class="btn-mais-horarios" id="btn-mh-p"></button>
+        <div class="horas-bg"></div>
+        <div class="salas-box prim-sb"></div>
+
+        <!-- INSERIR AS SALAS AQUI!!!! -->
+
+    </div>
+
+    <div id="temp-horario" class="salas-box template">
+        <div class="sala-titulo">
+            <div class="sala-nome cursor">SALA 1</div>
+            <div class="sala-lingua leg cursor">LEG</div>
+            <img class="sala-tipo" src="/assets/3D.png" alt="">
+        </div>
+        <div class="sala-horas">
+            <!-- INSERIR AS HORAS AQUI -->
+        </div>
+    </div>
+
+    <div id="temp-hora" class="hora cursor template">16:00</div>
+
+
 </body>
-<script>
-</script>
 
 </html>

@@ -1,0 +1,98 @@
+[
+    {
+        "filme": {
+            "estudio": "WARNER BROS. PICTURES",
+            "id": 1,
+            "filmeNome": "DUNA",
+            "diretor": "DENIS VILLENEUVE",
+            "sinopse": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque",
+            "genero": "ficção científica",
+            "duracao": "125 min",
+            "pais": "Estados Unidos",
+            "filmePoster": "/assets/duna.jpg"
+        },
+        "atores": [
+            "assets/timothee chalamet",
+            "assets/zendaya",
+            "assets/oscar-isaac",
+            "assets/josh brolin"
+        ],
+        "salas": [
+            {
+                "salaNome": "SALA 1",
+                "salaLingua": "leg",
+                "horas": [
+                    "16: 00",
+                    "18: 00",
+                    "20: 00"
+                ]
+            },
+            {
+                "salaNome": "SALA 3",
+                "salaLingua": "dub",
+                "horas": [
+                    "16: 00",
+                    "18: 00",
+                    "20: 00"
+                ]
+            },
+            {
+                "salaNome": "SALA 6",
+                "salaLingua": "dub",
+                "horas": [
+                    "16: 00",
+                    "18: 00",
+                    "20: 00"
+                ]
+            }
+        ]
+    },
+    {
+        "filme": {
+            "estudio": "WALT DISNEY CO.",
+            "id": 2,
+            "filmeNome": "VINGADORES",
+            "diretor": "TAIKA WAITITI",
+            "sinopse": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque",
+            "genero": "ficção científica",
+            "duracao": "125 min",
+            "pais": "Estados Unidos",
+            "filmePoster": "/assets/duna.jpg"
+        },
+        "atores": [
+            "assets/timothee chalamet",
+            "assets/zendaya",
+            "assets/oscar-isaac",
+            "assets/josh brolin"
+        ],
+        "salas": [
+            {
+                "salaNome": "SALA 1",
+                "salaLingua": "leg",
+                "horas": [
+                    "16: 00",
+                    "18: 00",
+                    "20: 00"
+                ]
+            },
+            {
+                "salaNome": "SALA 3",
+                "salaLingua": "dub",
+                "horas": [
+                    "16: 00",
+                    "18: 00",
+                    "20: 00"
+                ]
+            },
+            {
+                "salaNome": "SALA 6",
+                "salaLingua": "dub",
+                "horas": [
+                    "16: 00",
+                    "18: 00",
+                    "20: 00"
+                ]
+            }
+        ]
+    }
+]
