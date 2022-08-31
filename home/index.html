@@ -123,13 +123,11 @@
             </div>
             <div class="sessao-horarios">
                 <div class="horarios-area">
-                    <button class="btn-mais-horarios" id="btn-mh-a" onclick="voltarHorarios(this)"></button>
-                    <button class="btn-mais-horarios" id="btn-mh-p" onclick="avancarHorarios(this)"></button>
+                    <button class="btn-mais-horarios" id="btn-mh-a"></button>
+                    <button class="btn-mais-horarios" id="btn-mh-p"></button>
                     <div class="horas-bg"></div>
                     <div class="salas-box prim-sb"></div>
-
                     <!-- INSERIR AS SALAS AQUI!!!! -->
-
                 </div>
             </div>
         </div>
@@ -147,29 +145,18 @@
     </template>
 
 
-
-    <div class="horarios-area">
-        <button class="btn-mais-horarios" id="btn-mh-a"></button>
-        <button class="btn-mais-horarios" id="btn-mh-p"></button>
-        <div class="horas-bg"></div>
-        <div class="salas-box prim-sb"></div>
-
-        <!-- INSERIR AS SALAS AQUI!!!! -->
-
-    </div>
-
-    <div id="temp-horario" class="salas-box template">
+    <div class="salas-box" id="temp-horario">
         <div class="sala-titulo">
             <div class="sala-nome cursor">SALA 1</div>
             <div class="sala-lingua leg cursor">LEG</div>
             <img class="sala-tipo" src="/assets/3D.png" alt="">
         </div>
         <div class="sala-horas">
-            <!-- INSERIR AS HORAS AQUI -->
+            <div class="hora cursor">16:00</div>
         </div>
     </div>
 
-    <div id="temp-hora" class="hora cursor template">16:00</div>
+
 
 
 </body>
