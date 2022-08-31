@@ -26,3 +26,20 @@ main {
     background-color: white;
     gap: 85px;
 }
+
+.template {
+    display: none;
+}
+
+.filme-info-page1 {
+    display: none;
+}
+
+.filme-info-page2 {
+    display: none;
+    height: 100%;
+}
+
+.page-ativo {
+    display: block;
+}

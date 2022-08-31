@@ -14,6 +14,26 @@
     display: flex;
     justify-content: start;
     overflow-x: hidden;
+    position: relative;
+}
+
+.btn-mais-horarios {
+    height: 30px;
+    width: 30px;
+    background: gray;
+    position: absolute;
+}
+
+#btn-mh-a {
+    top: 19px;
+    z-index: 10;
+    left: 6px;
+}
+
+#btn-mh-p {
+    top: 19px;
+    z-index: 10;
+    right: 6px;
 }
 
 .salas-box {
@@ -96,6 +116,6 @@
     width: 968px;
     background-color: var(--bg-dark);
     position: absolute;
-    top: 38px;
+    top: 27px;
     z-index: 0;
 }

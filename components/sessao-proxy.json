@@ -1,0 +1,409 @@
+[
+    {
+        "id": 1,
+        "horario": "14:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": "2022-08-20",
+        "total": 30.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 1,
+            "nome": "sala 1",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 1,
+            "nome": "Homem-Aranha: Sem Volta para Casa",
+            "duracao": 148,
+            "generos": "super-herÃ³i",
+            "diretor": "Jon Watts",
+            "sinopse": "O Homem-Aranha precisa lidar com as consequÃªncias da sua verdadeira identidade ter sido descoberta.",
+            "atores": "Tom Holland, Zendaya, Benedict Cumberbatch"
+        },
+        "tipo": {
+            "id": 1,
+            "nome": "2D",
+            "preco": 20.0
+        },
+        "bilhetes": [
+            {
+                "id": 1,
+                "poltrona": 1,
+                "meia": true,
+                "total": 10.0,
+                "dataCompra": null,
+                "diaSessao": "2022-08-15",
+                "horarioSessao": "14:00:00",
+                "pessoa": {
+                    "id": 1,
+                    "nome": "Julia Souza",
+                    "cpf": "3280-340"
+                },
+                "pessoaId": 1,
+                "sessaoId": 1
+            },
+            {
+                "id": 2,
+                "poltrona": 2,
+                "meia": false,
+                "total": 20.0,
+                "dataCompra": null,
+                "diaSessao": "2022-08-16",
+                "horarioSessao": "14:00:00",
+                "pessoa": {
+                    "id": 2,
+                    "nome": "Roberto Firmino",
+                    "cpf": "2830-529"
+                },
+                "pessoaId": 2,
+                "sessaoId": 1
+            }
+        ],
+        "ocupadas": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 2,
+        "horario": "16:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 10.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 1,
+            "nome": "sala 1",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 1,
+            "nome": "Homem-Aranha: Sem Volta para Casa",
+            "duracao": 148,
+            "generos": "super-herÃ³i",
+            "diretor": "Jon Watts",
+            "sinopse": "O Homem-Aranha precisa lidar com as consequÃªncias da sua verdadeira identidade ter sido descoberta.",
+            "atores": "Tom Holland, Zendaya, Benedict Cumberbatch"
+        },
+        "tipo": {
+            "id": 1,
+            "nome": "2D",
+            "preco": 20.0
+        },
+        "bilhetes": [
+            {
+                "id": 3,
+                "poltrona": 4,
+                "meia": true,
+                "total": 10.0,
+                "dataCompra": null,
+                "diaSessao": "2022-08-15",
+                "horarioSessao": "16:00:00",
+                "pessoa": {
+                    "id": 3,
+                    "nome": "Gabriel Borges",
+                    "cpf": "3802-138"
+                },
+                "pessoaId": 3,
+                "sessaoId": 2
+            }
+        ],
+        "ocupadas": [
+            4
+        ]
+    },
+    {
+        "id": 3,
+        "horario": "20:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 1,
+            "nome": "sala 1",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 1,
+            "nome": "Homem-Aranha: Sem Volta para Casa",
+            "duracao": 148,
+            "generos": "super-herÃ³i",
+            "diretor": "Jon Watts",
+            "sinopse": "O Homem-Aranha precisa lidar com as consequÃªncias da sua verdadeira identidade ter sido descoberta.",
+            "atores": "Tom Holland, Zendaya, Benedict Cumberbatch"
+        },
+        "tipo": {
+            "id": 1,
+            "nome": "2D",
+            "preco": 20.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 4,
+        "horario": "22:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 1,
+            "nome": "sala 1",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 1,
+            "nome": "Homem-Aranha: Sem Volta para Casa",
+            "duracao": 148,
+            "generos": "super-herÃ³i",
+            "diretor": "Jon Watts",
+            "sinopse": "O Homem-Aranha precisa lidar com as consequÃªncias da sua verdadeira identidade ter sido descoberta.",
+            "atores": "Tom Holland, Zendaya, Benedict Cumberbatch"
+        },
+        "tipo": {
+            "id": 1,
+            "nome": "2D",
+            "preco": 20.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 5,
+        "horario": "12:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 5,
+            "nome": "sala 5",
+            "capacidade": 20
+        },
+        "filme": {
+            "id": 2,
+            "nome": "Duna",
+            "duracao": 155,
+            "generos": "ficÃ§Ã£o-cientÃ­fica",
+            "diretor": "Denis Villeneuve",
+            "sinopse": "No futuro distante da humanidade, o duque Leto Atreides aceita a administraÃ§Ã£o do perigoso planeta deserto Arrakis, a Ãºnica fonte da substÃ¢ncia mais valiosa do universo.",
+            "atores": "TimothÃ©e Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac, Josh Brolin"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 6,
+        "horario": "16:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 5,
+            "nome": "sala 5",
+            "capacidade": 20
+        },
+        "filme": {
+            "id": 2,
+            "nome": "Duna",
+            "duracao": 155,
+            "generos": "ficÃ§Ã£o-cientÃ­fica",
+            "diretor": "Denis Villeneuve",
+            "sinopse": "No futuro distante da humanidade, o duque Leto Atreides aceita a administraÃ§Ã£o do perigoso planeta deserto Arrakis, a Ãºnica fonte da substÃ¢ncia mais valiosa do universo.",
+            "atores": "TimothÃ©e Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac, Josh Brolin"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 7,
+        "horario": "20:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 5,
+            "nome": "sala 5",
+            "capacidade": 20
+        },
+        "filme": {
+            "id": 2,
+            "nome": "Duna",
+            "duracao": 155,
+            "generos": "ficÃ§Ã£o-cientÃ­fica",
+            "diretor": "Denis Villeneuve",
+            "sinopse": "No futuro distante da humanidade, o duque Leto Atreides aceita a administraÃ§Ã£o do perigoso planeta deserto Arrakis, a Ãºnica fonte da substÃ¢ncia mais valiosa do universo.",
+            "atores": "TimothÃ©e Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac, Josh Brolin"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 8,
+        "horario": "16:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 2,
+            "nome": "sala 2",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 3,
+            "nome": "Godzilla vs. Kong",
+            "duracao": 113,
+            "generos": "aÃ§Ã£o, aventura",
+            "diretor": "Adam Wingard",
+            "sinopse": "Kong e seus protetores embarcam em uma jornada perigosa para encontrar seu verdadeiro lar. No entanto, eles logo se encontram no caminho de Godzilla, completamente enfurecido, deixando um rastro de destruiÃ§Ã£o em todo o mundo.",
+            "atores": "Alexander SkarsgÃ¥rd, Millie Bobby Brown, Rebecca Hall, Brian Tyree Henry"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 9,
+        "horario": "18:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 2,
+            "nome": "sala 2",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 3,
+            "nome": "Godzilla vs. Kong",
+            "duracao": 113,
+            "generos": "aÃ§Ã£o, aventura",
+            "diretor": "Adam Wingard",
+            "sinopse": "Kong e seus protetores embarcam em uma jornada perigosa para encontrar seu verdadeiro lar. No entanto, eles logo se encontram no caminho de Godzilla, completamente enfurecido, deixando um rastro de destruiÃ§Ã£o em todo o mundo.",
+            "atores": "Alexander SkarsgÃ¥rd, Millie Bobby Brown, Rebecca Hall, Brian Tyree Henry"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 10,
+        "horario": "20:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 2,
+            "nome": "sala 2",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 3,
+            "nome": "Godzilla vs. Kong",
+            "duracao": 113,
+            "generos": "aÃ§Ã£o, aventura",
+            "diretor": "Adam Wingard",
+            "sinopse": "Kong e seus protetores embarcam em uma jornada perigosa para encontrar seu verdadeiro lar. No entanto, eles logo se encontram no caminho de Godzilla, completamente enfurecido, deixando um rastro de destruiÃ§Ã£o em todo o mundo.",
+            "atores": "Alexander SkarsgÃ¥rd, Millie Bobby Brown, Rebecca Hall, Brian Tyree Henry"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    },
+    {
+        "id": 11,
+        "horario": "22:00:00",
+        "dataInicio": "2022-08-15",
+        "dataFinal": null,
+        "total": 0.0,
+        "ativo": null,
+        "filmeId": null,
+        "salaId": null,
+        "tipoId": null,
+        "sala": {
+            "id": 2,
+            "nome": "sala 2",
+            "capacidade": 50
+        },
+        "filme": {
+            "id": 3,
+            "nome": "Godzilla vs. Kong",
+            "duracao": 113,
+            "generos": "aÃ§Ã£o, aventura",
+            "diretor": "Adam Wingard",
+            "sinopse": "Kong e seus protetores embarcam em uma jornada perigosa para encontrar seu verdadeiro lar. No entanto, eles logo se encontram no caminho de Godzilla, completamente enfurecido, deixando um rastro de destruiÃ§Ã£o em todo o mundo.",
+            "atores": "Alexander SkarsgÃ¥rd, Millie Bobby Brown, Rebecca Hall, Brian Tyree Henry"
+        },
+        "tipo": {
+            "id": 2,
+            "nome": "3D",
+            "preco": 28.0
+        },
+        "bilhetes": [],
+        "ocupadas": []
+    }
+]
