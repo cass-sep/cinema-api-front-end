@@ -137,16 +137,17 @@ export function sala() {
     var sessaoWindow = document.getElementById("sessao-window");
     var salaBox = document.querySelector("#temp-horario");
     var horaBox = document.querySelector("#temp-hora");
+    var horarioSecao = document.getElementById("temp-area");
 
-    var horarioSecao = sessaoWindow.content.querySelector(".horarios-area");
     console.log(horarioSecao)
 
-    var salaNome = salaBox.content.querySelector(".sala-nome");
-    var salaLingua = salaBox.content.querySelector(".sala-lingua");
-    var salaTipo = salaBox.content.querySelector(".sala-tipo");
-    var horasPai = salaBox.content.querySelector(".sala-horas");
+    var salaNome = salaBox.querySelector(".sala-nome");
+    var salaLingua = salaBox.querySelector(".sala-lingua");
+    var salaTipo = salaBox.querySelector(".sala-tipo");
+    var horasPai = salaBox.querySelector(".sala-horas");
 
-    var hora = horaBox.content.querySelector(".hora");
+    var hora = horaBox;
+    console.log(hora);
 
     // a cada sessao criar uma nova salabox
     // preencher os valores
@@ -158,167 +159,31 @@ export function sala() {
     // GET sessoes por filme e por dia
 
 
-    // var sessoes = [
 
-    //     {
-    //         "horario": "18:00",
-    //         "sala": {
-    //             "id": 2,
-    //             "nome": "sala 2"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     }, {
-    //         "horario": "16:00",
-    //         "sala": {
-    //             "id": 1,
-    //             "nome": "sala 1"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     }, {
-    //         "horario": "22:00",
-    //         "sala": {
-    //             "id": 4,
-    //             "nome": "sala 4"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     },
-    //     {
-    //         "horario": "20:00",
-    //         "sala": {
-    //             "id": 3,
-    //             "nome": "sala 3"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     },
-
-
-    //     {
-    //         "horario": "18:00",
-    //         "sala": {
-    //             "id": 3,
-    //             "nome": "sala 3"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     },
-    //     {
-    //         "horario": "20:00",
-    //         "sala": {
-    //             "id": 4,
-    //             "nome": "sala 4"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     }, {
-    //         "horario": "16:00",
-    //         "sala": {
-    //             "id": 2,
-    //             "nome": "sala 2"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     },
-    //     {
-    //         "horario": "22:00",
-    //         "sala": {
-    //             "id": 1,
-    //             "nome": "sala 1"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     }
-    //     ,
-    //     {
-    //         "horario": "18:00",
-    //         "sala": {
-    //             "id": 4,
-    //             "nome": "sala 4"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     },
-    //     {
-    //         "horario": "20:00",
-    //         "sala": {
-    //             "id": 1,
-    //             "nome": "sala 1"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     }, {
-    //         "horario": "16:00",
-    //         "sala": {
-    //             "id": 3,
-    //             "nome": "sala 3"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     },
-    //     {
-    //         "horario": "22:00",
-    //         "sala": {
-    //             "id": 2,
-    //             "nome": "sala 2"
-    //         },
-    //         "tipo": {
-    //             "nome": "2d",
-    //             "lingua": "leg"
-    //         }
-    //     }
-    // ]
 
     var mesmaSala = [];
 
-    // sessoes.sort((a, b) => {
-    //     if (a.sala.id < b.sala.id)
-    //         return -1;
-    //     if (a.sala.id > b.sala.id)
-    //         return 1;
-    //     return 0;
-    // });
+    sessoes.sort((a, b) => {
+        if (a.sala.id < b.sala.id)
+            return -1;
+        if (a.sala.id > b.sala.id)
+            return 1;
+        return 0;
+    });
 
-    // sessoes.sort((a, b) => {
-    //     if (a.horario < b.horario && a.sala.id == b.sala.id)
-    //         return -1;
-    //     if (a.horario > b.horario && a.sala.id == b.sala.id)
-    //         return 1;
-    //     return 0;
-    // });
-
-    // var salas = [];
+    sessoes.sort((a, b) => {
+        if (a.horario < b.horario && a.sala.id == b.sala.id)
+            return -1;
+        if (a.horario > b.horario && a.sala.id == b.sala.id)
+            return 1;
+        return 0;
+    });
 
     // sessoes.forEach(sessao => {
     //     if (mesmaSala.includes(sessao.sala.id) === false) {
     //         if (mesmaSala !== "") {
-    //             console.log(salaBox);
     //             // var novaSala = salaBox.content.cloneNode(true);
-    //             horarioSecao.appendChild(salaBox);
+    //             horarioSecao.content.appendChild(salaBox);
     //         } else {
     //             mesmaSala.push(sessao.sala.id)
     //         }
@@ -332,8 +197,9 @@ export function sala() {
     //         horasPai.appendChild(hora);
     //     }
     // });
+    console.log("sala");
 
-    // var novoHorarioSecao = horarioSecao.content.cloneNode(true);
+    var novoHorarioSecao = horarioSecao.content.cloneNode(true);
 
-    // return horarioSecao;
+    return novoHorarioSecao;
 }
