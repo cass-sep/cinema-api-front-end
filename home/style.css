@@ -1,8 +1,8 @@
-@import url("/home/styles/dias-secao.css");
-@import url("/home/styles/botoes-secao.css");
-@import url("/home/styles/filme-secao.css");
-@import url("/home/styles/horarios-secao.css");
-@import url("/home/styles/banner-secao.css");
+@import url("home/styles/dias-secao.css");
+@import url("home/styles/botoes-secao.css");
+@import url("home/styles/filme-secao.css");
+@import url("home/styles/horarios-secao.css");
+@import url("home/styles/banner-secao.css");
 
 * {
     margin: 0;
