@@ -86,8 +86,7 @@ nav{
 .menu_lateral .bilhete{
     background-color: #e1e1e1;
     margin-top:10px;
-    position: relative;
-  
+    position: relative;  
 }
 .menu_lateral .bilhete .deletar{
     cursor: pointer;
@@ -199,4 +198,7 @@ nav{
 .sala .poltrona.selecionada{
     background-color: var(--color-primary);
     color:#fff;
+}
+.indisponivel{
+    box-shadow: inset 0px 0px 0px 3px red;
 }

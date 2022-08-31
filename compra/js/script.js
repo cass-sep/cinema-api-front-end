@@ -2,11 +2,9 @@ import { Carrinho } from "./Carrinho.js"
 
 export let carrinho = new Carrinho()
 
-
 const urlParams = new URLSearchParams(window.location.search);
 const paramSessaoId = urlParams.get('sessao');
 const paramSessaoData = urlParams.get('data');
-
 
 const sala = document.querySelector(".poltronas")
 
@@ -19,9 +17,7 @@ const fetchData = async () => {
     }
 }
 
-
 let data = await fetchData()
-
 
 const poltronaDisponivel = numPolt => {
     let poltrona = document.createElement("div")
@@ -57,6 +53,7 @@ const poltronaOcupada = () => {
 
 export const preencherDados = async () => {
     data = await fetchData()
+    console.log(data)
     sala.innerHTML = ""
     console.log("Poltronas ocupadas: " + data.ocupadas)
     for (let i = 1; i <= data.sala.capacidade; i++) {
@@ -83,16 +80,27 @@ if (!data.descricao) {
     alert(data.descricao)
 }
 
+document.querySelector(".footer-total input[type='submit']").addEventListener("click", async event => {
 
-document.querySelector("input[type='submit']").addEventListener("click", event => {
+    let data = await fetchData()
 
-    axios.post('http://localhost:8080/bilhetes', carrinho.getBilhetes()[0])
-        .then(response => {
+    let todasPoltDisp = true
+    carrinho.getBilhetes().forEach(bilhete => {
+        if (data.ocupadas.includes(bilhete.poltrona)) {
+            todasPoltDisp = false
+            alert("Poltrona " + bilhete.poltrona + " não está mais disponível")
+            carrinho.destacarUmBilhete(bilhete)
+        }
+    })
+
+    if (todasPoltDisp) {
+        axios.all(carrinho.getBilhetes().map(bilhete => {
+            return axios.post('http://localhost:8080/bilhetes', bilhete)
+        })).then(el => {
+            console.log(el)
             resetar()
         })
-        .catch(error => {
-            console.log(error)
-        })
+    }
 
 })
 
