@@ -1,4 +1,5 @@
 import { Carrinho } from "./Carrinho.js"
+import { monetarioBr, dataBr } from "./util/Util.js"
 
 export let carrinho = new Carrinho()
 
@@ -13,7 +14,7 @@ const fetchData = async () => {
         const res = await fetch(`http://localhost:8080/sessoes/${paramSessaoId}/${paramSessaoData}`)
         return await res.json()
     } catch (err) {
-        alert("API não encontrada!")
+        swal("Error", "Não foi possível se conectar com o Banco de Dados.", "error")
     }
 }
 
@@ -67,7 +68,7 @@ export const preencherDados = async () => {
 
     document.querySelector(".menu_lateral .top .title").textContent = data.filme.nome
     document.querySelector(".menu_lateral .top .nomeSala").textContent = data.sala.nome
-    document.querySelector(".menu_lateral .top .date").textContent = paramSessaoData
+    document.querySelector(".menu_lateral .top .date").textContent = dataBr(paramSessaoData)
     document.querySelector(".menu_lateral .top .sessaoHorario").textContent = data.horario
     document.querySelector(".menu_lateral .top .sessaoPreco").textContent = monetarioBr(data.tipo.preco)
     document.querySelector(".menu_lateral .top .tipo span").textContent = data.tipo.nome
@@ -86,19 +87,20 @@ document.querySelector(".footer-total input[type='submit']").addEventListener("c
 
     let todasPoltDisp = true
     carrinho.getBilhetes().forEach(bilhete => {
-        if (data.ocupadas.includes(bilhete.poltrona)) {
+        if (data.ocupadas.includes(bilhete.bilheteObj.poltrona)) {
             todasPoltDisp = false
-            alert("Poltrona " + bilhete.poltrona + " não está mais disponível")
+            swal("Ops!", `Poltrona ${bilhete.bilheteObj.poltrona} não está mais disponível`, "error")
             carrinho.destacarUmBilhete(bilhete)
         }
     })
 
     if (todasPoltDisp) {
         axios.all(carrinho.getBilhetes().map(bilhete => {
-            return axios.post('http://localhost:8080/bilhetes', bilhete)
+            return axios.post('http://localhost:8080/bilhetes', bilhete.bilheteObj)
         })).then(el => {
             console.log(el)
             resetar()
+            swal("Success!", "Compra finalizada.", "success")
         })
     }
 
@@ -109,6 +111,3 @@ const resetar = () => {
     preencherDados()
 }
 
-export const monetarioBr = num => {
-    return num.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-}

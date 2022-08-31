@@ -202,3 +202,11 @@ nav{
 .indisponivel{
     box-shadow: inset 0px 0px 0px 3px red;
 }
+
+
+.swal-button {
+    background-color: var(--color-primary);
+}
+.swal-text{
+    font-size:18px;
+}

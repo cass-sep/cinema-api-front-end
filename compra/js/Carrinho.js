@@ -1,12 +1,9 @@
 import { Bilhete } from "./Bilhete.js"
-import { monetarioBr } from "./script.js"
-
+import { monetarioBr } from "./util/Util.js"
 
 export class Carrinho {
     constructor() {
-        this.bilhetes = []
-        this.bilhetesEl = []
-        this.bilhetesClass = []
+        this.bilhetes = new Array()
     }
 
     getBilhetes = () => {
@@ -14,32 +11,31 @@ export class Carrinho {
     }
 
     addBilhete = (objBilhete, poltronaElement) => {
-
-        if (!this.bilhetes.some(bilhete => bilhete.poltrona === objBilhete.poltrona)) {
-            let a = new Bilhete(objBilhete, poltronaElement);
-            this.bilhetes.push(objBilhete)
-            this.bilhetesEl.push(a.cloneBilhete)
-            this.bilhetesClass.push(a)
+        // console.log(this.bilhetes)
+        if (!this.bilhetes.some(bilhete => bilhete.bilheteObj.poltrona === objBilhete.poltrona)) {
+            this.bilhetes.push(new Bilhete(objBilhete, poltronaElement))
         }
         this.atualizarTotal()
     }
 
-    removeBilhete = objBilhete => {
-        this.bilhetes = this.bilhetes.filter(bilhete => bilhete != objBilhete)
+    removeBilhete = bilhete => {
+        bilhete.cloneBilhete.remove()
+        bilhete.poltronaElement.classList.remove("selecionada")
+        this.bilhetes = this.bilhetes.filter(b => b !== bilhete)
         this.atualizarTotal()
     }
 
-    destacarUmBilhete = objBilhete => {
-        this.bilhetesClass.forEach(bilhete => {
-            if (bilhete.bilheteObj == objBilhete) {
-                bilhete.cloneBilhete.classList.add("indisponivel")
+    destacarUmBilhete = bilhete => {
+        this.getBilhetes().forEach(b => {
+            if (b === bilhete) {
+                b.cloneBilhete.classList.add("indisponivel")
             }
         })
     }
 
     atualizarTotal = () => {
         let divTotal = document.querySelector(".total-bilhetes")
-        let total = this.bilhetes.reduce((accum, curr) => accum + curr.preco, 0)
+        let total = this.bilhetes.reduce((accum, curr) => accum + curr.bilheteObj.preco, 0)
         divTotal.innerHTML = monetarioBr(total)
         if (this.bilhetes.length > 0) {
             document.querySelector(".footer-total").classList.remove("closed")
@@ -50,11 +46,8 @@ export class Carrinho {
 
     limparCarrinho = () => {
         // document.querySelector(".box-bilhetes").innerHTML = ""
-        this.bilhetesEl.forEach(element => element.remove());
-        this.bilhetes = []
+        this.bilhetes.forEach(element => element.cloneBilhete.remove())
+        this.bilhetes = new Array()
         this.atualizarTotal()
     }
 }
-
-
-

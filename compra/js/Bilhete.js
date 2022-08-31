@@ -1,6 +1,7 @@
-const templateBilhete = document.querySelector("#bilhete-template");
+import { carrinho } from "./script.js"
+import { monetarioBr } from "./util/Util.js"
 
-import { carrinho, monetarioBr } from "./script.js"
+const templateBilhete = document.querySelector("#bilhete-template");
 
 export class Bilhete {
 
@@ -23,24 +24,18 @@ export class Bilhete {
         this.bilheteMeia
             .addEventListener("change", event => {
                 carrinho.getBilhetes().map(element => {
-                    if (element.poltrona === this.bilheteObj.poltrona) {
-                        element.meia = !element.meia
-                        element.preco = this.bilheteMeia.checked ? this.precoSessao / 2 : this.precoSessao
+                    if (element.bilheteObj.poltrona === this.bilheteObj.poltrona) {
+                        element.bilheteObj.meia = !element.meia
+                        element.bilheteObj.preco = this.bilheteMeia.checked ? this.precoSessao / 2 : this.precoSessao
                     }
-                    this.bilhetePreco.textContent = monetarioBr(element.preco)
+                    this.bilhetePreco.textContent = monetarioBr(element.bilheteObj.preco)
                 })
                 carrinho.atualizarTotal()
             })
 
-        this.btnDeletar.addEventListener("click", event => this.deletarItem(this.bilheteObj))
+        this.btnDeletar.addEventListener("click", event => carrinho.removeBilhete(this))
 
         document.querySelector(".box-bilhetes").appendChild(this.cloneBilhete)
-    }
-
-    deletarItem = obj => {
-        carrinho.removeBilhete(obj)
-        this.cloneBilhete.remove()
-        this.poltronaElement.classList.remove("selecionada")
     }
 
 }
