@@ -34,7 +34,7 @@
 
 
     <template id="sessao-window">
-        <div class="filme-box" id>
+        <div class="filme-box" data-filme-id="">
             <div class="filme-info">
                 <div class="filme-bg">
                 </div>
@@ -51,8 +51,18 @@
                     <img class="filme-poster" src="/assets/duna.jpg" alt="">
                 </div>
                 <div class="filme-extra-info">
-                    <button class="btn-filme-info" id="btn-fi-a" onclick="voltarInfo(this)"></button>
-                    <button class="btn-filme-info" id="btn-fi-p" onclick="avancarInfo(this)"></button>
+                    <button class="btn-filme-info" id="btn-fi-a" onclick="voltarInfo(this)">
+                        <div class="btn-filme-bg">
+                            <img src=".././assets/icon-proximo.png" alt="" class="icon-filme-info icon-voltar"
+                                width="25">
+                        </div>
+                    </button>
+                    <button class="btn-filme-info" id="btn-fi-p" onclick="avancarInfo(this)">
+                        <div class="btn-filme-bg bfb-avancar">
+                            <img src=".././assets/icon-proximo.png" alt="" class="icon-filme-info icon-avancar"
+                                width="25">
+                        </div>
+                    </button>
                     <div class="filme-info-page1 page page-ativo" data-page="1">
                         <div class="filme-descricao">
                             <div class="filme-sinopse">
@@ -122,10 +132,13 @@
                 </div>
             </div>
             <div class="sessao-horarios">
+                <button class="btn-mais-horarios btn-off" id="btn-mh-a" onclick="scrollMenos(this)">
+                    <img src=".././assets/icon-proximo.png" alt="" class="icon-salas icon-sala-voltar" />
+                </button>
+                <button class="btn-mais-horarios btn-off" id="btn-mh-p" onclick="scrollMais(this)">
+                    <img src=".././assets/icon-proximo.png" alt="" class="icon-salas icon-sala-avancar" />
+                </button>
                 <div class="horarios-area">
-                    <button class="btn-mais-horarios" id="btn-mh-a"></button>
-                    <button class="btn-mais-horarios" id="btn-mh-p"></button>
-                    <div class="horas-bg"></div>
                     <div class="salas-box prim-sb"></div>
                     <!-- INSERIR AS SALAS AQUI!!!! -->
                 </div>
@@ -145,20 +158,26 @@
     </template>
 
 
-    <div class="salas-box" id="temp-horario">
-        <div class="sala-titulo">
-            <div class="sala-nome cursor">SALA 1</div>
-            <div class="sala-lingua leg cursor">LEG</div>
-            <img class="sala-tipo" src="/assets/3D.png" alt="">
-        </div>
-        <div class="sala-horas">
-            <div class="hora cursor">16:00</div>
-        </div>
-    </div>
 
 
 
 
 </body>
 
+
 </html>
+
+
+<template id="temp-horario">
+    <div class="salas-box">
+        <div class="horas-bg"></div>
+        <div class="sala-titulo">
+            <div class="sala-nome cursor">SALAa 1</div>
+            <div class="sala-lingua leg cursor">LEG</div>
+            <img class="sala-tipo" src="/assets/3D.png" alt="">
+        </div>
+    </div>
+</template>
+<!-- <div class="sala-horas">
+    <div class="hora cursor">16:00</div>
+</div> -->

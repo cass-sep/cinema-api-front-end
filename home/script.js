@@ -1,15 +1,72 @@
-window.onload = function () {
 
+
+function scrollMais(elemento) {
+    var areaHorarios = elemento.parentElement.querySelector('.horarios-area');
+    var lado = elemento.getAttribute("data-lado");
+    var offset = 200;
+    if (areaHorarios.scrollLeft < (areaHorarios.scrollWidth - areaHorarios.clientWidth)) {
+        areaHorarios.scrollBy({
+            top: 0,
+            left: offset,
+            behavior: 'smooth'
+        });
+    }
+
+    if ((areaHorarios.scrollWidth - areaHorarios.clientWidth) <= (areaHorarios.scrollLeft + offset)) {
+        elemento.classList.add("btn-off");
+    }
+    console.log(areaHorarios.scrollLeft);
+    if ((areaHorarios.scrollLeft + offset) > 0) {
+        var btnMenos = elemento.parentElement.querySelector('#btn-mh-a');
+        btnMenos.classList.add("btn-on");
+        btnMenos.classList.remove("btn-off");
+    }
 }
+
+function scrollMenos(elemento) {
+    var areaHorarios = elemento.parentElement.querySelector('.horarios-area');
+    var lado = elemento.getAttribute("data-lado");
+    var offset = 200;
+    if (areaHorarios.scrollLeft >= 0) {
+        areaHorarios.scrollBy({
+            top: 0,
+            left: -offset,
+            behavior: 'smooth'
+        });
+        console.log(areaHorarios.scrollLeft);
+    }
+    if ((areaHorarios.scrollLeft - offset) <= 0) {
+        elemento.classList.add("btn-off");
+    }
+
+    var btnMais = elemento.parentElement.querySelector('#btn-mh-p');
+    if ((areaHorarios.scrollWidth - areaHorarios.clientWidth) > (areaHorarios.scrollLeft - offset) && btnMais.classList.contains("btn-off")) {
+        btnMais.classList.add("btn-on");
+        btnMais.classList.remove("btn-off");
+    }
+}
+
 
 function comprarPage(btnComprar) {
     var diaTag = document.querySelector(".db-atv");
-    var dia = diaTag.getAttribute("data-dia");
     var filmeId = btnComprar.getAttribute("data-filmeid");
-    console.log(btnComprar.getAttribute("data-filmeid"));
-    if (dia !== null && filmeId !== null) {
-        var params = `?filme=${filmeId}&horario=${hora}&dia=${dia}`;
-        // window.location = window.location.origin.concat(`/compra${params}`)
+    var dia = diaTag.getAttribute("data-dia");
+    var janelaTag = document.querySelector(`[data-filme-id='${filmeId}']`);
+    var horario = janelaTag.querySelector(".hb-atv");
+
+    if (horario === null) {
+        return alert("escolha um horario");
+    } else {
+        var sala = horario.parentElement.getAttribute("data-sala");
+
+        console.log("horario :" + horario.innerHTML);
+        console.log("sala :" + sala);
+        console.log("dia :" + dia);
+        if (dia !== null && filmeId !== null && sala !== null) {
+            var params = `?filme=${filmeId}&sala=${sala}&horario=${horario.innerHTML}&dia=${dia}`;
+            alert(window.location.origin.concat(`/compra${params}`))
+            // window.location = window.location.origin.concat(`/compra${params}`)
+        }
     }
 }
 
@@ -30,7 +87,6 @@ function voltarInfo(btnVoltar) {
             }
         });
     }
-    var tote = document.querySelector(".db-atv").parentElement
 }
 function avancarInfo(btnAvancar) {
     var paiBox = btnAvancar.parentElement;
@@ -49,6 +105,5 @@ function avancarInfo(btnAvancar) {
             }
         });
     }
-    var tote = document.querySelector(".db-atv").parentElement
 
 }

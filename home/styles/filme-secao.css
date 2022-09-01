@@ -148,20 +148,50 @@
 }
 
 .btn-filme-info {
-    height: 30px;
-    width: 30px;
-    background: gray;
+    height: 304px;
+    width: 61px;
+    background: rgba(128, 128, 128, 0);
     position: absolute;
+    border: none;
+    overflow: hidden;
 }
 
 #btn-fi-p {
-    top: 236px;
+    top: 111px;
     right: 21px;
 }
 
 #btn-fi-a {
-    top: 236px;
+    top: 111px;
     left: 13px;
+}
+
+.btn-filme-bg {
+    margin-left: 3px;
+    display: none;
+}
+
+.bfb-avancar {
+    margin-left: 33px;
+}
+
+.on-hover {
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-color: #fffbfb61;
+    box-shadow: 0 0 45px 10px white, 0px -19px 52px 8px white, -1px 20px 65px 8px white;
+}
+
+.icon-filme-info {
+    margin: auto;
+    background-color: rgba(230, 230, 230, 0.836);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.icon-avancar {
+    transform: rotate(180deg);
 }
 
 

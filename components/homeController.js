@@ -3,55 +3,6 @@ import { sessoes } from '../components/horariosService.js';
 
 window.onload = function () {
 
-
-    // var salasBox = document.querySelector(".salas-box");
-    // var salaNome = document.querySelector(".sala-nome");
-    // var salaLingua = document.querySelector(".sala-lingua");
-
-    // var salaHorarios = document.querySelector(".sala-horas");
-    // var hora = document.querySelector(".hora");
-    // var horariosBox = sessaoWindow.content.querySelector(".horarios-area");
-    // var mesmaSala = [];
-
-    // organizar(sessoes);
-
-    // var horarios = {
-    //     "sala": "",
-    //     "horas": ""
-    // }
-    // var variosHorario = []
-
-    // var i = 1;
-    // sessoes.map(sessao => {
-    //     if (mesmaSala.includes(sessao.sala.id) === false) {
-    //         if (mesmaSala !== "") {
-    //             variosHorario.push(horarios)
-    //             variosHorario.map(horario => {
-    //                 variosHorario.map(novoHorario => {
-    //                     if (novoHorario.sala === horario.sala) {
-    //                         hora.innerHTML = horario.horas;
-    //                         salaHorarios.appendChild(hora);
-    //                     }
-    //                 })
-    //             })
-    //             horariosBox.appendChild(salasBox)
-    //         }
-    //         mesmaSala.push(sessao.sala.id)
-    //         salaNome.innerHTML = sessao.sala.nome;
-    //         salaLingua.innerHTML = sessao.tipo.lingua;
-    //     } else {
-    //         horarios.horas = sessao.horario;
-    //         horarios.sala = sessao.sala.id;
-    //     }
-    //     i++;
-    // })
-
-    // horariosArea.appendChild(salaHorarios)
-
-    // console.log(variosHorario);
-
-
-
     topMenu();
 
     var sessaoWindow = document.getElementById("sessao-window");
@@ -60,23 +11,20 @@ window.onload = function () {
     var tempHorario = document.getElementById("temp-horario");
 
 
-    var salahora = document.querySelector(".sala-horas");
-    console.log(salahora);
-
-    // teste()
-
     pegarFilmes().then(filme => {
         filme.forEach(element => {
-            var estudioBox = sessaoWindow.content.querySelector(".filme-estudio");
-            var filmeBox = sessaoWindow.content.querySelector(".filme-nome");
-            var posterBox = sessaoWindow.content.querySelector(".filme-poster");
-            var diretorBox = sessaoWindow.content.querySelector(".diretor-nome");
-            var sinopseBox = sessaoWindow.content.querySelector(".txt-sinopse");
-            var generoBox = sessaoWindow.content.querySelector(".filme-genero");
-            var duracaoBox = sessaoWindow.content.querySelector(".filme-duracao");
-            var paisBox = sessaoWindow.content.querySelector(".filme-pais");
-            var btnComprar = sessaoWindow.content.querySelector(".btn-comprar");
-            var horariosArea = sessaoWindow.content.querySelector(".horarios-area");
+            var filmePego = element.filme;
+            sessaoWindow.content.querySelector(".filme-estudio").innerHTML = filmePego.estudio;
+            sessaoWindow.content.querySelector(".filme-nome").innerHTML = filmePego.filmeNome;
+            sessaoWindow.content.querySelector(".diretor-nome").innerHTML = filmePego.diretor;
+            sessaoWindow.content.querySelector(".txt-sinopse").innerHTML = filmePego.sinopse;
+            sessaoWindow.content.querySelector(".filme-genero").innerHTML = filmePego.genero;
+            sessaoWindow.content.querySelector(".filme-duracao").innerHTML = filmePego.duracao;
+            sessaoWindow.content.querySelector(".filme-pais").innerHTML = filmePego.pais;
+            sessaoWindow.content.querySelector(".filme-poster").innerHTML = filmePego.filmePoster;
+            sessaoWindow.content.querySelector(".btn-comprar").setAttribute("data-filmeid", filmePego.id);
+            sessaoWindow.content.querySelector(".filme-box").setAttribute("data-filme-id", filmePego.id);
+
 
 
             var diaAtivoBox = tempDiaSemana.content.querySelector(".dia-box");
@@ -84,25 +32,14 @@ window.onload = function () {
             var diaBox = tempDiaSemana.content.querySelector(".txt-dia");
             var mesBox = tempDiaSemana.content.querySelector(".txt-mes");
 
-
-
-            var filmePego = element.filme;
-
-            estudioBox.innerHTML = filmePego.estudio;
-            filmeBox.innerHTML = filmePego.filmeNome;
-            diretorBox.innerHTML = filmePego.diretor;
-            sinopseBox.innerHTML = filmePego.sinopse;
-            generoBox.innerHTML = filmePego.genero;
-            duracaoBox.innerHTML = filmePego.duracao;
-            paisBox.innerHTML = filmePego.pais;
-            posterBox.innerHTML = filmePego.filmePoster;
-            btnComprar.setAttribute("data-filmeid", filmePego.id);
-
-
+            var horariosArea = sessaoWindow.content.querySelector(".horarios-area");
+            var salasBox = tempHorario.content.querySelector(".salas-box");
+            var salaNome = tempHorario.content.querySelector(".sala-nome");
+            var salaLingua = tempHorario.content.querySelector(".sala-lingua");
 
             var cloneWindow = sessaoWindow.content.cloneNode(true);
             var diasBox = cloneWindow.querySelector(".dias-barra");
-
+            var horarioAreas = cloneWindow.querySelector(".horarios-area");
 
 
             var startingDay = new Date();
@@ -129,38 +66,140 @@ window.onload = function () {
                 diaAtivo = false;
             }
 
+            organizar(sessoes);
 
-            // sessoes.forEach(sessao => {
-            //     if (mesmaSala.includes(sessao.sala.id) === false) {
-            //         if (mesmaSala !== "") {
-            //             horarioArea.appendChild(salaBox);
-            //         } else {
-            //             mesmaSala.push(sessao.sala.id)
-            //         }
-            //         salaNome.innerHTML = sessao.sala.nome;
-            //         salaLingua.innerHTML = sessao.tipo.lingua;
-            //         salaTipo.innerHTML = sessao.tipo.nome;
-            //         hora.innerHTML = sessao.horario;
-            //         horasPai.appendChild(hora);
-            //     } else {
-            //         hora.innerHTML = sessao.horario;
-            //         horasPai.appendChild(hora);
-            //     }
-            // });
+            sessoes.forEach(sessao => {
+                if (sessao.filme.id == filmePego.id) {
+
+                    salaNome.innerHTML = sessao.sala.nome;
+                    salaLingua.innerHTML = sessao.tipo.lingua;
+
+                    var horaHo = document.createElement("div")
+                    var salaHoras = document.createElement("div")
+                    horaHo.classList.add("hora", "cursor")
+                    horaHo.innerHTML = sessao.horario;
+                    salaHoras.classList.add("sala-horas")
+                    salaHoras.appendChild(horaHo);
+                    salaHoras.setAttribute("data-sala", sessao.sala.id);
+
+                    var clonagem = salasBox.cloneNode(true)
+                    clonagem.appendChild(salaHoras);
+
+                    horarioAreas.appendChild(clonagem);
+                }
+            })
 
 
             main.appendChild(cloneWindow);
 
         })
 
+    }).then(finale => {
+        var filmesNaPage = document.querySelectorAll(".filme-box");
+        filmesNaPage.forEach(filme => {
+            var nomesSalas = filme.querySelectorAll(".sala-nome");
+            var elementoParaInserirOHorario = "";
+            var nomesColetados = [];
+            nomesSalas.forEach(sala => {
+                if (nomesColetados.includes(sala.innerHTML)) {
+                    var horarioSala = sala.parentElement.parentElement.querySelector(".hora")
+                    var elementoParaInserirHora = elementoParaInserirOHorario.querySelector(".sala-horas");
+                    elementoParaInserirHora.appendChild(horarioSala);
+                    sala.parentElement.parentElement.remove();
+                } else {
+                    nomesColetados.push(sala.innerHTML);
+                    elementoParaInserirOHorario = sala.parentElement.parentElement;
+                }
+            })
+        })
+
+        var btnDia = document.querySelectorAll(".dia-box");
+        btnDia.forEach(botao => {
+            botao.addEventListener('click', function () {
+                if (!botao.classList.contains('db-atv')) {
+                    var dia = botao.getAttribute("data-dia");
+                    var btnAtivos = document.querySelectorAll(".db-atv");
+                    btnAtivos.forEach(botaoAtivo => {
+                        var diaAtivos = botaoAtivo.querySelector(".td-atv");
+                        var mesAtivos = botaoAtivo.querySelector(".tm-atv");
+                        botaoAtivo.classList.remove("db-atv");
+                        diaAtivos.classList.remove("td-atv");
+                        mesAtivos.classList.remove("tm-atv");
+                    })
+
+                    var dataEscolhida = document.querySelectorAll(`[data-dia='${dia}']`);
+                    dataEscolhida.forEach(data => {
+                        var diaEscolhido = data.querySelector(".txt-dia");
+                        var mesEscolhido = data.querySelector(".txt-mes");
+                        data.classList.add('db-atv');
+                        diaEscolhido.classList.add("td-atv");
+                        mesEscolhido.classList.add("tm-atv");
+                    })
+                }
+            })
+        })
 
 
-        var testando = document.querySelector(".filme-box")
-        console.log(testando)
+        var btnHorario = document.querySelectorAll(".hora");
+        btnHorario.forEach(botao => {
+            botao.addEventListener('click', function () {
+                var horas = botao.parentElement.parentElement.parentElement.querySelectorAll('.hora');
+                if (!botao.classList.contains('hb-atv')) {
+                    horas.forEach(hora => {
+                        if (hora.classList.contains('hb-atv')) {
+                            hora.classList.remove("hb-atv");
+                            hora.classList.add('off');
+                        } else if (hora !== botao) {
+                            hora.classList.add('off');
+                        }
+                    })
+                    if (botao.classList.contains('off')) {
+                        botao.classList.remove('off');
+                    }
+                    botao.classList.add('hb-atv');
+                } else {
+                    horas.forEach(hora => {
+                        if (hora.classList.contains('hb-atv')) {
+                            hora.classList.remove("hb-atv");
+                        } else if (hora.classList.contains('off')) {
+                            hora.classList.remove('off');
+                        }
+                    })
+                }
+            })
+        })
+
+        document.querySelectorAll('.horarios-area').forEach(element => {
+            var tamanhoSomado = 0;
+
+            if (element.clientWidth < element.scrollWidth) {
+                console.log("element.clientWidth: " + element.clientWidth);
+                console.log("element.scrollWidth: " + element.scrollWidth);
+                // element.style.border = '1px solid red';
+                var botaoMais = element.parentElement.querySelector("#btn-mh-p");
+                botaoMais.classList.add("btn-on");
+                botaoMais.classList.remove("btn-off");
+            }
+
+        });
+
+        document.querySelectorAll(".filme-extra-info").forEach(area => {
+            area.addEventListener("mouseover", function () {
+                area.querySelectorAll(".btn-filme-bg").forEach(botao => {
+                    if (!botao.classList.contains("on-hover")) { botao.classList.add("on-hover"); }
+                })
+            });
+            area.addEventListener("mouseout", function () {
+                area.querySelectorAll(".btn-filme-bg").forEach(botao => {
+                    if (botao.classList.contains("on-hover")) { botao.classList.remove("on-hover"); }
+                })
+            });
+        })
 
 
 
-    });
+    })
+
 
 
     async function teste() {
