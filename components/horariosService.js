@@ -9,8 +9,198 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
         }
-    }, {
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+
+
+
+
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
+        "horario": "18:00",
+        "sala": {
+            "id": 2,
+            "nome": "sala 2"
+        },
+        "tipo": {
+            "nome": "2d",
+            "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
+        }
+    },
+    {
         "horario": "16:00",
         "sala": {
             "id": 1,
@@ -19,8 +209,12 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
         }
-    }, {
+    },
+    {
         "horario": "22:00",
         "sala": {
             "id": 4,
@@ -29,6 +223,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 2
         }
     },
     {
@@ -40,6 +237,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 4
         }
     },
 
@@ -53,6 +253,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 4
         }
     },
     {
@@ -64,6 +267,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 2
         }
     }, {
         "horario": "16:00",
@@ -74,6 +280,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
         }
     },
     {
@@ -85,6 +294,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
         }
     }
     ,
@@ -97,6 +309,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 2
         }
     },
     {
@@ -108,6 +323,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
         }
     }, {
         "horario": "16:00",
@@ -118,6 +336,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 4
         }
     },
     {
@@ -129,6 +350,9 @@ export var sessoes = [
         "tipo": {
             "nome": "2d",
             "lingua": "leg"
+        },
+        "filme": {
+            "id": 1
         }
     }
 ]

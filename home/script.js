@@ -1,6 +1,51 @@
-window.onload = function () {
 
+
+function scrollMais(elemento) {
+    var areaHorarios = elemento.parentElement.querySelector('.horarios-area');
+    var lado = elemento.getAttribute("data-lado");
+    var offset = 200;
+    if (areaHorarios.scrollLeft < (areaHorarios.scrollWidth - areaHorarios.clientWidth)) {
+        areaHorarios.scrollBy({
+            top: 0,
+            left: offset,
+            behavior: 'smooth'
+        });
+    }
+
+    if ((areaHorarios.scrollWidth - areaHorarios.clientWidth) <= (areaHorarios.scrollLeft + offset)) {
+        elemento.classList.add("btn-off");
+    }
+    console.log(areaHorarios.scrollLeft);
+    if ((areaHorarios.scrollLeft + offset) > 0) {
+        var btnMenos = elemento.parentElement.querySelector('#btn-mh-a');
+        btnMenos.classList.add("btn-on");
+        btnMenos.classList.remove("btn-off");
+    }
 }
+
+function scrollMenos(elemento) {
+    var areaHorarios = elemento.parentElement.querySelector('.horarios-area');
+    var lado = elemento.getAttribute("data-lado");
+    var offset = 200;
+    if (areaHorarios.scrollLeft >= 0) {
+        areaHorarios.scrollBy({
+            top: 0,
+            left: -offset,
+            behavior: 'smooth'
+        });
+        console.log(areaHorarios.scrollLeft);
+    }
+    if ((areaHorarios.scrollLeft - offset) <= 0) {
+        elemento.classList.add("btn-off");
+    }
+
+    var btnMais = elemento.parentElement.querySelector('#btn-mh-p');
+    if ((areaHorarios.scrollWidth - areaHorarios.clientWidth) > (areaHorarios.scrollLeft - offset) && btnMais.classList.contains("btn-off")) {
+        btnMais.classList.add("btn-on");
+        btnMais.classList.remove("btn-off");
+    }
+}
+
 
 function comprarPage(btnComprar) {
     var diaTag = document.querySelector(".db-atv");
@@ -30,7 +75,6 @@ function voltarInfo(btnVoltar) {
             }
         });
     }
-    var tote = document.querySelector(".db-atv").parentElement
 }
 function avancarInfo(btnAvancar) {
     var paiBox = btnAvancar.parentElement;
@@ -49,6 +93,5 @@ function avancarInfo(btnAvancar) {
             }
         });
     }
-    var tote = document.querySelector(".db-atv").parentElement
 
 }
