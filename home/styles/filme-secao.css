@@ -59,13 +59,13 @@
     font-family: var(--double-pica);
     position: absolute;
     top: 14px;
-    font-size: 88px;
+    font-size: 38px;
     color: var(--txt-main);
 }
 
 .filme-poster {
     height: 316px;
-    width: 251px;
+    width: 220px;
     margin: 3px 65px;
 }
 

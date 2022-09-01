@@ -1,0 +1,335 @@
+[
+    {
+        "filme": {
+            "id": 3,
+            "nome": "Godzilla vs. Kong",
+            "duracao": 113,
+            "generos": "ação, aventura",
+            "diretor": "Adam Wingard",
+            "sinopse": "Kong e seus protetores embarcam em uma jornada perigosa para encontrar seu verdadeiro lar. No entanto, eles logo se encontram no caminho de Godzilla, completamente enfurecido, deixando um rastro de destruição em todo o mundo.",
+            "atores": "Alexander Skarsgård, Millie Bobby Brown, Rebecca Hall, Brian Tyree Henry",
+            "posterUrl": "https://m.media-amazon.com/images/M/MV5BYmRiOWJlYzItNjg2Ny00MTA1LTg0ODAtMzQzYWU1NDU2NmUyXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_QL75_UY562_CR35,0,380,562_.jpg",
+            "bannerUrl": "Godzilla-vs-Kong-2.jpg"
+        },
+        "salasAtivas": [
+            {
+                "sala": {
+                    "id": 3,
+                    "nome": "Sala 03",
+                    "capacidade": 40
+                },
+                "sessoes": [
+                    {
+                        "id": 8,
+                        "horario": "16:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 3,
+                            "nome": "Sala 03",
+                            "capacidade": 40
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    }
+                ]
+            },
+            {
+                "sala": {
+                    "id": 2,
+                    "nome": "Sala 02",
+                    "capacidade": 50
+                },
+                "sessoes": [
+                    {
+                        "id": 9,
+                        "horario": "18:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 2,
+                            "nome": "Sala 02",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 10,
+                        "horario": "20:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 2,
+                            "nome": "Sala 02",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 11,
+                        "horario": "22:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 2,
+                            "nome": "Sala 02",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 13,
+                        "horario": "22:00:00",
+                        "dataInicio": "2022-08-18",
+                        "dataFinal": "2022-08-22",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 2,
+                            "nome": "Sala 02",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filme": {
+            "id": 2,
+            "nome": "Duna",
+            "duracao": 155,
+            "generos": "ficção-científica",
+            "diretor": "Denis Villeneuve",
+            "sinopse": "No futuro distante da humanidade, o duque Leto Atreides aceita a administração do perigoso planeta deserto Arrakis, a única fonte da substância mais valiosa do universo.",
+            "atores": "Timothée Chalamet, Zendaya, Rebecca Ferguson, Oscar Isaac, Josh Brolin",
+            "posterUrl": "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX509_.jpg",
+            "bannerUrl": "duna2021.jpg"
+        },
+        "salasAtivas": [
+            {
+                "sala": {
+                    "id": 5,
+                    "nome": "Sala 05",
+                    "capacidade": 20
+                },
+                "sessoes": [
+                    {
+                        "id": 5,
+                        "horario": "12:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 6,
+                        "horario": "16:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 7,
+                        "horario": "20:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 12,
+                        "horario": "12:00:00",
+                        "dataInicio": "2022-08-18",
+                        "dataFinal": "2022-08-23",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 14,
+                        "horario": "12:00:00",
+                        "dataInicio": "2022-08-12",
+                        "dataFinal": "2022-08-14",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "filme": {
+            "id": 1,
+            "nome": "Homem-Aranha: Sem Volta para Casa",
+            "duracao": 148,
+            "generos": "super-herói",
+            "diretor": "Jon Watts",
+            "sinopse": "O Homem-Aranha precisa lidar com as consequências da sua verdadeira identidade ter sido descoberta.",
+            "atores": "Tom Holland, Zendaya, Benedict Cumberbatch",
+            "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTJkYzI0M2QtMDhiOC00MDczLTgyYzQtZmUzMmUxNmVkN2VhXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg",
+            "bannerUrl": "spiderman-no-way-home.jpg"
+        },
+        "salasAtivas": [
+            {
+                "sala": {
+                    "id": 1,
+                    "nome": "Sala 01",
+                    "capacidade": 50
+                },
+                "sessoes": [
+                    {
+                        "id": 1,
+                        "horario": "14:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 1,
+                            "nome": "Sala 01",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 1,
+                            "nome": "2D",
+                            "preco": 20.0
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "horario": "16:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 1,
+                            "nome": "Sala 01",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 1,
+                            "nome": "2D",
+                            "preco": 20.0
+                        }
+                    },
+                    {
+                        "id": 3,
+                        "horario": "20:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 1,
+                            "nome": "Sala 01",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 1,
+                            "nome": "2D",
+                            "preco": 20.0
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "horario": "22:00:00",
+                        "dataInicio": "2022-08-15",
+                        "dataFinal": "2022-08-20",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 1,
+                            "nome": "Sala 01",
+                            "capacidade": 50
+                        },
+                        "tipo": {
+                            "id": 1,
+                            "nome": "2D",
+                            "preco": 20.0
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
