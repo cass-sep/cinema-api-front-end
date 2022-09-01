@@ -11,17 +11,20 @@ window.onload = function () {
     var tempHorario = document.getElementById("temp-horario");
 
 
-    pegarFilmes().then(filme => {
-        filme.forEach(element => {
+    pegarFilmes().then(elemento => {
+        elemento.forEach(element => {
             var filmePego = element.filme;
-            sessaoWindow.content.querySelector(".filme-estudio").innerHTML = filmePego.estudio;
-            sessaoWindow.content.querySelector(".filme-nome").innerHTML = filmePego.filmeNome;
+            var salasAtivas = element.salasAtivas;
+            // sessaoWindow.content.querySelector(".filme-estudio").innerHTML = filmePego.estudio;
+            // sessaoWindow.content.querySelector(".filme-pais").innerHTML = filmePego.pais;
+            sessaoWindow.content.querySelector(".filme-nome").innerHTML = filmePego.nome;
             sessaoWindow.content.querySelector(".diretor-nome").innerHTML = filmePego.diretor;
             sessaoWindow.content.querySelector(".txt-sinopse").innerHTML = filmePego.sinopse;
-            sessaoWindow.content.querySelector(".filme-genero").innerHTML = filmePego.genero;
+            sessaoWindow.content.querySelector(".filme-genero").innerHTML = filmePego.generos;
             sessaoWindow.content.querySelector(".filme-duracao").innerHTML = filmePego.duracao;
-            sessaoWindow.content.querySelector(".filme-pais").innerHTML = filmePego.pais;
-            sessaoWindow.content.querySelector(".filme-poster").innerHTML = filmePego.filmePoster;
+            sessaoWindow.content.querySelector(".filme-poster").src = filmePego.posterUrl;
+            sessaoWindow.content.querySelector(".filme-info").style.backgroundImage = `url('../../assets/screenshots/${filmePego.bannerUrl}')`;
+            // sessaoWindow.content.querySelector(".filme-info").style.No = `url('../../assets/screenshots/${filmePego.bannerUrl}')`;
             sessaoWindow.content.querySelector(".btn-comprar").setAttribute("data-filmeid", filmePego.id);
             sessaoWindow.content.querySelector(".filme-box").setAttribute("data-filme-id", filmePego.id);
 
@@ -56,7 +59,7 @@ window.onload = function () {
                     diaBox.classList.remove("td-atv");
                     mesBox.classList.remove("tm-atv");
                 }
-                diaAtivoBox.setAttribute("data-dia", thisDay.toLocaleString('pt-br', { day: '2-digit' }));
+                diaAtivoBox.setAttribute("data-data", thisDay.toISOString().slice(0, 10));
                 diaNomeBox.innerHTML = diaDaSemana.replace("-feira", "").toUpperCase();
                 diaBox.innerHTML = thisDay.toLocaleString('pt-br', { day: '2-digit' });
                 mesBox.innerHTML = thisDay.toLocaleString('pt-br', { month: 'long' }).toUpperCase();
@@ -66,27 +69,29 @@ window.onload = function () {
                 diaAtivo = false;
             }
 
-            organizar(sessoes);
+            // organizar(salasAtivas);
 
-            sessoes.forEach(sessao => {
-                if (sessao.filme.id == filmePego.id) {
+            salasAtivas.forEach(salaAtiva => {
 
-                    salaNome.innerHTML = sessao.sala.nome;
-                    salaLingua.innerHTML = sessao.tipo.lingua;
-
+                salaNome.innerHTML = salaAtiva.sala.nome;
+                // salaLingua.innerHTML = salaAtiva.tipo.lingua;
+                salaAtiva.sessoes.forEach(sessao => {
                     var horaHo = document.createElement("div")
                     var salaHoras = document.createElement("div")
                     horaHo.classList.add("hora", "cursor")
+                    horaHo.setAttribute("data-sessao", sessao.id);
                     horaHo.innerHTML = sessao.horario;
                     salaHoras.classList.add("sala-horas")
                     salaHoras.appendChild(horaHo);
-                    salaHoras.setAttribute("data-sala", sessao.sala.id);
+                    salaHoras.setAttribute("data-sala", salaAtiva.sala.id);
 
                     var clonagem = salasBox.cloneNode(true)
                     clonagem.appendChild(salaHoras);
 
                     horarioAreas.appendChild(clonagem);
-                }
+                })
+
+
             })
 
 
@@ -117,7 +122,7 @@ window.onload = function () {
         btnDia.forEach(botao => {
             botao.addEventListener('click', function () {
                 if (!botao.classList.contains('db-atv')) {
-                    var dia = botao.getAttribute("data-dia");
+                    var dia = botao.getAttribute("data-data");
                     var btnAtivos = document.querySelectorAll(".db-atv");
                     btnAtivos.forEach(botaoAtivo => {
                         var diaAtivos = botaoAtivo.querySelector(".td-atv");
@@ -127,7 +132,7 @@ window.onload = function () {
                         mesAtivos.classList.remove("tm-atv");
                     })
 
-                    var dataEscolhida = document.querySelectorAll(`[data-dia='${dia}']`);
+                    var dataEscolhida = document.querySelectorAll(`[data-data='${dia}']`);
                     dataEscolhida.forEach(data => {
                         var diaEscolhido = data.querySelector(".txt-dia");
                         var mesEscolhido = data.querySelector(".txt-mes");
@@ -198,6 +203,8 @@ window.onload = function () {
 
 
 
+
+
     })
 
 
@@ -208,8 +215,9 @@ window.onload = function () {
     }
 
     async function pegarFilmes() {
-        let x = await fetch('../components/import.json');
+        let x = await fetch('http://localhost:8080/sessoes/ativas');
         let y = await x.json();
+        console.log(y);
         return y;
     }
 

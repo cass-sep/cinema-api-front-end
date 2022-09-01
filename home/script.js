@@ -50,22 +50,20 @@ function scrollMenos(elemento) {
 function comprarPage(btnComprar) {
     var diaTag = document.querySelector(".db-atv");
     var filmeId = btnComprar.getAttribute("data-filmeid");
-    var dia = diaTag.getAttribute("data-dia");
+    var data = diaTag.getAttribute("data-data");
     var janelaTag = document.querySelector(`[data-filme-id='${filmeId}']`);
     var horario = janelaTag.querySelector(".hb-atv");
 
     if (horario === null) {
         return alert("escolha um horario");
     } else {
-        var sala = horario.parentElement.getAttribute("data-sala");
+        // var sala = horario.parentElement.getAttribute("data-sala");
+        var sessao = horario.getAttribute("data-sessao");
 
         console.log("horario :" + horario.innerHTML);
-        console.log("sala :" + sala);
-        console.log("dia :" + dia);
-        if (dia !== null && filmeId !== null && sala !== null) {
-            var params = `?filme=${filmeId}&sala=${sala}&horario=${horario.innerHTML}&dia=${dia}`;
-            alert(window.location.origin.concat(`/compra${params}`))
-            // window.location = window.location.origin.concat(`/compra${params}`)
+        if (data !== null && sessao !== null) {
+            var params = `/compra/index.html?sessao=${sessao}&data=${data}`;
+            window.location = window.location.origin.concat(params);
         }
     }
 }
