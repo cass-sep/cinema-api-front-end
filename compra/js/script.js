@@ -16,7 +16,7 @@ const fetchData = async () => {
     } catch (err) {
         swal("Error", "Não foi possível se conectar com o Banco de Dados.", "error")
     }
-}
+}   
 
 let data = await fetchData()
 
@@ -25,6 +25,7 @@ const poltronaDisponivel = numPolt => {
     poltrona.classList.add("poltrona")
     poltrona.setAttribute("data-id", numPolt)
     poltrona.textContent = numPolt
+    
     poltrona.addEventListener("click", event => {
 
         if (!poltrona.classList.contains("ocupada")) {
@@ -67,6 +68,7 @@ export const preencherDados = async () => {
     }
 
     document.querySelector(".menu_lateral .top .title").textContent = data.filme.nome
+    document.querySelector(".menu_lateral .top .img_poster img").src = data.filme.posterUrl
     document.querySelector(".menu_lateral .top .nomeSala").textContent = data.sala.nome
     document.querySelector(".menu_lateral .top .date").textContent = dataBr(paramSessaoData)
     document.querySelector(".menu_lateral .top .sessaoHorario").textContent = data.horario
