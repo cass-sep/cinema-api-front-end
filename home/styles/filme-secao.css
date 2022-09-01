@@ -167,11 +167,12 @@
 }
 
 .btn-filme-bg {
+    margin-left: 3px;
     display: none;
 }
 
 .bfb-avancar {
-    margin-left: 35px;
+    margin-left: 33px;
 }
 
 .on-hover {

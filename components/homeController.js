@@ -80,6 +80,7 @@ window.onload = function () {
                     horaHo.innerHTML = sessao.horario;
                     salaHoras.classList.add("sala-horas")
                     salaHoras.appendChild(horaHo);
+                    salaHoras.setAttribute("data-sala", sessao.sala.id);
 
                     var clonagem = salasBox.cloneNode(true)
                     clonagem.appendChild(salaHoras);
