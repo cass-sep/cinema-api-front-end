@@ -3,7 +3,9 @@
     margin:0px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-
+}
+:root{
+    --color-primary: #00b400;
 }
 .sala, .material-symbols-outlined{
     user-select: none;
@@ -11,11 +13,13 @@
 html, body{
     width:100%;
     height: 100%;
+    display: flex;
 }
 main{
    display: flex;
-   height:calc(100% - 70px);   
-   padding-top: 80px; 
+   flex:1;
+   height:calc(100% - 0px);   
+   padding-top: 80px;   
 }
 nav{
     background-color: #222;
@@ -25,12 +29,15 @@ nav{
     top:0;
 }
 
+
+
+
+
+/* MENU LATERAL (CARRINHO) */
 .menu_lateral{
     width:300px;
     height: calc(100% - 0px);
     background-color: #f1f1f1;
-    /* background-color:#ab3536; */
-    
     display: flex;
     flex-direction: column;
 }
@@ -39,7 +46,8 @@ nav{
     height:100%;
     overflow: auto;
     padding:10px;
-    
+    padding-bottom:0px;
+    margin-bottom:70px;
 }
 .menu_lateral .img_poster{
     width:130px;
@@ -59,7 +67,6 @@ nav{
 .menu_lateral .top ul{
     list-style: none;
     width:150px;
-    /* background-color: aquamarine; */
 }
 .menu_lateral .top ul li{
     padding:5px;
@@ -76,38 +83,48 @@ nav{
    color:#fff;
    border-radius:3px;
 }
-
-
-
-
 .menu_lateral .bilhete{
     background-color: #e1e1e1;
     margin-top:10px;
+    position: relative;  
 }
 .menu_lateral .bilhete .deletar{
-    background:red;
     cursor: pointer;
     text-align: right;
-    padding:10px;
+    padding:5px;
+    position: absolute;
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:red;
 }
 
 .bilhete .meia, .bilhete .poltrona, .bilhete .total_bilhete{
-    /* background-color: green; */
     padding:10px;
 }
 
 
 
 
+
+/* RODAPÉ (PREÇO E BOTÃO) */
 .footer-total{
-    background-color: #f6f0f0;
-    height:70px;
+    background-color: #333;
+    color:#fff;
+    flex: 70px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     bottom:0;
+    transition: 0.3s;
+    opacity: 1;
+}
+.footer-total.closed{
+    bottom:-70px;
+    opacity: 0;
 }
 .footer-total .total-bilhetes{
 
@@ -115,11 +132,11 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size:40px;
+    font-size:30px;
     font-weight: bold;
 }
 .footer-total input{
-    background:green;
+    background:var(--color-primary);
     margin:10px;
     border:none;
     outline:none;
@@ -127,38 +144,30 @@ nav{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px;
+    cursor:pointer;
     color:#fff;
+    border-radius:3px;
 }
 
 
 
+
+
+/* SALA / POLTRONAS */
 .box-sala{
     width: calc(100% - 300px);
-    
     display: flex;
     justify-content: center;
     align-items:center;
 }
-
 .sala{
-    /* outline:1px solid black; */
-   
-    
-  
-  
-    
     height:auto;
-    
-   
 }
-
 .sala .poltronas{
     display: flex;
     flex-wrap: wrap;
- 
     width:355px;
     min-width:355px;
-  
     flex-direction: row;
     gap:5px;
 }
@@ -172,7 +181,7 @@ nav{
     text-transform: uppercase;
 }
 .sala .poltrona{
-    background-color:#00b400;
+    background-color:#dcf4dc;
     width:40px;
     height:40px;
     border-radius:100%;
@@ -181,24 +190,23 @@ nav{
     align-items:center;
     cursor:pointer;
 }
-/* .sala .poltrona:hover{
-    background-color:rgb(125, 220, 125);
-}
-.sala .poltrona.ocupada:hover{
-    background-color: rgb(248, 126, 126);
-} */
 .sala .poltrona.ocupada{
     background-color: red;
     border:2px solid red;
     cursor:not-allowed;
 }
 .sala .poltrona.selecionada{
-    background-color: rgb(248, 233, 115);
-    border:2px solid rgb(149, 149, 8);
+    background-color: var(--color-primary);
+    color:#fff;
+}
+.indisponivel{
+    box-shadow: inset 0px 0px 0px 3px red;
 }
 
 
-
-
-
-
+.swal-button {
+    background-color: var(--color-primary);
+}
+.swal-text{
+    font-size:18px;
+}
