@@ -161,6 +161,42 @@
                         }
                     },
                     {
+                        "id": 5,
+                        "horario": "16:00:00",
+                        "dataInicio": "2022-09-01",
+                        "dataFinal": "2022-09-04",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
+                        "id": 5,
+                        "horario": "12:00:00",
+                        "dataInicio": "2022-09-01",
+                        "dataFinal": "2022-09-05",
+                        "total": null,
+                        "ativo": true,
+                        "sala": {
+                            "id": 5,
+                            "nome": "Sala 05",
+                            "capacidade": 20
+                        },
+                        "tipo": {
+                            "id": 2,
+                            "nome": "3D",
+                            "preco": 28.0
+                        }
+                    },
+                    {
                         "id": 6,
                         "horario": "16:00:00",
                         "dataInicio": "2022-08-15",

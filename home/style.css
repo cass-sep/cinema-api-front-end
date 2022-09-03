@@ -14,17 +14,32 @@
     cursor: default;
 }
 
+.interact {
+    cursor: pointer;
+}
+
 main {
-    padding: 0 25px 0 25px;
-    background-color: #c4c4c4;
+    background-color: #181717;
+}
+
+.cb-light {
+    display: flex;
+    flex-direction: row;
+    padding: 38px 30px 0 30px;
+    background-color: white;
+    gap: 85px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .content-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 38px 30px 0 30px;
-    background-color: white;
+    background-color: #181717;
     gap: 85px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .template {

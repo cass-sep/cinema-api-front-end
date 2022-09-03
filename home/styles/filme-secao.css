@@ -1,5 +1,7 @@
 @import url(./color-palette.css);
 
+
+
 .filme-box {
     width: 1149px;
     height: 530px;
@@ -57,16 +59,15 @@
 
 .filme-nome {
     font-family: var(--double-pica);
-    position: absolute;
-    top: 14px;
     font-size: 38px;
     color: var(--txt-main);
+    text-align: center;
 }
 
 .filme-poster {
     height: 316px;
     width: 220px;
-    margin: 3px 65px;
+    margin: 39px 65px;
 }
 
 .filme-extra-info {
@@ -133,6 +134,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: none;
+    border: none;
 }
 
 .trailer-icon {
@@ -145,6 +148,10 @@
     font: var(--inter-bold);
     text-align: center;
     color: var(--txt-second);
+}
+
+.trailer-txt:hover {
+    text-shadow: 0 0 25px;
 }
 
 .btn-filme-info {
@@ -179,8 +186,6 @@
     display: block;
     height: 10px;
     width: 10px;
-    background-color: #fffbfb61;
-    box-shadow: 0 0 45px 10px white, 0px -19px 52px 8px white, -1px 20px 65px 8px white;
 }
 
 .icon-filme-info {
@@ -203,7 +208,8 @@
 }
 
 .filme-dados {
-    width: 100%;
+    width: 99%;
+    height: 27%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -257,4 +263,34 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.trailer-on {
+    display: none;
+}
+
+.stop-trailer {
+    display: none;
+}
+
+.fechar-trailer {
+    background-color: rgb(206, 206, 206);
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 192px;
+    right: 9px;
+    display: none;
+}
+
+.bf-on {
+    display: block;
+}
+
+.icon-fechar {
+    width: inherit;
+    height: inherit;
+    padding: 10px;
 }

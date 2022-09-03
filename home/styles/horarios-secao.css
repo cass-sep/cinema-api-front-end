@@ -60,9 +60,10 @@
 }
 
 .sala-nome {
-    color: var(--txt-main);
+    color: rgb(133, 133, 133);
     margin-left: 10px;
     font: var(--rubik-one);
+    width: 72px;
 }
 
 .sala-horas {
@@ -70,9 +71,11 @@
     width: 100%;
     margin-top: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    background-color: #303030;
+    gap: 2px;
 }
 
 .sala-lingua {
@@ -105,9 +108,12 @@
     width: 86px;
     height: 100%;
     text-align: center;
-    padding-top: 6px;
-    color: var(--txt-horario);
+    padding-top: 3px;
+    color: #0061d9;
     font-family: var(--inconsolata-f);
+    font-size: 21px;
+    /* margin: 0 3px 0 3px; */
+    background-color: black;
 }
 
 .hora:hover {
@@ -118,11 +124,11 @@
 }
 
 .horas-bg {
-    height: 31px;
+    height: 35px;
     width: 100%;
-    background-color: var(--bg-dark);
+    background-color: var(--linhas);
     position: absolute;
-    top: 27px;
+    top: 25px;
     z-index: -1;
 }
 
@@ -133,8 +139,8 @@
     box-shadow: 0 0 9px var(--txt-horario);
 }
 
-.off {
-    color: #004c83;
+.hora-dtv {
+    color: #183448;
 }
 
 .btn-on {
@@ -154,4 +160,12 @@
 
 .icon-sala-avancar {
     transform: rotate(180deg);
+}
+
+.hora-off {
+    display: none;
+}
+
+.sala-off {
+    display: none;
 }

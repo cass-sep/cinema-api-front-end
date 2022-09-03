@@ -13,15 +13,15 @@
     display: flex;
     background-color: white;
     height: 80px;
-    padding: 35px;
+    padding: 30px;
     border-bottom: 1px solid #e1e1e1;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #em-cartaz {
     font-family: var(--inder);
     color: white;
-    font-size: 198px;
+    font-size: 72px;
     margin-top: -9px;
 }
 

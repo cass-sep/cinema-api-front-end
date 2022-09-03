@@ -71,18 +71,23 @@
 }
 
 .db-atv {
-    border-bottom: 2px solid var(--linhas);
+    background-color: #363636;
+    border-bottom: 2px solid white;
 }
 
 .txt-dia-semana {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     position: absolute;
-    color: #363636;
+    color: #4e4e4e;
     top: 20px;
     right: 0px;
     font: var(--rubik-one);
     font-size: 12px;
+}
+
+.tds-atv {
+    color: white
 }
 
 .txt-dia {

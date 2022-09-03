@@ -26,6 +26,7 @@
             <h1 id="programacao" class="cursor">PROGRAMAÇÃO DIÁRIA</h1>
         </header>
         <div class="content-box">
+
         </div>
     </main>
 
@@ -36,35 +37,38 @@
     <template id="sessao-window">
         <div class="filme-box" data-filme-id="">
             <div class="filme-info">
+                <!-- INSERIR TEMPLATE DO TRAILER AQUI!!! -->
                 <div class="filme-bg">
                 </div>
                 <div class="filme-main-info">
-                    <div class="filme-titulos">
+                    <!-- <div class="filme-titulos">
                         <div class="filme-estudio cursor">
-                            <!-- WARNER BROS. PICTURES -->
+                            WARNER BROS. PICTURES
                         </div>
-                        <div class="filme-nome cursor">
-                            <!-- DUNA -->
-                            <!--  -->
-                        </div>
-                    </div>
+
+                    </div> -->
                     <img class="filme-poster" src="/assets/duna.jpg" alt="">
                 </div>
                 <div class="filme-extra-info">
-                    <button class="btn-filme-info" id="btn-fi-a" onclick="voltarInfo(this)">
+                    <button class="btn-filme-info interact" id="btn-fi-a" onclick="voltarInfo(this)">
                         <div class="btn-filme-bg">
                             <img src=".././assets/icon-proximo.png" alt="" class="icon-filme-info icon-voltar"
                                 width="25">
                         </div>
                     </button>
-                    <button class="btn-filme-info" id="btn-fi-p" onclick="avancarInfo(this)">
+                    <button class="btn-filme-info interact" id="btn-fi-p" onclick="avancarInfo(this)">
                         <div class="btn-filme-bg bfb-avancar">
                             <img src=".././assets/icon-proximo.png" alt="" class="icon-filme-info icon-avancar"
                                 width="25">
                         </div>
                     </button>
+
                     <div class="filme-info-page1 page page-ativo" data-page="1">
                         <div class="filme-descricao">
+                            <div class="filme-nome cursor">
+                                <!-- DUNA -->
+                                <!--  -->
+                            </div>
                             <div class="filme-sinopse">
                                 <p class="txt-sinopse cursor"> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                     Cumque
@@ -76,10 +80,10 @@
                             </div>
                         </div>
                         <div class="filme-trailer-box">
-                            <div class="trailer-btn">
+                            <button class="trailer-btn interact" data-src="">
                                 <img class="trailer-icon" src="/assets/icone-trailer.svg" alt="">
                                 <h3 class="trailer-txt">trailer</h3>
-                            </div>
+                            </button>
                         </div>
                         <div class="filme-dados">
                             <h3 class="filme-genero cursor" style=" font-size: 16px; ">
@@ -123,19 +127,19 @@
                     </div>
                 </div>
                 <div class="botoes-area">
-                    <div class="btn-saibamais">
-                        <p class="txt-saiba-mais cursor">SAIBA MAIS</p>
+                    <div class="btn-saibamais interact">
+                        <p class="txt-saiba-mais">SAIBA MAIS</p>
                     </div>
-                    <button class="btn-comprar" onclick="comprarPage(this)" data-filmeid="">
-                        <p class="txt-comprar cursor">COMPRAR INGRESSO</p>
+                    <button class="btn-comprar interact" onclick="comprarPage(this)" data-filmeid="">
+                        <p class="txt-comprar">COMPRAR INGRESSO</p>
                     </button>
                 </div>
             </div>
             <div class="sessao-horarios">
-                <button class="btn-mais-horarios btn-off" id="btn-mh-a" onclick="scrollMenos(this)">
+                <button class="btn-mais-horarios btn-off interact" id="btn-mh-a" onclick="scrollMenos(this)">
                     <img src=".././assets/icon-proximo.png" alt="" class="icon-salas icon-sala-voltar" />
                 </button>
-                <button class="btn-mais-horarios btn-off" id="btn-mh-p" onclick="scrollMais(this)">
+                <button class="btn-mais-horarios btn-off interact" id="btn-mh-p" onclick="scrollMais(this)">
                     <img src=".././assets/icon-proximo.png" alt="" class="icon-salas icon-sala-avancar" />
                 </button>
                 <div class="horarios-area">
@@ -147,18 +151,26 @@
 
 
     </template>
+
+
     <template id="temp-dia-box">
-        <div class="dia-box" data-dia="">
-            <h4 class="txt-dia-semana cursor">QUARTA</h4>
+        <div class="dia-box interact" data-dia="">
+            <h4 class="txt-dia-semana">QUARTA</h4>
             <div class="dia-box-bg">
-                <p class="txt-dia cursor">26</p>
-                <p class="txt-mes cursor">AGOSTO</p>
+                <p class="txt-dia">26</p>
+                <p class="txt-mes">AGOSTO</p>
             </div>
         </div>
     </template>
 
 
-
+    <template id="temp-trailer">
+        <iframe style="position: absolute;" class="trailer-iframe" width="970" height="446" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div class="fechar-trailer interact bf-on" onclick="stopTrailer(this)"><img class="icon-fechar"
+                src="../assets/icon-fechar.png" alt=""></div>
+    </template>
 
 
 
