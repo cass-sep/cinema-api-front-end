@@ -1,12 +1,3 @@
-function stopTrailer(trailer) {
-    // var filmeId = document.querySelector(`[data-filme-id="${filmeInfo.parentElement.getAttribute("data-filme-id")}"]`)
-    var iFrame = trailer.parentElement.querySelector("iframe");
-    iFrame.classList.add("stop-trailer");
-    // var btnPlay = iFrame.querySelector(".ytp-play-button");
-
-    // console.log(btnPlay);
-    // btnPlay.click();
-}
 
 function scrollMais(elemento) {
     var areaHorarios = elemento.parentElement.querySelector('.horarios-area');

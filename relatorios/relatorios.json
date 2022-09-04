@@ -1,0 +1,68 @@
+{
+    "salas": [
+        {
+            "id": 1,
+            "nome": "Sala 01",
+            "faturamento": 90.0,
+            "filmes": [
+                "Homem-Aranha: Sem Volta para Casa"
+            ],
+            "tipos": [
+                "2D"
+            ],
+            "bilhetes_vendidos": 6,
+            "qtd_sessoes": 4
+        },
+        {
+            "id": 2,
+            "nome": "Sala 02",
+            "faturamento": 56.0,
+            "filmes": [
+                "Godzilla vs. Kong"
+            ],
+            "tipos": [
+                "3D"
+            ],
+            "bilhetes_vendidos": 2,
+            "qtd_sessoes": 4
+        },
+        {
+            "id": 3,
+            "nome": "Sala 03",
+            "faturamento": 28.0,
+            "filmes": [
+                "Godzilla vs. Kong"
+            ],
+            "tipos": [
+                "3D"
+            ],
+            "bilhetes_vendidos": 1,
+            "qtd_sessoes": 1
+        },
+        {
+            "id": 4,
+            "nome": "Sala 04",
+            "faturamento": 0.0,
+            "filmes": [],
+            "tipos": [],
+            "bilhetes_vendidos": 0,
+            "qtd_sessoes": 0
+        },
+        {
+            "id": 5,
+            "nome": "Sala 05",
+            "faturamento": 84.0,
+            "filmes": [
+                "Duna"
+            ],
+            "tipos": [
+                "3D"
+            ],
+            "bilhetes_vendidos": 3,
+            "qtd_sessoes": 5
+        }
+    ],
+    "arrecadaoTotal": 258.0,
+    "ocupacaoTotal": 12,
+    "totalSessoes": 14
+}

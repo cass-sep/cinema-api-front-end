@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <header id="contexto">
+        <h1 id="programacao">RELATÓRIOS</h1>
+    </header>
+
+    <nav>
+        <form class="relatorio-periodo">
+            <label class="txt-saiba-mais" for="birthday">De:</label>
+            <input class="btn-saibamais interact" type="date" id="de">
+            <label class="txt-saiba-mais" for="birthday">Até:</label>
+            <input class="btn-saibamais interact" type="date" id="ate">
+            <input class="btn-comprar interact txt-comprar" type="button" value="OK">
+        </form>
+    </nav>
+
+    <main>
+        <div class="tabela">
+        </div>
+        <div class="tabela-totais">
+
+        </div>
+    </main>
+</body>
+
+<template id="temp-item">
+    <div class="item sessao-horarios">
+        <div class="row header">
+            <div class="sala-nome dub thead">Sala 03</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">FATURAMENTO:</div>
+            <div class="sala-lingua leg td faturamento">R$ 999.999,00</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">BILHETES:</div>
+            <div class="sala-lingua leg td bilhetes">2334</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">SESSÕES:</div>
+            <div class="sala-lingua leg td sessoes">3</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">FILMES:</div>
+            <div class="sala-lingua leg td filmes">Duna, Homem-Aranha: Sem Volta para Casa, Batman</div>
+        </div>
+    </div>
+</template>
+
+<template id="temp-totais">
+    <div class="sessao-horarios t-totais">
+        <div class="row header">
+            <div class="sala-nome dub thead">RESULTADOS</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">ARRECADAÇÃO TOTAL:</div>
+            <div class="sala-lingua leg td arrecadao">90</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">OCUPAÇÃO TOTAL:</div>
+            <div class="sala-lingua leg td ocupacao">6</div>
+        </div>
+        <div class="row horas-bg">
+            <div class="sala-lingua leg th">SESSÕES TOTAL:</div>
+            <div class="sala-lingua leg td sessoes">4</div>
+        </div>
+    </div>
+</template>
+
+<script>
+</script>
+
+</html>

@@ -1,0 +1,151 @@
+@import url(../home/style.css);
+
+.sala-nome {
+    text-align: start;
+    width: auto;
+    padding: 5px 20px;
+    margin: 0;
+    color: white;
+    background-color: black;
+    font-family: var(--inder);
+}
+
+.sala-lingua {
+    padding: 5px 13px;
+    width: auto;
+    height: fit-content;
+    margin: 1px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.horas-bg {
+    position: initial;
+    z-index: 0;
+    height: auto;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.sessao-horarios {
+    background-color: var(--bg-main);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1px;
+    border-right: none;
+}
+
+.header {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.thead {
+    font-size: 30px;
+}
+
+.dub {
+    color: var(--txt-second);
+    background-color: black;
+    border-radius: 19px;
+}
+
+.item {
+    padding: 20px 40px 38px 40px;
+    border-radius: 31px;
+    width: 760px;
+    border: 2px solid;
+}
+
+.tabela {
+    padding: 40px 70px 40px 70px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--linhas);
+    flex-direction: column;
+    align-items: center;
+    gap: 30px
+}
+
+.btn-saibamais {
+    position: initial;
+    font-family: 'Rubik';
+    color: black;
+    box-shadow: 4px 4px 8px -2px black;
+    width: auto;
+    height: auto;
+    padding: 11px;
+    background-color: #383838;
+    border: 2px solid #000000;
+    margin-right: 16px;
+}
+
+.btn-saibamais:focus-visible {
+    background-color: var(--txt-dub);
+    color: #000000;
+}
+
+.txt-saiba-mais {
+    width: auto;
+    text-align: center;
+    color: var(--txt-botao);
+    font: var(--rubik);
+    font-size: 15px;
+    line-height: 13px;
+    margin-right: 2px;
+}
+
+.relatorio-periodo {
+    display: flex;
+    background-color: #363636;
+    align-items: center;
+    justify-content: center;
+    padding: 21px;
+    border-bottom: 2px solid var(--bg-main);
+}
+
+.btn-comprar {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 9px 26px;
+}
+
+#contexto {
+    display: flex;
+    background-color: var(--bg-botao);
+    height: 97px;
+    padding: 30px;
+    border-bottom: 4px solid var(--txt-dub);
+    justify-content: center;
+}
+
+.tabela-totais {
+    width: 460px;
+    height: 318px;
+    background-color: var(--linhas);
+    padding: 10px;
+    border-left: 2px solid var(--bg-main);
+    position: sticky;
+    top: 35px;
+}
+
+.t-totais {
+    padding: 9px 17px 33px;
+    border-radius: 30px;
+    border: 2px solid;
+}
+
+main {
+    background-color: #181717;
+    display: flex;
+    justify-content: center;
+}

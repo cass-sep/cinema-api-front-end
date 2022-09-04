@@ -313,7 +313,6 @@ window.onload = function () {
         // let x = await fetch('http://localhost:8080/sessoes/ativas');
         let x = await fetch('../../components/json-sessoes.json');
         let y = await x.json();
-        console.log(y);
         return y;
     }
 
