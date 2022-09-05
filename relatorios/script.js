@@ -1,9 +1,7 @@
-window.onload = function () {
-    var topMenu = document.createElement("nav");
-    topMenu.style.background = "black";
-    topMenu.style.height = "60px";
-    document.querySelector("body").insertBefore(topMenu, document.querySelector("body").firstChild);
+import { topMenu } from '../components/top-menu.js';
 
+window.onload = function () {
+    topMenu();
     var tabela = document.querySelector(".tabela");
     var tabelaTotal = document.querySelector(".tabela-totais");
     var btnFiltrar = document.querySelector(".btn-comprar");
