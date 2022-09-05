@@ -1,32 +1,65 @@
-*{
-    padding:0px;
-    margin:0px;
+@import url(./color-palette.css);
+
+* {
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+<<<<<<< Updated upstream
 
+=======
 }
-.sala, .material-symbols-outlined{
+
+:root {
+    --color-primary: #00b400;
+>>>>>>> Stashed changes
+}
+
+.sala,
+.material-symbols-outlined {
     user-select: none;
 }
-html, body{
-    width:100%;
+
+html,
+body {
+    width: 100%;
     height: 100%;
 }
+<<<<<<< Updated upstream
 main{
    display: flex;
    height:calc(100% - 70px);   
    padding-top: 80px; 
-}
-nav{
-    background-color: #222;
-    width:100%;
-    height:80px;
-    position: fixed;
-    top:0;
+=======
+
+main {
+    display: flex;
+    flex: 1;
+    height: calc(100% - 0px);
+    padding-top: 80px;
+>>>>>>> Stashed changes
 }
 
+nav {
+    background-color: #222;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+}
+
+<<<<<<< Updated upstream
 .menu_lateral{
     width:300px;
+=======
+
+
+
+
+/* MENU LATERAL (CARRINHO) */
+.menu_lateral {
+    width: 300px;
+>>>>>>> Stashed changes
     height: calc(100% - 0px);
     background-color: #f1f1f1;
     /* background-color:#ab3536; */
@@ -34,49 +67,69 @@ nav{
     display: flex;
     flex-direction: column;
 }
-.box-bilhetes{
-    width:100%;
-    height:100%;
+
+.box-bilhetes {
+    width: 100%;
+    height: 100%;
     overflow: auto;
+<<<<<<< Updated upstream
     padding:10px;
     
+=======
+    padding: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 70px;
+>>>>>>> Stashed changes
 }
-.menu_lateral .img_poster{
-    width:130px;
+
+.menu_lateral .img_poster {
+    width: 130px;
     height: auto;
 }
-.menu_lateral .title{
+
+.menu_lateral .title {
     font-weight: bold;
 }
-.menu_lateral .img_poster img{
-    width:100%;
-    height: 200px; 
+
+.menu_lateral .img_poster img {
+    width: 100%;
+    height: 200px;
 }
-.menu_lateral .top{
+
+.menu_lateral .top {
     display: flex;
-    padding:10px;
+    padding: 10px;
 }
-.menu_lateral .top ul{
+
+.menu_lateral .top ul {
     list-style: none;
+<<<<<<< Updated upstream
     width:150px;
     /* background-color: aquamarine; */
+=======
+    width: 150px;
+>>>>>>> Stashed changes
 }
-.menu_lateral .top ul li{
-    padding:5px;
+
+.menu_lateral .top ul li {
+    padding: 5px;
     display: flex;
     align-items: center;
 }
-.menu_lateral .top ul li span.material-symbols-outlined{
-    font-size:22px;
-    margin-right:5px;
-}
-.menu_lateral .top ul li.tipo span{
-   background-color: #222;
-   padding:3px;
-   color:#fff;
-   border-radius:3px;
+
+.menu_lateral .top ul li span.material-symbols-outlined {
+    font-size: 22px;
+    margin-right: 5px;
 }
 
+.menu_lateral .top ul li.tipo span {
+    background-color: #222;
+    padding: 3px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+<<<<<<< Updated upstream
 
 
 
@@ -94,27 +147,74 @@ nav{
 .bilhete .meia, .bilhete .poltrona, .bilhete .total_bilhete{
     /* background-color: green; */
     padding:10px;
+=======
+.menu_lateral .bilhete {
+    background-color: #e1e1e1;
+    margin-top: 10px;
+    position: relative;
+}
+
+.menu_lateral .bilhete .deletar {
+    cursor: pointer;
+    text-align: right;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.bilhete .meia,
+.bilhete .poltrona,
+.bilhete .total_bilhete {
+    padding: 10px;
+>>>>>>> Stashed changes
 }
 
 
 
 
+<<<<<<< Updated upstream
 .footer-total{
     background-color: #f6f0f0;
     height:70px;
+=======
+
+/* RODAPÉ (PREÇO E BOTÃO) */
+.footer-total {
+    background-color: #333;
+    color: #fff;
+    flex: 70px;
+>>>>>>> Stashed changes
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+<<<<<<< Updated upstream
     position: absolute;
     bottom:0;
+=======
+    position: fixed;
+    bottom: 0;
+    transition: 0.3s;
+    opacity: 1;
 }
-.footer-total .total-bilhetes{
 
-    width:300px;
+.footer-total.closed {
+    bottom: -70px;
+    opacity: 0;
+>>>>>>> Stashed changes
+}
+
+.footer-total .total-bilhetes {
+
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< Updated upstream
     font-size:40px;
     font-weight: bold;
 }
@@ -128,18 +228,44 @@ nav{
     font-weight: bold;
     font-size: 16px;
     color:#fff;
+=======
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer-total input {
+    background: var(--color-primary);
+    margin: 10px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+>>>>>>> Stashed changes
 }
 
 
 
+<<<<<<< Updated upstream
 .box-sala{
+=======
+
+
+/* SALA / POLTRONAS */
+.box-sala {
+>>>>>>> Stashed changes
     width: calc(100% - 300px);
     
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
+<<<<<<< Updated upstream
 .sala{
     /* outline:1px solid black; */
    
@@ -159,28 +285,50 @@ nav{
     width:355px;
     min-width:355px;
   
-    flex-direction: row;
-    gap:5px;
+=======
+.sala {
+    height: auto;
 }
-.sala .tela{
+
+.sala .poltronas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 355px;
+    min-width: 355px;
+>>>>>>> Stashed changes
+    flex-direction: row;
+    gap: 5px;
+}
+
+.sala .tela {
     background-color: #000;
-    padding:3px;
+    padding: 3px;
     width: 60%;
-    margin:0 20% 30px 20%;
+    margin: 0 20% 30px 20%;
     text-align: center;
-    color:#fff;
+    color: #fff;
     text-transform: uppercase;
 }
+<<<<<<< Updated upstream
 .sala .poltrona{
     background-color:#00b400;
     width:40px;
     height:40px;
     border-radius:100%;
+=======
+
+.sala .poltrona {
+    background-color: #dcf4dc;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+>>>>>>> Stashed changes
     display: flex;
     justify-content: center;
-    align-items:center;
-    cursor:pointer;
+    align-items: center;
+    cursor: pointer;
 }
+<<<<<<< Updated upstream
 /* .sala .poltrona:hover{
     background-color:rgb(125, 220, 125);
 }
@@ -188,10 +336,15 @@ nav{
     background-color: rgb(248, 126, 126);
 } */
 .sala .poltrona.ocupada{
+=======
+
+.sala .poltrona.ocupada {
+>>>>>>> Stashed changes
     background-color: red;
-    border:2px solid red;
-    cursor:not-allowed;
+    border: 2px solid red;
+    cursor: not-allowed;
 }
+<<<<<<< Updated upstream
 .sala .poltrona.selecionada{
     background-color: rgb(248, 233, 115);
     border:2px solid rgb(149, 149, 8);
@@ -202,3 +355,23 @@ nav{
 
 
 
+=======
+
+.sala .poltrona.selecionada {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.indisponivel {
+    box-shadow: inset 0px 0px 0px 3px red;
+}
+
+
+.swal-button {
+    background-color: var(--color-primary);
+}
+
+.swal-text {
+    font-size: 18px;
+}
+>>>>>>> Stashed changes
