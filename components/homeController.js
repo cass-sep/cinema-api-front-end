@@ -14,12 +14,12 @@ window.onload = function () {
         elemento.forEach(element => {
             var filmePego = element.filme;
             var salasAtivas = element.salasAtivas;
-            // sessaoWindow.content.querySelector(".filme-estudio").innerHTML = filmePego.estudio;
-            // sessaoWindow.content.querySelector(".filme-pais").innerHTML = filmePego.pais;
-            // sessaoWindow.content.querySelector(".trailer-btn").setAttribute("data-src") = filmePego.trailerUrl;
-            sessaoWindow.content.querySelector(".trailer-btn").setAttribute("data-src", "https://www.youtube.com/embed/ur0rw-SaFmU?autoplay=1")
+
+
+            // sessaoWindow.content.querySelector(".trailer-btn").setAttribute("data-src", "https://www.youtube.com/embed/ur0rw-SaFmU?autoplay=1")
             sessaoWindow.content.querySelector(".filme-nome").innerHTML = filmePego.nome;
-            sessaoWindow.content.querySelector(".filme-atores-box").innerHTML = filmePego.atores;
+            sessaoWindow.content.querySelector(".fn-2").innerHTML = filmePego.nome;
+
             sessaoWindow.content.querySelector(".diretor-nome").innerHTML = filmePego.diretor;
             sessaoWindow.content.querySelector(".txt-sinopse").innerHTML = filmePego.sinopse;
             sessaoWindow.content.querySelector(".filme-genero").innerHTML = filmePego.generos;
@@ -46,6 +46,14 @@ window.onload = function () {
             var horarioAreas = cloneWindow.querySelector(".horarios-area");
 
 
+            var atores = filmePego.atores.split(', ');
+            atores.forEach(ator => {
+                var atoresBox = document.createElement("div");
+                atoresBox.innerHTML = ator;
+                atoresBox.setAttribute("class", "ator-nome cursor");
+                cloneWindow.querySelector(".cast-info").appendChild(atoresBox);
+            })
+
             var startingDay = new Date();
             var thisDay = new Date();
             var diaAtivo = true;
@@ -63,9 +71,9 @@ window.onload = function () {
                     mesBox.classList.remove("tm-atv");
                     diaSemanaBox.classList.remove("tds-atv");
                 }
-                diaAtivoBox.setAttribute("data-data", thisDay.toISOString().slice(0, 10));
+                diaAtivoBox.setAttribute("data-data", thisDay.toISOString({ timeZone: 'America/Sao_Paulo' }).slice(0, 10));
                 diaNomeBox.innerHTML = diaDaSemana.replace("-feira", "").toUpperCase();
-                diaBox.innerHTML = thisDay.toLocaleString('pt-br', { day: '2-digit' });
+                diaBox.innerHTML = thisDay.toLocaleString('pt-br', { day: '2-digit' }, { timeZone: "America/Sao_Paulo" });
                 mesBox.innerHTML = thisDay.toLocaleString('pt-br', { month: 'long' }).toUpperCase();
                 thisDay.setDate(startingDay.getDate() + 1);
                 diasBox.appendChild(tempDiaSemana.content.cloneNode(true));
@@ -105,6 +113,7 @@ window.onload = function () {
         })
 
     }).then(finale => {
+
         var filmesNaPage = document.querySelectorAll(".filme-box");
         filmesNaPage.forEach(filme => {
             var nomesSalas = filme.querySelectorAll(".sala-nome");
@@ -182,7 +191,16 @@ window.onload = function () {
                 })
             })
 
-
+            pegarLinks().then(json => {
+                // if (filmeInfo.filme === json[filmePego.nome]) {
+                var filmeNome = filme.querySelector(".filme-nome").innerHTML;
+                filme.querySelector(".filme-estudio").innerHTML = json[filmeNome].estudio;
+                filme.querySelector(".filme-pais").innerHTML = json[filmeNome].pais;
+                console.log(json[filmeNome].saibaMais);
+                filme.querySelector("#botao-sb").setAttribute("href", json[filmeNome].saibaMais);
+                filme.querySelector(".trailer-btn").setAttribute("data-src", json[filmeNome].trailer);
+                // }
+            })
 
         })
 
@@ -334,6 +352,12 @@ window.onload = function () {
         });
 
         // return sessoes;
+    }
+
+    async function pegarLinks() {
+        var file = await fetch("../components/links.json");
+        var json = await file.json();
+        return json
     }
 
 }

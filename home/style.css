@@ -10,16 +10,23 @@
     box-sizing: border-box;
 }
 
+main {
+    background-color: #8695b4;
+    padding-top: 18px;
+}
+
+footer {
+    background: black;
+    height: 200px;
+    width: 100%;
+}
+
 .cursor {
     cursor: default;
 }
 
 .interact {
     cursor: pointer;
-}
-
-main {
-    background-color: #181717;
 }
 
 .cb-light {
@@ -35,7 +42,7 @@ main {
 .content-box {
     display: flex;
     flex-direction: row;
-    padding: 38px 30px 0 30px;
+    padding: 96px 0 110px 0;
     background-color: #181717;
     gap: 85px;
     flex-wrap: wrap;
