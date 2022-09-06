@@ -26,7 +26,7 @@ export const formSubmitEvent = (url, objj) => {
         axios.post(`http://localhost:8080/${url}`, obj).then(res => {
             console.warn(res)
             if (res.status == 201) {
-                swal("Success", "Sessão criada!", "success")
+               swal("Success", "Sessão criada!", "success")
             }
         }).catch(err => {
             console.log(err)

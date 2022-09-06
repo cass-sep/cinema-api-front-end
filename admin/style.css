@@ -37,6 +37,7 @@ table {
     width: 1200px;
     max-width: 100%;
     position: relative;
+    margin-bottom:100px;
 }
 #table {
     position: relative;
@@ -45,7 +46,7 @@ table td img{
     height: 200px;
 }
 table td{
-  /* font-weight: bold; */
+  
   color:#202020;
 }
 table td,

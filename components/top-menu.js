@@ -5,7 +5,7 @@ export function topMenu() {
     relatorios.style.color = "#fff";
     relatorios.style.font = "var(--rubik)";
     relatorios.style.fontSize = "20px";
-    relatorios.href = "../relatorios/index.html"
+    relatorios.href = "/relatorios/index.html"
     relatorios.style.textDecoration = "none";
     relatorios.style.padding = "10px";
 
@@ -14,7 +14,7 @@ export function topMenu() {
     compra.style.color = "#fff";
     compra.style.font = "var(--rubik)";
     compra.style.fontSize = "20px";
-    compra.href = "../compra/index.html"
+    compra.href = "/compra/index.html"
     compra.style.textDecoration = "none";
     compra.style.padding = "10px";
 
@@ -39,14 +39,21 @@ export function topMenu() {
     drop.style.gap = "10px";
     drop.style.boxShadow = "0 5px 5px 0 black";
 
-    var categorias = [{nome: "Filmes", link: "filmes"}, {nome: "Salas", link: "salas"}, {nome: "Sessões", link: "sessoes"}, {nome: "Pessoas", link: "pessoas"}, {nome: "Bilhetes", link: "bilhetes"}]
+    var categorias = [
+        { nome: "Filmes", link: "filmes" },
+        { nome: "Salas", link: "salas" },
+        { nome: "Tipos", link: "tipos" },
+        { nome: "Sessões", link: "sessoes" },
+        { nome: "Pessoas", link: "pessoas" },
+        { nome: "Bilhetes", link: "bilhetes" }
+    ]
     categorias.forEach(categoria => {
         var tag = document.createElement("a");
         tag.innerHTML = categoria.nome;
         tag.style.color = "#fff";
         tag.style.font = "var(--rubik)";
         tag.style.fontSize = "20px";
-        tag.href = `/admin/${categoria.link}/index.html`
+        tag.href = `/admin/${categoria.link}`
         tag.style.textDecoration = "none";
 
         drop.appendChild(tag)
@@ -66,14 +73,14 @@ export function topMenu() {
 
 
     logo.style.display = "block";
-    logo.style.backgroundImage = "url(../assets/blue.svg)";
+    logo.style.backgroundImage = "url(/assets/blue.svg)";
     logo.style.backgroundRepeat = "no-repeat";
     logo.style.backgroundSize = "68px";
     logo.style.backgroundPosition = "center";
     logo.style.width = "83px";
     logo.style.height = "41px";
     logo.style.marginLeft = "25px";
-    logo.href = "../home/index.html"
+    logo.href = "/home/index.html"
 
     var topMenu = document.createElement("header");
     topMenu.style.backgroundColor = "#000";
