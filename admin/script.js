@@ -1,4 +1,4 @@
-import { topMenu } from "../../components/top-menu.js"
+import { topMenu } from "../components/top-menu.js"
 
 const form = document.querySelector("form#cadastro")
 const formEdicao = document.querySelector("form#edicao")
