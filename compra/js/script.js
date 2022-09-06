@@ -3,7 +3,6 @@ import { monetarioBr, dataBr } from "./util/Util.js"
 
 import { topMenu } from "../../components/top-menu.js"
 
-
 topMenu()
 
 export let carrinho = new Carrinho()
