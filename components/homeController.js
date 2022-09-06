@@ -25,7 +25,7 @@ window.onload = function () {
             sessaoWindow.content.querySelector(".filme-genero").innerHTML = filmePego.generos;
             sessaoWindow.content.querySelector(".filme-duracao").innerHTML = Math.floor(Number(filmePego.duracao) / 60) + "h" + (Number(filmePego.duracao) % 60) + "min";
             sessaoWindow.content.querySelector(".filme-poster").src = filmePego.posterUrl;
-            sessaoWindow.content.querySelector(".filme-info").style.backgroundImage = `url('../../assets/screenshots/${filmePego.bannerUrl}')`;
+            sessaoWindow.content.querySelector(".filme-info").style.backgroundImage = `url('${filmePego.bannerUrl}')`;
             sessaoWindow.content.querySelector(".btn-comprar").setAttribute("data-filmeid", filmePego.id);
             sessaoWindow.content.querySelector(".filme-box").setAttribute("data-filme-id", filmePego.id);
 

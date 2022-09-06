@@ -1,10 +1,8 @@
 import { Carrinho } from "./Carrinho.js"
 import { monetarioBr, dataBr } from "./util/Util.js"
-<<<<<<< Updated upstream
+
 import { topMenu } from "../../components/top-menu.js"
-=======
-import { topMenu } from "../../components/top-menu.js";
->>>>>>> Stashed changes
+
 
 topMenu()
 

@@ -19,9 +19,13 @@ export const formSubmitEvent = (url, objj) => {
         formEditEvent(url, objj)
     }
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", e => {
+
         e.preventDefault()
         let obj = serializarForm(form)
+
+        console.log("Obj POST:")
+        console.log(obj)
 
         axios.post(`http://localhost:8080/${url}`, obj).then(res => {
             console.warn(res)
@@ -43,14 +47,14 @@ const formEditEvent = (url, objj) => {
 
         e.preventDefault()
         let obj = serializarForm(formEdicao)
-        console.log(obj)
 
+        console.log("Obj PUT:")
+        console.log(obj)
 
         axios.put(`http://localhost:8080/${url}/${formEdicao.dataset.id}`, obj).then(res => {
             console.warn(res)
             if (res.status == 200) {
                 swal("Success", "Editado com sucesso!", "success")
-
             }
         }).catch(err => {
             console.log(err)
@@ -79,7 +83,6 @@ if (modalPessoa) {
     })
 }
 
-
 export const criaTr = (tabela, itens, id, url, obj) => {
     let tr = document.createElement('tr')
     itens.forEach(item => {
@@ -89,6 +92,7 @@ export const criaTr = (tabela, itens, id, url, obj) => {
     })
 
     let td = document.createElement('td')
+    td.setAttribute("width", "130px")
     let a = document.createElement("span")
 
     a.classList.add("material-symbols-outlined", "delete")
@@ -131,7 +135,7 @@ export const criaTr = (tabela, itens, id, url, obj) => {
                 element.removeAttribute("width")
                 let input = element.querySelector("input")
                 
-                if (input) {
+                if (input && !input.classList.contains("no-edit")) {
                     if (input.type == "submit") {
                         input.value = "SALVAR"
                     }
@@ -208,4 +212,3 @@ export const render = async (url, obj) => {
         criaTr(tbody, dadosDaTabela, item.id, url, obj)
     })
 }
-

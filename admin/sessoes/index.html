@@ -17,14 +17,14 @@
 
 <body>
 
-    <!-- <div class="container-modal-pessoa">
+    <div class="container-modal-pessoa">
         <div class="modal-pessoa">
             <h3>Editar Sala</h3>
             <form id="edicao">
                 
             </form>
         </div>
-    </div> -->
+    </div>
 
     <header id="contexto">
         <h1 id="programacao">SESSÕES</h1>
@@ -38,22 +38,19 @@
                 <thead class="thread-cadastro">
                     <tr>
                         <th>ativo<input type="checkbox" value="" name="ativo" placeholder="ativo">
-                        <th>id<input value="" name="id" placeholder="id">
-                        <th>de<input type="date" value="" name="dataInicio" placeholder="dataInicio" required>
+                        <th>de<input class="no-edit" type="date" value="" name="dataInicio" placeholder="dataInicio" required>
                         </th>
-                        <th>até<input type="date" name="dataFinal" placeholder="dataFinal" required></th>
-                        <th>horário<input type="time" name="horario" placeholder="horario" required></th>
-                        <th>sala<select name="salaId" required>
+                        <th>até<input class="no-edit" type="date" name="dataFinal" placeholder="dataFinal" required></th>
+                        <th>horário<input class="no-edit" type="time" name="horario" placeholder="horario" required></th>
+                        <th>sala<select class="no-edit" name="salaId" required>
                                 <option disabled selected>Sala</option>
                             </select></th>
-                        <th>filme ID<input name="filmeId" placeholder="filmeId" required></th>
-                        <th>tipo<select name="tipoId" required>
+                        <th>filme ID<input class="no-edit" name="filmeId" placeholder="filmeId" required></th>
+                        <th>tipo<select class="no-edit" name="tipoId" required>
                                 <option value="1">2D</option>
                                 <option value="2">3D</option>
-                                <option value="3">2D LEG</option>
-                                <option value="4">3D LEG</option>
                             </select></th>
-                        <th width="100px">&nbsp<input type="submit" value="CADASTRAR"></th>
+                        <th width="130px">&nbsp<input type="submit" value="CADASTRAR"></th>
                     </tr>
                 </thead>
             </form>

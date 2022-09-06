@@ -27,7 +27,7 @@ export class Carrinho {
 
     destacarUmBilhete = bilhete => {
         this.getBilhetes().forEach(b => {
-            if (b === bilhete) {
+            if (b.bilheteObj == bilhete) {
                 b.cloneBilhete.classList.add("indisponivel")
             }
         })

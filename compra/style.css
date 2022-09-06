@@ -11,7 +11,7 @@ body {
     height: 100%;
     display: flex;
 }
-<<<<<<< Updated upstream
+
 main{
    display: flex;
    flex:1;
@@ -19,28 +19,13 @@ main{
    padding-top: 0px;   
 }
 /* nav{
-=======
 
-main {
-    display: flex;
-    flex: 1;
-    height: calc(100% - 0px);
-}
-
-nav {
->>>>>>> Stashed changes
     background-color: #222;
     width: 100%;
     height: 80px;
     position: fixed;
-<<<<<<< Updated upstream
     top:0;
 } */
-=======
-    top: 0;
-}
->>>>>>> Stashed changes
-
 
 
 
