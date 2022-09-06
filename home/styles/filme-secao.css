@@ -38,7 +38,6 @@
 }
 
 .filme-titulos {
-    height: 107px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -91,20 +90,22 @@
 .filme-diretor {
     height: 48px;
     width: 100%;
+    margin-top: 30px;
 }
 
 .diretor-intro {
     font-family: var(--dw-pica);
-    color: var(--txt-second);
-    font-size: 14px;
+    color: var(--txt-main);
+    font-size: 19px;
     text-align: center;
+    font: var(--inter-light);
 }
 
 .diretor-nome {
-    font-family: var(--dw-pica);
-    color: var(--txt-second);
-    font-size: 20px;
+    color: var(--txt-main);
     text-align: center;
+    font: var(--inter-light);
+    font-size: 20px;
 }
 
 .filme-sinopse {
@@ -258,11 +259,18 @@
 }
 
 .cast-info {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    height: 232px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.ator-nome {
+    color: white;
+    font: var(--inter-light);
+    font-size: 20px;
 }
 
 .trailer-on {
