@@ -53,7 +53,7 @@ export function topMenu() {
         tag.style.color = "#fff";
         tag.style.font = "var(--rubik)";
         tag.style.fontSize = "20px";
-        tag.href = `/admin/${categoria.link}`
+        tag.href = `/admin/${categoria.link}/`
         tag.style.textDecoration = "none";
 
         drop.appendChild(tag)
