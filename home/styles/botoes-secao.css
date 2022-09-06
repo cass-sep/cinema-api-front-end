@@ -23,6 +23,7 @@
     border-radius: 10px;
     border: 2px solid var(--linhas);
     text-decoration: none;
+    box-shadow: 5px 4px 5px -3px black;
 }
 
 .txt-saiba-mais {

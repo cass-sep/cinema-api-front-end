@@ -33,7 +33,7 @@ window.onload = function () {
 function criarSala(sala, tabela) {
     var tempItem = document.querySelector("#temp-item").cloneNode(true);
     tempItem.content.querySelector(".thead").innerHTML = sala.nome.toUpperCase();
-    tempItem.content.querySelector(".faturamento").innerHTML = sala.faturamento;
+    tempItem.content.querySelector(".faturamento").innerHTML = "R$" + sala.faturamento + ",00";
     tempItem.content.querySelector(".bilhetes").innerHTML = sala.bilhetes_vendidos;
     tempItem.content.querySelector(".sessoes").innerHTML = sala.qtd_sessoes;
     tempItem.content.querySelector(".filmes").innerHTML = sala.filmes;
@@ -44,7 +44,7 @@ function criarSala(sala, tabela) {
 
 function criarTotal(item, tabelaTotal) {
     var tempTotais = document.querySelector("#temp-totais").cloneNode(true);
-    tempTotais.content.querySelector(".arrecadao").innerHTML = item.arrecadaoTotal;
+    tempTotais.content.querySelector(".arrecadao").innerHTML = "R$" + item.arrecadaoTotal + ",00";
     tempTotais.content.querySelector(".ocupacao").innerHTML = item.ocupacaoTotal;
     tempTotais.content.querySelector(".sessoes").innerHTML = item.totalSessoes;
 
