@@ -7,6 +7,7 @@ export function topMenu() {
     relatorios.style.fontSize = "20px";
     relatorios.href = "../relatorios/index.html"
     relatorios.style.textDecoration = "none";
+    relatorios.style.padding = "10px";
 
     var compra = document.createElement("a");
     compra.innerHTML = "Compra";
@@ -15,16 +16,54 @@ export function topMenu() {
     compra.style.fontSize = "20px";
     compra.href = "../compra/index.html"
     compra.style.textDecoration = "none";
+    compra.style.padding = "10px";
 
-    // element {
-    //     display: block;
-    //     background - image: url("../assets/blue.svg");
-    //     background - repeat: no - repeat;
-    //     background - size: 80px;
-    //     width: 80px;
-    //     height: 39px;
-    //     margin - left: 25px;
-    // }
+    var gerenciamento = document.createElement("a");
+    gerenciamento.innerHTML = "Gerenciamento";
+    gerenciamento.style.color = "#fff";
+    gerenciamento.style.font = "var(--rubik)";
+    gerenciamento.style.fontSize = "20px";
+    gerenciamento.style.textDecoration = "none";
+    gerenciamento.style.position = "relative";
+    gerenciamento.style.padding = "10px";
+    gerenciamento.style.cursor = "pointer";
+
+    var drop = document.createElement("div");
+    drop.style.backgroundColor = "#000";
+    drop.style.display = "flex";
+    drop.style.flexDirection = "column";
+    drop.style.position = "absolute";
+    drop.style.top = "35px";
+    drop.style.display = "none";
+    drop.style.padding = "10px 50px 20px 30px";
+    drop.style.gap = "10px";
+    drop.style.boxShadow = "0 5px 5px 0 black";
+
+    var categorias = ["Filmes", "Salas", "Sessões", "Pessoas", "Bilhetes"]
+    categorias.forEach(categoria => {
+        var tag = document.createElement("a");
+        tag.innerHTML = categoria;
+        tag.style.color = "#fff";
+        tag.style.font = "var(--rubik)";
+        tag.style.fontSize = "20px";
+        // tag.href = "../${}/index.html"
+        tag.style.textDecoration = "none";
+
+        drop.appendChild(tag)
+
+        gerenciamento.addEventListener('mouseover', function () {
+            drop.style.display = "flex";
+        });
+        gerenciamento.addEventListener('mouseout', function () {
+            drop.style.display = "none";
+        });
+        drop.addEventListener('mouseout', function () {
+            drop.style.display = "none";
+        });
+    })
+
+    gerenciamento.appendChild(drop);
+
 
     logo.style.display = "block";
     logo.style.backgroundImage = "url(../assets/blue.svg)";
@@ -44,10 +83,11 @@ export function topMenu() {
     topMenu.style.zIndex = "100";
     topMenu.style.display = "flex";
     topMenu.style.alignItems = "center";
-    topMenu.style.gap = "30px";
+    topMenu.style.gap = "6px";
     topMenu.appendChild(logo);
     topMenu.appendChild(relatorios);
     topMenu.appendChild(compra);
+    topMenu.appendChild(gerenciamento);
 
     document.querySelector("body").style.paddingTop = "60px";
 
