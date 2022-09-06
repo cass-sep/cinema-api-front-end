@@ -1,12 +1,5 @@
-*{
-    padding:0px;
-    margin:0px;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-:root{
-    --color-primary: #00b400;
-}
+@import url("./geral.css");
+
 .sala, .material-symbols-outlined{
     user-select: none;
 }
@@ -135,11 +128,10 @@ nav{
     font-size:30px;
     font-weight: bold;
 }
-.footer-total input{
+.btn-submit{
     background:var(--color-primary);
     margin:10px;
     border:none;
-    outline:none;
     padding:10px 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -204,9 +196,54 @@ nav{
 }
 
 
-.swal-button {
-    background-color: var(--color-primary);
+
+
+
+.container-modal-pessoa{
+   
+    position: fixed;
+    z-index: 2;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: none;
+    justify-content: center;
+    align-items:center;
+    background:rgba(0,0,0,0.6);
 }
-.swal-text{
+.container-modal-pessoa.show{
+    display: flex;
+}
+.modal-pessoa{
+    background:rgb(255, 255, 255);
+    border-radius:5px;
+    position: fixed;
+    min-width:300px;
+    min-height:300px;
+    max-width: 100%;
+    padding:10px;
+    display: flex;
+    justify-content: start;
+    
+    align-items:center;
+    flex-direction: column;
+}
+.modal-pessoa h3{
+    margin:20px;
+}
+.modal-pessoa form{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+    gap:10px;
+}
+.modal-pessoa form input[type="text"]{
+    outline: none;
+    border-radius:5px;
+    border:none;
+    padding:10px;
+    font-weight: bold;
     font-size:18px;
+    background:rgba(0,0,0,0.05)
 }

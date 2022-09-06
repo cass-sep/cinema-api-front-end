@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessões</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="./script.js" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- <div class="container-modal-pessoa">
+        <div class="modal-pessoa">
+            <h3>Editar Sala</h3>
+            <form id="edicao">
+                
+            </form>
+        </div>
+    </div> -->
+    
+    <header id="contexto">
+        <h1 id="programacao">SESSÕES</h1>
+    </header>
+    
+    <main>
+        <div class="background-fake"></div>
+        <table id="table">
+           
+            <form  id="cadastro">
+                <thead class="thread-cadastro">
+                    <tr>
+                        <th>de<input type="date" value="" name="dataInicio" placeholder="dataInicio" required>
+                        </th>
+                        <th>até<input type="date" name="dataFinal" placeholder="dataFinal" required></th>
+                        <th>horário<input type="time" name="horario" placeholder="horario" required></th>
+                        <th>sala<select name="salaId" required>
+                                <option disabled selected>Sala</option>
+                            </select></th>
+                        <th>filme ID<input name="filmeId" placeholder="filmeId" required></th>
+                        <th>tipo<select name="tipoId" required>
+                                <option value="1">2D</option>
+                                <option value="2">3D</option>
+                            </select></th>
+                        <th width="100px">&nbsp<input type="submit" value="CADASTRAR"></th>
+                    </tr>
+                </thead>
+            </form>
+
+
+            <thead>
+                <tr>
+                    <th>de</th>
+                    <th>até</th>
+                    <th>horário</th>
+                    <th>sala</th>
+                    <th>filme</th>
+                    <th>tipo</th>
+                    <th>bilhetes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- DINAMICAMENTE -->
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

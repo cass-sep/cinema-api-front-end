@@ -1,0 +1,19 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    --color-primary: #bdda0d;
+}
+.swal-button--confirm, .swal-button--catch {
+    background-color: var(--color-primary);
+    color:#202020;
+}
+.swal-button--confirm:hover, .swal-button--catch:hover {
+    background-color: red;
+}
+.swal-text{
+    font-size:16px;
+}

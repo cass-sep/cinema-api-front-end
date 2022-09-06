@@ -8,18 +8,18 @@ window.onload = function () {
     var inputDe = document.querySelector("#de");
     var inputAte = document.querySelector("#ate");
 
-    // btnFiltrar.addEventListener('click', function () {
-    //     tabela.innerHTML = "";
-    //     tabelaTotal.innerHTML = "";
-    //     var param = `?de=${inputDe.value}&ate=${inputAte.value}`;
+    btnFiltrar.addEventListener('click', function () {
+        tabela.innerHTML = "";
+        tabelaTotal.innerHTML = "";
+        var param = `?de=${inputDe.value}&ate=${inputAte.value}`;
 
-    //     // pegarComIntervalo(param).then(itens => {
-    //     //     itens.salas.forEach(sala => {
-    //     //         criarSala(sala, tabela);
-    //     //     });
-    //     //     criarTotal(item, tabelaTotal)
-    //     // })
-    // })
+        pegarComIntervalo(param).then(itens => {
+            itens.salas.forEach(sala => {
+                criarSala(sala, tabela);
+            });
+            criarTotal(itens, tabelaTotal)
+        })
+    })
 
     pegarRelatorio().then(itens => {
         itens.salas.forEach(sala => {
@@ -59,10 +59,10 @@ async function pegarRelatorio() {
 }
 
 
-// async function pegarComIntervalo(params) {
-//     var file = await fetch(`./relatorios${params}.json`)
-//     var json = await file.json();
-//     return json
-// }
+async function pegarComIntervalo(params) {
+    var file = await fetch(`http://localhost:8080/relatorios/salas${params}`)
+    var json = await file.json();
+    return json
+}
 
 // http://localhost:8080/relatorios/salas?de=2022-08-21&ate=2022-08-21
