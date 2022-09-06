@@ -83,27 +83,34 @@ window.onload = function () {
 
 
             salasAtivas.forEach(salaAtiva => {
-                organizar(salaAtiva.sessoes);
+                // organizar(salaAtiva.sessoes);
                 salaNome.innerHTML = salaAtiva.sala.nome.toUpperCase();
                 // salaLingua.innerHTML = salaAtiva.tipo.lingua;
+                let clonagem
+
+                var salaHoras = document.createElement("div")
+                salaHoras.classList.add("sala-horas")
+                salaHoras.setAttribute("data-sala", salaAtiva.sala.id);
+
                 salaAtiva.sessoes.forEach(sessao => {
+                    console.warn(sessao)
                     var horaHo = document.createElement("div")
-                    var salaHoras = document.createElement("div")
+                    
                     horaHo.classList.add("hora", "interact")
                     horaHo.setAttribute("data-sessao", sessao.id);
                     horaHo.setAttribute("data-de", sessao.dataInicio);
                     horaHo.setAttribute("data-ate", sessao.dataFinal);
                     horaHo.innerHTML = sessao.horario.split(":")[0] + ":" + sessao.horario.split(":")[1];
-                    salaHoras.classList.add("sala-horas")
+                    
+                   
                     salaHoras.appendChild(horaHo);
-                    salaHoras.setAttribute("data-sala", salaAtiva.sala.id);
-
-                    var clonagem = salasBox.cloneNode(true)
+                    
+                    clonagem = salasBox.cloneNode(true)
                     clonagem.appendChild(salaHoras);
-
-                    horarioAreas.appendChild(clonagem);
+                   
                 })
-
+               
+                horarioAreas.appendChild(clonagem);
 
             })
 
@@ -120,35 +127,35 @@ window.onload = function () {
             var elementoParaInserirOHorario = "";
             var nomesColetados = [];
 
-            nomesSalas.forEach(sala => {
-                var horarioSala = sala.parentElement.parentElement.querySelector(".hora")
-                var diaSelecionado = new Date(document.querySelector(".db-atv").getAttribute("data-data"));
-                var de = new Date(horarioSala.getAttribute("data-de"));
-                var ate = new Date(horarioSala.getAttribute("data-ate"));
+            // nomesSalas.forEach(sala => {
+            //     var horarioSala = sala.parentElement.parentElement.querySelector(".hora")
+            //     var diaSelecionado = new Date(document.querySelector(".db-atv").getAttribute("data-data"));
+            //     var de = new Date(horarioSala.getAttribute("data-de"));
+            //     var ate = new Date(horarioSala.getAttribute("data-ate"));
 
-                if (nomesColetados.includes(sala.innerHTML)) {
+            //     if (nomesColetados.includes(sala.innerHTML)) {
 
-                    if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
-                        horarioSala.classList.add("hora-off");
-                    } else {
-                        horarioSala.classList.add("hora-on");
-                    }
+            //         if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
+            //             horarioSala.classList.add("hora-off");
+            //         } else {
+            //             horarioSala.classList.add("hora-on");
+            //         }
 
-                    var elementoParaInserirHora = elementoParaInserirOHorario.querySelector(".sala-horas");
-                    elementoParaInserirHora.parentElement.classList.add("sala-off");
-                    elementoParaInserirHora.appendChild(horarioSala);
-                    sala.parentElement.parentElement.remove();
-                } else {
-                    if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
-                        horarioSala.classList.add("hora-off");
-                    } else {
-                        horarioSala.classList.add("hora-on");
-                    }
-                    nomesColetados.push(sala.innerHTML);
-                    elementoParaInserirOHorario = sala.parentElement.parentElement;
-                    sala.parentElement.parentElement.classList.add("sala-off");
-                }
-            })
+            //         var elementoParaInserirHora = elementoParaInserirOHorario.querySelector(".sala-horas");
+            //         elementoParaInserirHora.parentElement.classList.add("sala-off");
+            //         elementoParaInserirHora.appendChild(horarioSala);
+            //         sala.parentElement.parentElement.remove();
+            //     } else {
+            //         if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
+            //             horarioSala.classList.add("hora-off");
+            //         } else {
+            //             horarioSala.classList.add("hora-on");
+            //         }
+            //         nomesColetados.push(sala.innerHTML);
+            //         elementoParaInserirOHorario = sala.parentElement.parentElement;
+            //         sala.parentElement.parentElement.classList.add("sala-off");
+            //     }
+            // })
 
             var salaAtual = filme.querySelector(".hora-on");
             if (salaAtual !== null) {
@@ -328,8 +335,8 @@ window.onload = function () {
     }
 
     async function pegarFilmes() {
-        // let x = await fetch('http://localhost:8080/sessoes/ativas');
-        let x = await fetch('../../components/json-sessoes.json');
+        let x = await fetch('http://localhost:8080/sessoes/ativas');
+        // let x = await fetch('../../components/json-sessoes.json');
         let y = await x.json();
         return y;
     }

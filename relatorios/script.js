@@ -1,4 +1,5 @@
 import { topMenu } from '../components/top-menu.js';
+import { monetarioBr } from "../compra/js/util/Util.js"
 
 window.onload = function () {
     topMenu();
@@ -33,7 +34,7 @@ window.onload = function () {
 function criarSala(sala, tabela) {
     var tempItem = document.querySelector("#temp-item").cloneNode(true);
     tempItem.content.querySelector(".thead").innerHTML = sala.nome.toUpperCase();
-    tempItem.content.querySelector(".faturamento").innerHTML = "R$" + sala.faturamento + ",00";
+    tempItem.content.querySelector(".faturamento").innerHTML = monetarioBr(sala.faturamento);
     tempItem.content.querySelector(".bilhetes").innerHTML = sala.bilhetes_vendidos;
     tempItem.content.querySelector(".sessoes").innerHTML = sala.qtd_sessoes;
     tempItem.content.querySelector(".filmes").innerHTML = sala.filmes;
@@ -44,7 +45,7 @@ function criarSala(sala, tabela) {
 
 function criarTotal(item, tabelaTotal) {
     var tempTotais = document.querySelector("#temp-totais").cloneNode(true);
-    tempTotais.content.querySelector(".arrecadao").innerHTML = "R$" + item.arrecadaoTotal + ",00";
+    tempTotais.content.querySelector(".arrecadao").innerHTML = monetarioBr(item.arrecadaoTotal);
     tempTotais.content.querySelector(".ocupacao").innerHTML = item.ocupacaoTotal;
     tempTotais.content.querySelector(".sessoes").innerHTML = item.totalSessoes;
 
@@ -53,7 +54,7 @@ function criarTotal(item, tabelaTotal) {
 }
 
 async function pegarRelatorio() {
-    var file = await fetch(`./relatorios.json`)
+    var file = await fetch(`http://localhost:8080/relatorios/salas`)
     var json = await file.json();
     return json
 }
