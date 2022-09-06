@@ -4,8 +4,8 @@ import { monetarioBr, dataBr } from "./util/Util.js"
 export let carrinho = new Carrinho()
 
 const urlParams = new URLSearchParams(window.location.search);
-const paramSessaoId = urlParams.get('sessao');
-const paramSessaoData = urlParams.get('data');
+const paramSessaoId = urlParams.get('sessao')
+const paramSessaoData = urlParams.get('data')
 
 const sala = document.querySelector(".poltronas")
 
@@ -16,7 +16,7 @@ const fetchData = async () => {
     } catch (err) {
         swal("Error", "Não foi possível se conectar com o Banco de Dados.", "error")
     }
-}   
+}
 
 let data = await fetchData()
 
@@ -25,12 +25,11 @@ const poltronaDisponivel = numPolt => {
     poltrona.classList.add("poltrona")
     poltrona.setAttribute("data-id", numPolt)
     poltrona.textContent = numPolt
-    
+
     poltrona.addEventListener("click", event => {
 
         if (!poltrona.classList.contains("ocupada")) {
             const bilheteObj = {
-                pessoaId: 1,
                 sessaoId: data.id,
                 poltrona: numPolt,
                 diaSessao: paramSessaoData,
@@ -57,7 +56,6 @@ export const preencherDados = async () => {
     data = await fetchData()
     console.log(data)
     sala.innerHTML = ""
-    console.log("Poltronas ocupadas: " + data.ocupadas)
     for (let i = 1; i <= data.sala.capacidade; i++) {
 
         if (data.ocupadas.includes(i)) {
@@ -77,39 +75,74 @@ export const preencherDados = async () => {
 
 }
 
-if (!data.descricao) {
-    preencherDados()
-} else {
-    alert(data.descricao)
-}
+preencherDados()
+// if (!data.descricao) {
+//     preencherDados()
+// } else {
+//     alert(data.descricao)
+// }
 
-document.querySelector(".footer-total input[type='submit']").addEventListener("click", async event => {
+const modalPessoa = document.querySelector(".container-modal-pessoa")
+
+modalPessoa.addEventListener("click", e => {
+    if (e.target.classList.contains("container-modal-pessoa")) {
+        e.target.classList.toggle("show")
+    }
+})
+
+document.querySelector(".modal-pessoa form").addEventListener("submit", e => {
+    
+    e.preventDefault()
+
+    const inputNome = document.querySelector(".modal-pessoa form .nome")
+    const inputCpf = document.querySelector(".modal-pessoa form .cpf")
+
+    let nome = inputNome.value
+    let cpf = inputCpf.value
+
+    let objCadastro = {}
+    objCadastro.pessoa = {nome, cpf}
+    objCadastro.bilhetes = []
+
+    carrinho.getBilhetes().forEach(bilhete => objCadastro.bilhetes.push(bilhete.bilheteObj))
+   
+    cadastrarBilhete(objCadastro)
+
+    console.warn(carrinho.getBilhetes())
+    console.log(objCadastro)
+})
+
+document.querySelector(".footer-total .btn-submit").addEventListener("click", event => {
+    modalPessoa.classList.toggle("show")
+    document.querySelector(".modal-pessoa .nome").focus()
+})
+
+const cadastrarBilhete = async objCadastro => {
 
     let data = await fetchData()
 
     let todasPoltDisp = true
-    carrinho.getBilhetes().forEach(bilhete => {
-        if (data.ocupadas.includes(bilhete.bilheteObj.poltrona)) {
+    objCadastro.bilhetes.forEach(bilhete => {
+        if (data.ocupadas.includes(bilhete.poltrona)) {
             todasPoltDisp = false
-            swal("Ops!", `Poltrona ${bilhete.bilheteObj.poltrona} não está mais disponível`, "error")
+            swal("Ops!", `Poltrona ${bilhete.poltrona} não está mais disponível`, "error")
             carrinho.destacarUmBilhete(bilhete)
+            modalPessoa.classList.remove("show")
         }
     })
 
     if (todasPoltDisp) {
-        axios.all(carrinho.getBilhetes().map(bilhete => {
-            return axios.post('http://localhost:8080/bilhetes', bilhete.bilheteObj)
-        })).then(el => {
-            console.log(el)
+        axios.post('http://localhost:8080/pedidos', objCadastro)
+        .then(el => {
             resetar()
             swal("Success!", "Compra finalizada.", "success")
         })
     }
-
-})
+}
 
 const resetar = () => {
     carrinho.limparCarrinho()
     preencherDados()
+    modalPessoa.classList.remove("show")
 }
 

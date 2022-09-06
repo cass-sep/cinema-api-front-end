@@ -39,14 +39,14 @@ export function topMenu() {
     drop.style.gap = "10px";
     drop.style.boxShadow = "0 5px 5px 0 black";
 
-    var categorias = ["Filmes", "Salas", "Sessões", "Pessoas", "Bilhetes"]
+    var categorias = [{nome: "Filmes", link: "filmes"}, {nome: "Salas", link: "salas"}, {nome: "Sessões", link: "sessoes"}, {nome: "Pessoas", link: "pessoas"}, {nome: "Bilhetes", link: "bilhetes"}]
     categorias.forEach(categoria => {
         var tag = document.createElement("a");
-        tag.innerHTML = categoria;
+        tag.innerHTML = categoria.nome;
         tag.style.color = "#fff";
         tag.style.font = "var(--rubik)";
         tag.style.fontSize = "20px";
-        // tag.href = "../${}/index.html"
+        tag.href = `/admin/${categoria.link}/index.html`
         tag.style.textDecoration = "none";
 
         drop.appendChild(tag)
