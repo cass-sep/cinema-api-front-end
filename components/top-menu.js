@@ -68,9 +68,10 @@ export function topMenu() {
     logo.style.display = "block";
     logo.style.backgroundImage = "url(../assets/blue.svg)";
     logo.style.backgroundRepeat = "no-repeat";
-    logo.style.backgroundSize = "80px";
-    logo.style.width = "80px";
-    logo.style.height = "39px";
+    logo.style.backgroundSize = "68px";
+    logo.style.backgroundPosition = "center";
+    logo.style.width = "83px";
+    logo.style.height = "41px";
     logo.style.marginLeft = "25px";
     logo.href = "../home/index.html"
 

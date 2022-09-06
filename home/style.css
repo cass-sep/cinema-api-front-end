@@ -10,6 +10,11 @@
     box-sizing: border-box;
 }
 
+body {
+    padding-top: 60px;
+    position: relative;
+}
+
 main {
     background-color: #8695b4;
     padding-top: 18px;
@@ -17,8 +22,42 @@ main {
 
 footer {
     background: black;
-    height: 200px;
+    height: 110px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+}
+
+#logo-footer {
+    height: 49px;
+    align-self: end;
+}
+
+.creditos {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.nome-criadores {
+    height: 18px;
+    font: var(--rubik);
+    font-size: 14px;
+    color: var(--txt-dub);
+    text-decoration: none;
+    display: flex;
+}
+
+.nome-criadores:hover {
+    color: white;
+}
+
+.logo-git {
+    fill: #FFF;
+    height: 16px;
 }
 
 .cursor {
@@ -42,7 +81,7 @@ footer {
 .content-box {
     display: flex;
     flex-direction: row;
-    padding: 96px 0 110px 0;
+    padding: 96px 0 199px 0;
     background-color: #181717;
     gap: 85px;
     flex-wrap: wrap;
