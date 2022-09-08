@@ -53,7 +53,7 @@ export function topMenu() {
         tag.style.color = "#fff";
         tag.style.font = "var(--rubik)";
         tag.style.fontSize = "20px";
-        tag.href = `/admin/${categoria.link}/`
+        tag.href = `../../admin/${categoria.link}/`
         tag.style.textDecoration = "none";
 
         drop.appendChild(tag)
@@ -73,14 +73,14 @@ export function topMenu() {
 
 
     logo.style.display = "block";
-    logo.style.backgroundImage = "url(/assets/blue.svg)";
+    logo.style.backgroundImage = "url(../../assets/blue.svg)";
     logo.style.backgroundRepeat = "no-repeat";
     logo.style.backgroundSize = "68px";
     logo.style.backgroundPosition = "center";
     logo.style.width = "83px";
     logo.style.height = "41px";
     logo.style.marginLeft = "25px";
-    logo.href = "/home/index.html"
+    logo.href = "../../home/index.html"
 
     var topMenu = document.createElement("header");
     topMenu.style.backgroundColor = "#000";

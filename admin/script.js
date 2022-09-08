@@ -126,20 +126,26 @@ export const criaTr = (tabela, itens, id, url, obj) => {
             modalPessoa.querySelector("form").dataset.id = id;
 
             inputs.forEach((el, index) => {
+
                 let element = el.cloneNode(true)
                 element.removeAttribute("width")
                 let input = element.querySelector("input")
+                
                 if (input) {
                     if (input.type == "submit") {
                         input.value = "SALVAR"
                     }
-
+                    else if(itens[index].includes("<img")){
+                        let myRe =  new RegExp(/\"([^\"]*)\"/gi);
+                        input.value = myRe.exec(itens[index])[1]
+                    }
                     else {
                         input.value = itens[index]
                     }
-
+                    
                     modalPessoa.querySelector("form").append(element)
                 }
+                
             })
             modalPessoa.classList.add("show")
             modalPessoa.querySelectorAll("form input")[0].focus()
