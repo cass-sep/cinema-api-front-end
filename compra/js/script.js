@@ -1,6 +1,10 @@
 import { Carrinho } from "./Carrinho.js"
 import { monetarioBr, dataBr } from "./util/Util.js"
+<<<<<<< Updated upstream
 import { topMenu } from "../../components/top-menu.js"
+=======
+import { topMenu } from "../../components/top-menu.js";
+>>>>>>> Stashed changes
 
 topMenu()
 
@@ -94,7 +98,7 @@ modalPessoa.addEventListener("click", e => {
 })
 
 document.querySelector(".modal-pessoa form").addEventListener("submit", e => {
-    
+
     e.preventDefault()
 
     const inputNome = document.querySelector(".modal-pessoa form .nome")
@@ -104,11 +108,11 @@ document.querySelector(".modal-pessoa form").addEventListener("submit", e => {
     let cpf = inputCpf.value
 
     let objCadastro = {}
-    objCadastro.pessoa = {nome, cpf}
+    objCadastro.pessoa = { nome, cpf }
     objCadastro.bilhetes = []
 
     carrinho.getBilhetes().forEach(bilhete => objCadastro.bilhetes.push(bilhete.bilheteObj))
-   
+
     cadastrarBilhete(objCadastro)
 
     console.warn(carrinho.getBilhetes())
@@ -136,10 +140,10 @@ const cadastrarBilhete = async objCadastro => {
 
     if (todasPoltDisp) {
         axios.post('http://localhost:8080/pedidos', objCadastro)
-        .then(el => {
-            resetar()
-            swal("Success!", "Compra finalizada.", "success")
-        })
+            .then(el => {
+                resetar()
+                swal("Success!", "Compra finalizada.", "success")
+            })
     }
 }
 

@@ -1,0 +1,127 @@
+@import url("/home/styles/color-palette.css");
+
+.top-menu-btn {
+    color: #fff;
+    font: var(--rubik);
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.top-menu-pointer {
+    cursor: pointer;
+}
+
+.top-menu-dropdown {
+    display: none;
+    background-color: #fff;
+    flex-direction: column;
+    position: absolute;
+    top: 45px;
+    padding: 5px;
+    gap: 10px;
+    box-shadow: 0 2px 8px 0 #0000008c;
+}
+
+.top-menu-dropdown-atv {
+    display: flex;
+}
+
+.top-menu-tag:hover {
+    background-color: var(--txt-dub);
+}
+
+.top-menu-tag {
+    color: #000;
+    font: var(--rubik);
+    font-size: 20px;
+    text-decoration: none;
+    height: 35px;
+    width: 150px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.top-menu-logo {
+    display: block;
+    background-image: url(../assets/blue.svg);
+    background-repeat: no-repeat;
+    background-size: 68px;
+    background-position: center;
+    width: 83px;
+    height: 41px;
+    margin-left: 25px;
+}
+
+.top-menu {
+    background-color: #000;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+body {
+    padding-top: 60px;
+}
+
+/* relatorios.style.
+    relatorios.style.
+    relatorios.style.
+    relatorios.style.
+    relatorios.style. 
+
+        compra.style.color = "#fff";
+    compra.style.font = "var(--rubik)";
+    compra.style.fontSize = "20px";
+    compra.style.textDecoration = "none";
+    compra.style.padding = "10px";
+
+        gerenciamento.style.color = "#fff";
+    gerenciamento.style.font = "var(--rubik)";
+    gerenciamento.style.fontSize = "20px";
+    gerenciamento.style.textDecoration = "none";
+    gerenciamento.style.position = "relative";
+    gerenciamento.style.padding = "10px";
+    gerenciamento.style.
+
+        drop.style.backgroundColor = "#fff";
+    drop.style.display = "flex";
+    drop.style.flexDirection = "column";
+    drop.style.position = "absolute";
+    drop.style.top = "35px";
+    drop.style.display = "none";
+    drop.style.padding = "10px 50px 20px 30px";
+    drop.style.gap = "10px";
+    drop.style.boxShadow = "0 2px 8px 0 #bdbdbd";*/
+
+
+/* tag.style. */
+/* tag.style. */
+/* tag.style. */
+/* tag.style. */
+
+/* logo.style. */
+/* logo.style. */
+/* logo.style. */
+/* logo.style. */
+/* logo.style. */
+/* logo.style. */
+/* logo.style. */
+/* logo.style. */
+
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+/* topMenu.style. */
+
+/* document.querySelector("body").style. */

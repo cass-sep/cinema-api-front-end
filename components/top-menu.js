@@ -1,7 +1,10 @@
 export function topMenu() {
     var logo = document.createElement("a");
+    logo.classList.add("top-menu-logo");
+
     var relatorios = document.createElement("a");
     relatorios.innerHTML = "Relatórios";
+<<<<<<< Updated upstream
     relatorios.style.color = "#fff";
     relatorios.style.font = "var(--rubik)";
     relatorios.style.fontSize = "20px";
@@ -17,28 +20,25 @@ export function topMenu() {
     compra.href = "/compra/index.html"
     compra.style.textDecoration = "none";
     compra.style.padding = "10px";
+=======
+    relatorios.href = "/relatorios/index.html"
+    relatorios.classList.add("top-menu-btn")
+
+    var compra = document.createElement("a");
+    compra.innerHTML = "Compra";
+    compra.href = "../../compra/index.html"
+    compra.classList.add("top-menu-btn")
+>>>>>>> Stashed changes
 
     var gerenciamento = document.createElement("a");
     gerenciamento.innerHTML = "Gerenciamento";
-    gerenciamento.style.color = "#fff";
-    gerenciamento.style.font = "var(--rubik)";
-    gerenciamento.style.fontSize = "20px";
-    gerenciamento.style.textDecoration = "none";
-    gerenciamento.style.position = "relative";
-    gerenciamento.style.padding = "10px";
-    gerenciamento.style.cursor = "pointer";
+    gerenciamento.classList.add("top-menu-btn")
+    gerenciamento.classList.add("top-menu-pointer")
 
     var drop = document.createElement("div");
-    drop.style.backgroundColor = "#000";
-    drop.style.display = "flex";
-    drop.style.flexDirection = "column";
-    drop.style.position = "absolute";
-    drop.style.top = "35px";
-    drop.style.display = "none";
-    drop.style.padding = "10px 50px 20px 30px";
-    drop.style.gap = "10px";
-    drop.style.boxShadow = "0 5px 5px 0 black";
+    drop.classList.add("top-menu-dropdown");
 
+<<<<<<< Updated upstream
     var categorias = [
         { nome: "Filmes", link: "filmes" },
         { nome: "Salas", link: "salas" },
@@ -55,23 +55,32 @@ export function topMenu() {
         tag.style.fontSize = "20px";
         tag.href = `../../admin/${categoria.link}/`
         tag.style.textDecoration = "none";
+=======
+    var categorias = [{ nome: "Filmes", link: "filmes" }, { nome: "Salas", link: "salas" }, { nome: "Sessões", link: "sessoes" }, { nome: "Pessoas", link: "pessoas" }, { nome: "Tipos", link: "tipos" }, { nome: "Bilhetes", link: "bilhetes" }]
+    categorias.forEach(categoria => {
+        var tag = document.createElement("a");
+        tag.innerHTML = categoria.nome;
+        tag.href = `../../admin/${categoria.link}/index.html`
+        tag.classList.add("top-menu-tag");
+>>>>>>> Stashed changes
 
         drop.appendChild(tag)
 
         gerenciamento.addEventListener('mouseover', function () {
-            drop.style.display = "flex";
+            drop.classList.add("top-menu-dropdown-atv");
         });
         gerenciamento.addEventListener('mouseout', function () {
-            drop.style.display = "none";
+            drop.classList.remove("top-menu-dropdown-atv");
         });
         drop.addEventListener('mouseout', function () {
-            drop.style.display = "none";
+            drop.classList.remove("top-menu-dropdown-atv");
         });
     })
 
     gerenciamento.appendChild(drop);
 
 
+<<<<<<< Updated upstream
     logo.style.display = "block";
     logo.style.backgroundImage = "url(../../assets/blue.svg)";
     logo.style.backgroundRepeat = "no-repeat";
@@ -81,23 +90,17 @@ export function topMenu() {
     logo.style.height = "41px";
     logo.style.marginLeft = "25px";
     logo.href = "../../home/index.html"
+=======
+    logo.href = "../../home/index.html";
+>>>>>>> Stashed changes
 
     var topMenu = document.createElement("header");
-    topMenu.style.backgroundColor = "#000";
-    topMenu.style.height = "60px";
-    topMenu.style.position = "fixed";
-    topMenu.style.top = "0";
-    topMenu.style.width = "100%";
-    topMenu.style.zIndex = "100";
-    topMenu.style.display = "flex";
-    topMenu.style.alignItems = "center";
-    topMenu.style.gap = "6px";
+    topMenu.classList.add("top-menu")
     topMenu.appendChild(logo);
     topMenu.appendChild(relatorios);
     topMenu.appendChild(compra);
     topMenu.appendChild(gerenciamento);
 
-    document.querySelector("body").style.paddingTop = "60px";
 
     document.querySelector("body").insertBefore(topMenu, document.querySelector("body").firstChild);
 }

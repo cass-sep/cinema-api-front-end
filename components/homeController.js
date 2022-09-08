@@ -40,6 +40,8 @@ window.onload = function () {
             var salasBox = tempHorario.content.querySelector(".salas-box");
             var salaNome = tempHorario.content.querySelector(".sala-nome");
             var salaLingua = tempHorario.content.querySelector(".sala-lingua");
+            var salaTitulo = tempHorario.content.querySelector(".sala-titulo");
+            var salaTipo = tempHorario.content.querySelector(".sala-tipo");
 
             var cloneWindow = sessaoWindow.content.cloneNode(true);
             var diasBox = cloneWindow.querySelector(".dias-barra");
@@ -71,7 +73,7 @@ window.onload = function () {
                     mesBox.classList.remove("tm-atv");
                     diaSemanaBox.classList.remove("tds-atv");
                 }
-                diaAtivoBox.setAttribute("data-data", thisDay.toISOString({ timeZone: 'America/Sao_Paulo' }).slice(0, 10));
+                diaAtivoBox.setAttribute("data-data", thisDay.toISOString('pt-br', { timeZone: 'America/Sao_Paulo' }).slice(0, 10));
                 diaNomeBox.innerHTML = diaDaSemana.replace("-feira", "").toUpperCase();
                 diaBox.innerHTML = thisDay.toLocaleString('pt-br', { day: '2-digit' }, { timeZone: "America/Sao_Paulo" });
                 mesBox.innerHTML = thisDay.toLocaleString('pt-br', { month: 'long' }).toUpperCase();
@@ -81,36 +83,78 @@ window.onload = function () {
                 diaAtivo = false;
             }
 
+            var hoje = new Date();
+
+            organizarPorSala(salasAtivas);
 
             salasAtivas.forEach(salaAtiva => {
-                // organizar(salaAtiva.sessoes);
+                var lingua = salaAtiva.sessoes[0].tipo.nome.split(" ")[1];
+                if (lingua === null || lingua === undefined) {
+                    lingua = "DUB";
+                    salaLingua.setAttribute("class", "sala-lingua dub cursor")
+                } else {
+                    salaLingua.setAttribute("class", "sala-lingua leg cursor")
+                }
+                salasBox.setAttribute("data-lingua", lingua)
+                // salaLingua.classList.add(lingua.toLowerCase());
+                salaLingua.innerHTML = lingua;
+
+                var tipo = salaAtiva.sessoes[0].tipo.nome.split(" ")[0];
+                if (tipo !== "2D") {
+                    salaTipo.setAttribute("id", tipo.toLowerCase());
+                    salaTipo.src = "/assets/3D.png";
+                } else {
+                    salaTipo.setAttribute("id", "dois-de");
+                    salaTipo.src = "";
+                }
+                salasBox.setAttribute("data-tipo", tipo)
+
                 salaNome.innerHTML = salaAtiva.sala.nome.toUpperCase();
-                // salaLingua.innerHTML = salaAtiva.tipo.lingua;
                 let clonagem
 
                 var salaHoras = document.createElement("div")
                 salaHoras.classList.add("sala-horas")
                 salaHoras.setAttribute("data-sala", salaAtiva.sala.id);
 
+
+                organizarPorHorario(salaAtiva.sessoes);
+                // organizarPorTipo(salaAtiva.sessoes);
+
                 salaAtiva.sessoes.forEach(sessao => {
-                    console.warn(sessao)
-                    var horaHo = document.createElement("div")
-                    
-                    horaHo.classList.add("hora", "interact")
-                    horaHo.setAttribute("data-sessao", sessao.id);
-                    horaHo.setAttribute("data-de", sessao.dataInicio);
-                    horaHo.setAttribute("data-ate", sessao.dataFinal);
-                    horaHo.innerHTML = sessao.horario.split(":")[0] + ":" + sessao.horario.split(":")[1];
-                    
-                   
-                    salaHoras.appendChild(horaHo);
-                    
-                    clonagem = salasBox.cloneNode(true)
-                    clonagem.appendChild(salaHoras);
-                   
+                    var de = new Date(sessao.dataInicio);
+                    var ate = new Date(sessao.dataFinal);
+                    if (hoje >= de && hoje <= ate) {
+
+
+                        var horaHo = document.createElement("div")
+                        horaHo.classList.add("hora", "interact")
+                        horaHo.setAttribute("data-sessao", sessao.id);
+                        horaHo.setAttribute("data-de", sessao.dataInicio);
+                        horaHo.setAttribute("data-ate", sessao.dataFinal);
+                        console.log(sessao.tipo.nome.split(" ")[0]);
+                        if (sessao.tipo.nome.split(" ")[1] === undefined) {
+                            horaHo.setAttribute("data-lingua", "DUB");
+                        } else {
+                            horaHo.setAttribute("data-lingua", sessao.tipo.nome.split(" ")[1]);
+                        }
+                        horaHo.setAttribute("data-tipo", sessao.tipo.nome.split(" ")[0]);
+                        horaHo.innerHTML = sessao.horario.split(":")[0] + ":" + sessao.horario.split(":")[1];
+
+
+                        salaHoras.appendChild(horaHo);
+
+                        clonagem = salasBox.cloneNode(true)
+                        clonagem.appendChild(salaHoras);
+                    } else {
+                        clonagem = null;
+                    }
+
                 })
-               
-                horarioAreas.appendChild(clonagem);
+
+                if (clonagem !== null) {
+                    horarioAreas.appendChild(clonagem);
+                }
+
 
             })
 
@@ -125,37 +169,54 @@ window.onload = function () {
         filmesNaPage.forEach(filme => {
             var nomesSalas = filme.querySelectorAll(".sala-nome");
             var elementoParaInserirOHorario = "";
-            var nomesColetados = [];
+            var tiposColetados = [];
+            var linguaColetados = [];
 
-            // nomesSalas.forEach(sala => {
-            //     var horarioSala = sala.parentElement.parentElement.querySelector(".hora")
-            //     var diaSelecionado = new Date(document.querySelector(".db-atv").getAttribute("data-data"));
-            //     var de = new Date(horarioSala.getAttribute("data-de"));
-            //     var ate = new Date(horarioSala.getAttribute("data-ate"));
+            nomesSalas.forEach(sala => {
+                var horariosSalas = sala.parentElement.parentElement.querySelectorAll(".hora")
+                // var diaSelecionado = new Date(document.querySelector(".db-atv").getAttribute("data-data"));
 
-            //     if (nomesColetados.includes(sala.innerHTML)) {
+                // horariosSalas.forEach(horarioSala => {
+                //     //     var de = new Date(horarioSala.getAttribute("data-de"));
+                //     //     var ate = new Date(horarioSala.getAttribute("data-ate"));
 
-            //         if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
-            //             horarioSala.classList.add("hora-off");
-            //         } else {
-            //             horarioSala.classList.add("hora-on");
-            //         }
+                //     if (!tiposColetados.includes(horarioSala.getAttribute("data-tipo"))) {
 
-            //         var elementoParaInserirHora = elementoParaInserirOHorario.querySelector(".sala-horas");
-            //         elementoParaInserirHora.parentElement.classList.add("sala-off");
-            //         elementoParaInserirHora.appendChild(horarioSala);
-            //         sala.parentElement.parentElement.remove();
-            //     } else {
-            //         if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
-            //             horarioSala.classList.add("hora-off");
-            //         } else {
-            //             horarioSala.classList.add("hora-on");
-            //         }
-            //         nomesColetados.push(sala.innerHTML);
-            //         elementoParaInserirOHorario = sala.parentElement.parentElement;
-            //         sala.parentElement.parentElement.classList.add("sala-off");
-            //     }
-            // })
+                //         tiposColetados.push(horarioSala.getAttribute("data-tipo"));
+
+                //         var dataTipo = ["2D", "3D"];
+                //         var idTipo = ["dois-de", "3d"];
+
+                //             if (horarioSala.parentElement.parentElement.getAttribute("data-tipo") !== horarioSala.getAttribute("data-tipo")) {
+                //                 var template = document.querySelector("#temp-horario").cloneNode(true);
+
+                //                 horarioSala.parentElement.parentElement.parentElement.appendChild()
+                //         }
+
+                //         // if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
+                //         //     horarioSala.classList.add("hora-off");
+                //         // } else {
+                //         //     horarioSala.classList.add("hora-on");
+                //         // }
+
+
+                //         var elementoParaInserirHora = elementoParaInserirOHorario.querySelector(".sala-horas");
+                //         elementoParaInserirHora.parentElement.classList.add("sala-off");
+                //         elementoParaInserirHora.appendChild(horarioSala);
+                //         sala.parentElement.parentElement.remove();
+                //     } else {
+                //         if (!(diaSelecionado >= de && diaSelecionado <= ate)) {
+                //             horarioSala.classList.add("hora-off");
+                //         } else {
+                //             horarioSala.classList.add("hora-on");
+                //         }
+                //         tiposColetados.push(sala.innerHTML);
+                //         elementoParaInserirOHorario = sala.parentElement.parentElement;
+                //         sala.parentElement.parentElement.classList.add("sala-off");
+                //     }
+                // })
+
+            })
 
             var salaAtual = filme.querySelector(".hora-on");
             if (salaAtual !== null) {
@@ -199,14 +260,11 @@ window.onload = function () {
             })
 
             pegarLinks().then(json => {
-                // if (filmeInfo.filme === json[filmePego.nome]) {
                 var filmeNome = filme.querySelector(".filme-nome").innerHTML;
                 filme.querySelector(".filme-estudio").innerHTML = json[filmeNome].estudio;
                 filme.querySelector(".filme-pais").innerHTML = json[filmeNome].pais;
-                console.log(json[filmeNome].saibaMais);
                 filme.querySelector("#botao-sb").setAttribute("href", json[filmeNome].saibaMais);
                 filme.querySelector(".trailer-btn").setAttribute("data-src", json[filmeNome].trailer);
-                // }
             })
 
         })
@@ -218,6 +276,152 @@ window.onload = function () {
         btnDia.forEach(botao => {
             botao.addEventListener('click', function () {
                 if (!botao.classList.contains('db-atv')) {
+                    var filmes = document.querySelectorAll(".filme-box");
+                    filmes.forEach(filme => {
+                        // console.log(filmeId);
+                        // console.log(filme.getAttribute("data-filme-id"));
+
+                        var horarioArea = filme.querySelector(".horarios-area");
+                        horarioArea.innerHTML = "";
+
+                        var primBox = document.createElement("div");
+                        primBox.classList.add("salas-box", "prim-sb");
+
+                        horarioArea.appendChild(primBox);
+
+                        pegarFilmes().then(info => {
+                            info.forEach(element => {
+                                var salasAtivas = element.salasAtivas;
+                                var filmeId = element.filme.id;
+
+                                if (filmeId == filme.getAttribute("data-filme-id")) {
+
+                                    var hoje = new Date(botao.getAttribute("data-data"));
+
+                                    organizarPorSala(salasAtivas);
+
+                                    salasAtivas.forEach(salaAtiva => {
+
+                                        var salasBox = document.createElement("div");
+                                        salasBox.classList.add("salas-box");
+
+                                        var horasBg = document.createElement("div");
+                                        horasBg.classList.add("horas-bg");
+                                        salasBox.appendChild(horasBg);
+
+                                        var salaTitulo = document.createElement("div");
+                                        salaTitulo.classList.add("sala-titulo");
+
+                                        var salaNome = document.createElement("div");
+                                        salaNome.classList.add("sala-nome");
+                                        salaNome.classList.add("cursor");
+                                        salaNome.innerHTML = salaAtiva.sala.nome.toUpperCase();
+
+                                        var salaLingua = document.createElement("div");
+                                        salaLingua.classList.add("sala-lingua");
+                                        salaLingua.classList.add("cursor");
+
+                                        salaTitulo.appendChild(salaNome);
+
+
+                                        // console.log(salasBox);
+
+                                        var salaHoras = document.createElement("div");
+                                        salaHoras.classList.add("sala-horas");
+                                        salaHoras.setAttribute("data-sala", salaAtiva.sala.id);
+
+                                        organizarPorHorario(salaAtiva.sessoes);
+                                        var i = 1;
+
+                                        salaAtiva.sessoes.forEach(sessao => {
+                                            var de = new Date(sessao.dataInicio);
+                                            var ate = new Date(sessao.dataFinal);
+                                            // console.log(hoje, de, ate);
+                                            if (hoje >= de && hoje <= ate) {
+                                                if (i < 2) {
+
+                                                    var lingua = sessao.tipo.nome.split(" ")[1];
+
+                                                    if (lingua === null || lingua === undefined) {
+                                                        lingua = "DUB";
+                                                    }
+                                                    salaLingua.innerHTML = lingua;
+                                                    salaLingua.classList.add(lingua.toLowerCase());
+                                                    salaTitulo.appendChild(salaLingua);
+
+
+                                                    var tipo = salaAtiva.sessoes[0].tipo.nome.split(" ")[0];
+                                                    if (tipo !== "2D") {
+                                                        var salaTipo = document.createElement("img");
+                                                        salaTipo.classList.add("sala-tipo");
+                                                        salaTipo.src = ("/assets/3D.png");
+                                                        salaTitulo.appendChild(salaTipo);
+                                                    }
+
+                                                    salasBox.appendChild(salaTitulo);
+                                                }
+                                                var horaHo = document.createElement("div")
+                                                horaHo.classList.add("hora", "interact")
+                                                horaHo.setAttribute("data-sessao", sessao.id);
+                                                horaHo.setAttribute("data-de", sessao.dataInicio);
+                                                horaHo.setAttribute("data-ate", sessao.dataFinal);
+                                                horaHo.addEventListener('click', function () {
+                                                    var horas = horaHo.parentElement.parentElement.parentElement.querySelectorAll('.hora');
+
+                                                    if (!horaHo.classList.contains('hb-atv')) {
+                                                        horas.forEach(hora => {
+                                                            console.log(hora);
+                                                            if (hora.classList.contains('hb-atv')) {
+                                                                hora.classList.remove("hb-atv");
+                                                                hora.classList.add('hora-dtv');
+                                                            } else if (hora !== horaHo) {
+                                                                hora.classList.add('hora-dtv');
+                                                            }
+                                                        })
+                                                        if (horaHo.classList.contains('hora-dtv')) {
+                                                            horaHo.classList.remove('hora-dtv');
+                                                        }
+                                                        horaHo.classList.add('hb-atv');
+                                                    } else {
+                                                        horas.forEach(hora => {
+                                                            if (hora.classList.contains('hb-atv')) {
+                                                                hora.classList.remove("hb-atv");
+                                                            } else if (hora.classList.contains('hora-dtv')) {
+                                                                hora.classList.remove('hora-dtv');
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                                horaHo.innerHTML = sessao.horario.split(":")[0] + ":" + sessao.horario.split(":")[1];
+
+
+
+
+                                                salaHoras.appendChild(horaHo);
+
+                                                salasBox.appendChild(salaHoras);
+                                                i++;
+                                            }
+
+                                        })
+
+                                        if (salasBox.querySelector(".hora") !== null) {
+                                            horarioArea.appendChild(salasBox);
+                                        }
+
+                                    })
+
+                                };
+
+                            })
+                        })
+
+
+                    })
+
+
+
+
                     var dia = botao.getAttribute("data-data");
                     var horas = document.querySelectorAll(".hora");
                     horas.forEach(hora => {
@@ -265,39 +469,16 @@ window.onload = function () {
                         mesEscolhido.classList.add("tm-atv");
                         diaSemanaAtivos.classList.add("tds-atv");
                     })
+
+
                 }
+
+
             })
         })
 
 
-        var btnHorario = document.querySelectorAll(".hora");
-        btnHorario.forEach(botao => {
-            botao.addEventListener('click', function () {
-                var horas = botao.parentElement.parentElement.parentElement.querySelectorAll('.hora');
-                if (!botao.classList.contains('hb-atv')) {
-                    horas.forEach(hora => {
-                        if (hora.classList.contains('hb-atv')) {
-                            hora.classList.remove("hb-atv");
-                            hora.classList.add('hora-dtv');
-                        } else if (hora !== botao) {
-                            hora.classList.add('hora-dtv');
-                        }
-                    })
-                    if (botao.classList.contains('hora-dtv')) {
-                        botao.classList.remove('hora-dtv');
-                    }
-                    botao.classList.add('hb-atv');
-                } else {
-                    horas.forEach(hora => {
-                        if (hora.classList.contains('hb-atv')) {
-                            hora.classList.remove("hb-atv");
-                        } else if (hora.classList.contains('hora-dtv')) {
-                            hora.classList.remove('hora-dtv');
-                        }
-                    })
-                }
-            })
-        })
+        horarioBtn();
 
         document.querySelectorAll('.horarios-area').forEach(element => {
             var tamanhoSomado = 0;
@@ -341,30 +522,70 @@ window.onload = function () {
         return y;
     }
 
-    function organizar(sessoes) {
-        sessoes.sort((a, b) => {
+    function organizarPorSala(salaAtiva) {
+        salaAtiva.sort((a, b) => {
             if (a.sala.id < b.sala.id)
                 return -1;
             if (a.sala.id > b.sala.id)
                 return 1;
             return 0;
         });
-
+    }
+    function organizarPorHorario(sessoes) {
         sessoes.sort((a, b) => {
-            if (a.horario < b.horario && a.sala.id == b.sala.id)
+            if (a.horario < b.horario)
                 return -1;
-            if (a.horario > b.horario && a.sala.id == b.sala.id)
+            if (a.horario > b.horario)
                 return 1;
             return 0;
         });
-
-        // return sessoes;
+    }
+    function organizarPorTipo(sessoes) {
+        sessoes.sort((a, b) => {
+            if (a.tipo.nome < b.tipo.nome)
+                return -1;
+            if (a.tipo.nome > b.tipo.nome)
+                return 1;
+            return 0;
+        });
     }
 
     async function pegarLinks() {
         var file = await fetch("../components/links.json");
         var json = await file.json();
         return json
+    }
+
+    function horarioBtn() {
+        var btnHorario = document.querySelectorAll(".hora");
+        btnHorario.forEach(botao => {
+            botao.addEventListener('click', function () {
+                var horas = botao.parentElement.parentElement.parentElement.querySelectorAll('.hora');
+                console.log(botao.innerHTML);
+                if (!botao.classList.contains('hb-atv')) {
+                    horas.forEach(hora => {
+                        if (hora.classList.contains('hb-atv')) {
+                            hora.classList.remove("hb-atv");
+                            hora.classList.add('hora-dtv');
+                        } else if (hora !== botao) {
+                            hora.classList.add('hora-dtv');
+                        }
+                    })
+                    if (botao.classList.contains('hora-dtv')) {
+                        botao.classList.remove('hora-dtv');
+                    }
+                    botao.classList.add('hb-atv');
+                } else {
+                    horas.forEach(hora => {
+                        if (hora.classList.contains('hb-atv')) {
+                            hora.classList.remove("hb-atv");
+                        } else if (hora.classList.contains('hora-dtv')) {
+                            hora.classList.remove('hora-dtv');
+                        }
+                    })
+                }
+            })
+        })
     }
 
 }

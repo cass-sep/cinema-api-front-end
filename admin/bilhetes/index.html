@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sessões</title>
+    <title>Bilhetes</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../style.css">
     <script src="./script.js" type="module"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400" rel="stylesheet" />
+    <link rel="stylesheet" href="/components/top-menu-style.css">
 </head>
 
 <body>
@@ -21,23 +22,19 @@
             </form>
         </div>
     </div>
-    
+
     <header id="contexto">
         <h1 id="programacao">BILHETES</h1>
     </header>
-    
+
     <main>
         <div class="background-fake"></div>
         <table id="table">
-           
+
             <form id="cadastro">
                 <thead class="thread-cadastro">
                     <tr>
                         <th></th>
-                        <th>nome<input type="text" value="" name="nome" placeholder="nome" required>
-                        </th>
-                        <th>capacidade<input type="number" name="capacidade" placeholder="capacidade" required></th>
-                        <th width="100px">&nbsp<input type="submit" value="CADASTRAR"></th>
                     </tr>
                 </thead>
             </form>
