@@ -4,12 +4,12 @@ export function topMenu() {
 
     var relatorios = document.createElement("a");
     relatorios.innerHTML = "Relatórios";
-    relatorios.href = "/relatorios/index.html"
+    relatorios.href = "../relatorios/index.html"
     relatorios.classList.add("top-menu-btn")
 
     var compra = document.createElement("a");
     compra.innerHTML = "Compra";
-    compra.href = "../../compra/index.html"
+    compra.href = "../compra/index.html"
     compra.classList.add("top-menu-btn")
 
     var gerenciamento = document.createElement("a");
@@ -24,7 +24,7 @@ export function topMenu() {
     categorias.forEach(categoria => {
         var tag = document.createElement("a");
         tag.innerHTML = categoria.nome;
-        tag.href = `../../admin/${categoria.link}/index.html`
+        tag.href = `../admin/${categoria.link}/index.html`
         tag.classList.add("top-menu-tag");
 
         drop.appendChild(tag)
@@ -43,7 +43,7 @@ export function topMenu() {
     gerenciamento.appendChild(drop);
 
 
-    logo.href = "../../home/index.html";
+    logo.href = "../home/index.html";
 
     var topMenu = document.createElement("header");
     topMenu.classList.add("top-menu")
