@@ -135,7 +135,7 @@ export const criaTr = (tabela, itens, id, url, obj) => {
                 element.removeAttribute("width")
                 let input = element.querySelector("input")
                 
-                if (input && !input.classList.contains("no-edit")) {
+                if (input) {
                     if (input.type == "submit") {
                         input.value = "SALVAR"
                     }
@@ -145,6 +145,11 @@ export const criaTr = (tabela, itens, id, url, obj) => {
                     }
                     else {
                         input.value = itens[index]
+                    }
+
+                    if(input.classList.contains("no-edit")){
+                        input.style.background = "red"
+                        input.disabled = true
                     }
                     
                     modalPessoa.querySelector("form").append(element)

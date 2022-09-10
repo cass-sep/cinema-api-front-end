@@ -5,13 +5,18 @@ const url = "sessoes"
 
 init(url, obj)
 
-const select = document.querySelector("select[name='salaId']")
+const selectSala = document.querySelector("select[name='salaId']")
+const selectTipo = document.querySelector("select[name='tipoId']")
 
 axios.get("http://localhost:8080/salas")
    .then(res => res.data)
-   .then(data => preencherSelect(data))
+   .then(data => preencherSelect(selectSala, data))
 
-const preencherSelect = (data) => {
+axios.get("http://localhost:8080/tipos")
+   .then(res => res.data)
+   .then(data => preencherSelect(selectTipo, data))
+
+const preencherSelect = (select, data) => {
    data.forEach(sala => {
       let option = document.createElement("option")
       option.text = sala.nome

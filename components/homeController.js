@@ -1,5 +1,5 @@
 import { topMenu } from '../components/top-menu.js';
-import { sessoes } from '../components/horariosService.js';
+
 
 window.onload = function () {
     topMenu();
@@ -8,6 +8,12 @@ window.onload = function () {
     var main = document.querySelector(".content-box");
     var tempDiaSemana = document.getElementById("temp-dia-box");
     var tempHorario = document.getElementById("temp-horario");
+
+    let repo = "/cinema-api-front-end"
+
+    if(!window.location.href.includes(repo)){
+        repo = ""
+    }
 
 
     pegarFilmes().then(elemento => {
@@ -25,7 +31,7 @@ window.onload = function () {
             sessaoWindow.content.querySelector(".filme-genero").innerHTML = filmePego.generos;
             sessaoWindow.content.querySelector(".filme-duracao").innerHTML = Math.floor(Number(filmePego.duracao) / 60) + "h" + (Number(filmePego.duracao) % 60) + "min";
             sessaoWindow.content.querySelector(".filme-poster").src = filmePego.posterUrl;
-            sessaoWindow.content.querySelector(".filme-info").style.backgroundImage = `url('${filmePego.bannerUrl}')`;
+            sessaoWindow.content.querySelector(".filme-info").style.backgroundImage = `url('${repo}${filmePego.bannerUrl}')`;
             sessaoWindow.content.querySelector(".btn-comprar").setAttribute("data-filmeid", filmePego.id);
             sessaoWindow.content.querySelector(".filme-box").setAttribute("data-filme-id", filmePego.id);
 
@@ -102,7 +108,7 @@ window.onload = function () {
                 var tipo = salaAtiva.sessoes[0].tipo.nome.split(" ")[0];
                 if (tipo !== "2D") {
                     salaTipo.setAttribute("id", tipo.toLowerCase());
-                    salaTipo.src = "/assets/3D.png";
+                    salaTipo.src = "../assets/3D.png";
                 } else {
                     salaTipo.setAttribute("id", "dois-de");
                     salaTipo.src = "";
@@ -354,7 +360,7 @@ window.onload = function () {
                                                     if (tipo !== "2D") {
                                                         var salaTipo = document.createElement("img");
                                                         salaTipo.classList.add("sala-tipo");
-                                                        salaTipo.src = ("/assets/3D.png");
+                                                        salaTipo.src = ("../assets/3D.png");
                                                         salaTitulo.appendChild(salaTipo);
                                                     }
 

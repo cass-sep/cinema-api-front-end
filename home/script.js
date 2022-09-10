@@ -1,3 +1,4 @@
+// import {FOLDER_REPO} from "../config/config.js"
 
 function scrollMais(elemento) {
     var areaHorarios = elemento.parentElement.querySelector('.horarios-area');
@@ -62,7 +63,15 @@ function comprarPage(btnComprar) {
         console.log("horario :" + horario.innerHTML);
         if (data !== null && sessao !== null) {
             var params = `/compra/index.html?sessao=${sessao}&data=${data}`;
-            window.location = window.location.origin.concat(params);
+            let repo = "/cinema-api-front-end";
+
+           
+            if (window.location.href.includes(repo)) {
+                window.location = window.location.origin.concat(repo+params);
+            }else{
+                window.location = window.location.origin.concat(params);
+            }
+
         }
     }
 }
